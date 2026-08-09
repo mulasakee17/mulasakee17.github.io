@@ -20,28 +20,29 @@ it deploys.
 ├── .nojekyll       # Tells GitHub Pages not to run Jekyll
 ├── assets/
 │   ├── README.md   # Drop-in instructions for the QR code
-│   └── wechat-qr.webp   # <-- add your WeChat QR here (480×480 recommended)
-└── research/       # (optional) drop PDFs here and link them relatively
+│   └── wechat-qr.webp   # your WeChat QR (currently the WeChat card image)
+└── research/
+    ├── phase-reversal-brief.html   # Working note — the "Read Brief" target
+    └── phase-reversal-full.html    # Working note — the "Full Research Note" target
 ```
 
 ---
 
-## Placeholders to replace
+## Links & content — where everything lives now
 
-Search `index.html` for these. Each is also marked with an HTML comment.
+All initial placeholders are wired up. To change anything:
 
-> ✅ `YOUR_EMAIL` is already set to `huimouye@qq.com` — nothing to do there.
+| Item                            | Where to edit                                        |
+| ------------------------------- | ---------------------------------------------------- |
+| Contact email                   | `index.html` → `mailto:huimouye@qq.com`              |
+| GitHub profile URL              | `index.html` → nav / hero / contact                  |
+| SwarmAlpha repo (`meeting-room`)| `index.html` → the two SwarmAlpha buttons            |
+| Phase Reversal brief            | `research/phase-reversal-brief.html` (edit the page) |
+| Phase Reversal full note        | `research/phase-reversal-full.html` (edit the page)  |
+| Canonical / OG URLs             | `<head>` of `index.html` and the two research pages  |
 
-| Placeholder                  | Where                                                | Replace with                                      |
-| ---------------------------- | ---------------------------------------------------- | ------------------------------------------------- |
-| `SWARMALPHA_GITHUB_URL`      | SwarmAlpha "View Project" + "GitHub" links           | The SwarmAlpha repo URL                           |
-| `PHASE_REVERSAL_BRIEF_URL`   | Phase Reversal "Read Brief"                          | Brief URL, or a local PDF (see below)             |
-| `PHASE_REVERSAL_FULL_URL`    | Phase Reversal "Full Research Note"                  | Full note URL, or a local PDF (see below)         |
-| GitHub profile URL           | Nav / hero / contact (`https://github.com/mulasakee17`) | Your GitHub profile URL                       |
-| Canonical URL                | `<head>` (`https://mulasakee17.github.io/`)          | Your live Pages URL                               |
-
-> The GitHub profile and canonical URLs were pre-filled from this repository's
-> name. If your Pages URL ever differs, update them in `index.html`.
+All internal links are relative, so the site works from any domain or
+sub-path — nothing to reconfigure when you change hosting.
 
 ---
 
@@ -79,28 +80,30 @@ keep that section short; it exists to link them, not to stand alone.
 
 ---
 
-## How to replace PDFs
+## How to edit the research pages
 
-Two options:
+The two Phase Reversal documents are plain HTML pages in `research/`:
 
-1. **Link out** — point `PHASE_REVERSAL_BRIEF_URL` / `PHASE_REVERSAL_FULL_URL`
-   at wherever you host the documents.
-2. **Self-host on GitHub Pages** — create a `research/` folder, drop PDFs in
-   (e.g. `research/phase-reversal-brief.pdf`), and use relative paths:
+- `research/phase-reversal-brief.html` — linked from "Read Brief"
+- `research/phase-reversal-full.html` — linked from "Full Research Note"
 
-```html
-<a href="research/phase-reversal-brief.pdf">Read Brief</a>
-<a href="research/phase-reversal-full.pdf">Full Research Note</a>
-```
+They reuse the site's `style.css`, so they inherit the same design
+automatically. Each section has a `<!-- EDIT -->` marker and a placeholder
+paragraph — replace those with your actual content.
 
-GitHub Pages serves PDFs directly from the repo, so no extra setup is needed.
+Prefer PDFs? Drop a `.pdf` into `research/` and change the two buttons'
+`href` attributes to the file paths. GitHub Pages serves PDFs as-is, no extra
+setup needed.
 
 ---
 
 ## How to replace the WeChat QR code
 
-1. Export your WeChat QR as a square `.webp` (~480 × 480 px).
+1. Export your WeChat QR (a square crop of just the QR is recommended) as a `.webp`.
 2. Save it as `assets/wechat-qr.webp` (overwrite the file).
+
+The current file is the full WeChat card image (640 × 838). A clean square
+crop of the QR scans more reliably and keeps the modal compact.
 
 If the image is missing, the WeChat modal gracefully shows
 *"WeChat QR coming soon."* — nothing breaks.
