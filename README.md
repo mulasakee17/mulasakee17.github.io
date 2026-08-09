@@ -1,6 +1,6 @@
-# Mengyuan He — Personal Research Website
+# Lucius — Personal Research Website
 
-Personal research website for **Mengyuan He (贺孟元)** — Independent Researcher
+Personal research website for **Lucius (贺孟元)** — Independent Researcher
 in multi-agent systems, AI × capital allocation, and complex systems.
 
 Built as a **static GitHub Pages site**: plain HTML, CSS, and vanilla
