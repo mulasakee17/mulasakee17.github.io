@@ -30,9 +30,10 @@ it deploys.
 
 Search `index.html` for these. Each is also marked with an HTML comment.
 
+> ✅ `YOUR_EMAIL` is already set to `huimouye@qq.com` — nothing to do there.
+
 | Placeholder                  | Where                                                | Replace with                                      |
 | ---------------------------- | ---------------------------------------------------- | ------------------------------------------------- |
-| `YOUR_EMAIL`                 | Contact section (`mailto:YOUR_EMAIL`)                | Your email address                                |
 | `SWARMALPHA_GITHUB_URL`      | SwarmAlpha "View Project" + "GitHub" links           | The SwarmAlpha repo URL                           |
 | `PHASE_REVERSAL_BRIEF_URL`   | Phase Reversal "Read Brief"                          | Brief URL, or a local PDF (see below)             |
 | `PHASE_REVERSAL_FULL_URL`    | Phase Reversal "Full Research Note"                  | Full note URL, or a local PDF (see below)         |
