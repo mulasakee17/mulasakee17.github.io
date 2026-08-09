@@ -22,8 +22,8 @@ it deploys.
 │   ├── README.md   # Drop-in instructions for the QR code
 │   └── wechat-qr.webp   # your WeChat QR (currently the WeChat card image)
 └── research/
-    ├── phase-reversal-brief.html   # Working note — the "Read Brief" target
-    └── phase-reversal-full.html    # Working note — the "Full Research Note" target
+    ├── phase-reversal-brief.pdf            # "Read Brief" target
+    └── phase-reversal-whitepaper-cn.pdf    # "Full Research Note" target
 ```
 
 ---
@@ -37,9 +37,9 @@ All initial placeholders are wired up. To change anything:
 | Contact email                   | `index.html` → `mailto:huimouye@qq.com`              |
 | GitHub profile URL              | `index.html` → nav / hero / contact                  |
 | SwarmAlpha repo (`meeting-room`)| `index.html` → the two SwarmAlpha buttons            |
-| Phase Reversal brief            | `research/phase-reversal-brief.html` (edit the page) |
-| Phase Reversal full note        | `research/phase-reversal-full.html` (edit the page)  |
-| Canonical / OG URLs             | `<head>` of `index.html` and the two research pages  |
+| Phase Reversal brief            | `research/phase-reversal-brief.pdf` (replace the file) |
+| Phase Reversal full note        | `research/phase-reversal-whitepaper-cn.pdf` (replace the file) |
+| Canonical / OG URLs             | `<head>` of `index.html`                             |
 
 All internal links are relative, so the site works from any domain or
 sub-path — nothing to reconfigure when you change hosting.
@@ -80,20 +80,17 @@ keep that section short; it exists to link them, not to stand alone.
 
 ---
 
-## How to edit the research pages
+## How to replace the research PDFs
 
-The two Phase Reversal documents are plain HTML pages in `research/`:
+The two Phase Reversal documents are PDFs in `research/`:
 
-- `research/phase-reversal-brief.html` — linked from "Read Brief"
-- `research/phase-reversal-full.html` — linked from "Full Research Note"
+- `research/phase-reversal-brief.pdf` — linked from "Read Brief"
+- `research/phase-reversal-whitepaper-cn.pdf` — linked from "Full Research Note"
 
-They reuse the site's `style.css`, so they inherit the same design
-automatically. Each section has a `<!-- EDIT -->` marker and a placeholder
-paragraph — replace those with your actual content.
-
-Prefer PDFs? Drop a `.pdf` into `research/` and change the two buttons'
-`href` attributes to the file paths. GitHub Pages serves PDFs as-is, no extra
-setup needed.
+To update a document, overwrite the PDF (keep the same filename) and push —
+GitHub Pages serves PDFs as-is, no extra setup. If you rename a file, update
+the matching `href` in `index.html`. The buttons open the PDF in a new tab so
+visitors stay on the landing page.
 
 ---
 
