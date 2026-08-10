@@ -128,6 +128,16 @@
     document.addEventListener('keydown', onModalKey);
   }
 
+  // Inside WeChat's in-app browser a QR image can be long-pressed to be
+  // recognized, so a visitor who already scanned the page QR doesn't have
+  // to scan again — swap the modal hint to say so. Copy lives in the HTML.
+  if (/MicroMessenger/i.test(navigator.userAgent)) {
+    var hintDefault = document.getElementById('modal-hint-default');
+    var hintWechat = document.getElementById('modal-hint-wechat');
+    if (hintDefault) hintDefault.hidden = true;
+    if (hintWechat) hintWechat.hidden = false;
+  }
+
   /* ---------- 4. QR image graceful fallback ---------- */
   if (qrImg) {
     function showQRFallback() {

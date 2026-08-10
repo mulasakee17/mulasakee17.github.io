@@ -45,7 +45,7 @@
       <nav aria-label="Primary">
         <ul class="nav-list">
           <li><a href="#research">Research</a></li>
-          <li><a href="#experience">About</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
             <a class="nav-external" href="https://github.com/mulasakee17"
@@ -108,9 +108,6 @@
             <div class="project-links">
               <!-- SwarmAlpha code lives in the meeting-room repo. -->
               <a class="btn btn-sm" href="https://github.com/mulasakee17/meeting-room" target="_blank" rel="noopener noreferrer">View Project</a>
-              <a class="link" href="https://github.com/mulasakee17/meeting-room" target="_blank" rel="noopener noreferrer">
-                GitHub <span class="arrow" aria-hidden="true">↗</span>
-              </a>
             </div>
           </article>
 
@@ -241,10 +238,14 @@
        aria-labelledby="wechat-modal-title" hidden>
     <div class="modal-card">
       <h2 id="wechat-modal-title" class="modal-title">WeChat</h2>
-      <p class="modal-hint">Scan with WeChat to get in touch.</p>
+      <!-- WeChat's in-app browser can long-press a QR image to recognize it,
+           so a visitor already inside WeChat doesn't have to scan again.
+           script.js swaps these two hints based on the UA. -->
+      <p class="modal-hint" id="modal-hint-default">Scan with WeChat to get in touch.</p>
+      <p class="modal-hint" id="modal-hint-wechat" hidden>Long-press the QR to recognize it in WeChat.</p>
       <div class="qr-frame">
         <img id="wechat-qr" src="assets/wechat-qr.webp"
-             alt="WeChat QR code for Lucius" width="640" height="838">
+             alt="WeChat QR code for Lucius" width="640" height="838" loading="lazy">
       </div>
       <button type="button" id="wechat-close" class="modal-close" aria-label="Close dialog">
         <span aria-hidden="true">×</span>

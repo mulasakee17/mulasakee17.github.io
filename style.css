@@ -195,11 +195,14 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 20px); }
 .nav-list a:focus-visible::after { transform: scaleX(1); }
 .nav-list .nav-external { color: var(--gray); }
 
-/* On narrow phones hide the wordmark so the first screen stays clean. */
+/* ---- Mobile (≤560px) header: keep the desktop rules above intact. ----
+   Restore a compact wordmark as the brand anchor after scrolling; the nav
+   GitHub item is dropped here (GitHub already lives in the hero CTA and
+   the contact list), freeing room for the wordmark. */
 @media (max-width: 560px) {
-  .wordmark { display: none; }
-  .header-inner { justify-content: center; }
-  .nav-list { gap: 4px 18px; }
+  .wordmark { font-size: 0.9rem; }
+  .nav-external { display: none; }
+  .nav-list { gap: 4px 16px; }
 }
 
 /* ---------- 5. Hero ---------- */
@@ -251,6 +254,20 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 20px); }
   align-items: center;
   flex-wrap: wrap;
   gap: clamp(20px, 4vw, 36px);
+}
+
+/* ---- Mobile (≤560px) hero: tighten only the vertical rhythm. ----
+   Order, sizes, and type stay identical; the tighter padding/margins let
+   name → role → CTA → first project sit near the fold for a QR-scan
+   visitor. Placed after the base hero rules so it wins the cascade. */
+@media (max-width: 560px) {
+  .hero {
+    padding: clamp(48px, 9vh, 64px) 0 clamp(48px, 8vh, 64px);
+  }
+  .hero-role { margin-top: 18px; }
+  .hero-focus { margin-top: 8px; }
+  .hero-question { margin-top: clamp(28px, 5vh, 40px); }
+  .hero-cta { margin-top: clamp(26px, 4vh, 36px); }
 }
 
 /* ---------- 6. Buttons & links ---------- */
