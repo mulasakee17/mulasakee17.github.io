@@ -12,12 +12,16 @@
      7. Sections
      8. Research projects
      9. Research direction
+     9.5. Company
     10. Research experience
     11. Contact
     12. Footer
     13. WeChat modal
     14. Motion / reveal
     15. Reduced motion
+
+   The RIZHICHI company page (rizhichi/) reuses this file plus a small
+   page-specific stylesheet (rizhichi/rizhichi.css).
    ============================================================ */
 
 /* ---------- 1. Design tokens ---------- */
@@ -196,13 +200,17 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 20px); }
 .nav-list .nav-external { color: var(--gray); }
 
 /* ---- Mobile (≤560px) header: keep the desktop rules above intact. ----
-   Restore a compact wordmark as the brand anchor after scrolling; the nav
-   GitHub item is dropped here (GitHub already lives in the hero CTA and
-   the contact list), freeing room for the wordmark. */
+   The GitHub item is dropped here (GitHub already lives in the hero CTA
+   and the contact list). With five anchor links, the home header drops
+   its wordmark on small screens so the links stay on one tappable line;
+   the hero states the name immediately below. The RIZHICHI header keeps
+   its own compact wordmark (it has no nav-list, so these don't apply). */
 @media (max-width: 560px) {
-  .wordmark { font-size: 0.9rem; }
   .nav-external { display: none; }
-  .nav-list { gap: 4px 16px; }
+  .site-header--home .wordmark { display: none; }
+  .site-header--home .header-inner { justify-content: center; }
+  .nav-list { gap: 4px 12px; }
+  .nav-list a { font-size: 0.78rem; }
 }
 
 /* ---------- 5. Hero ---------- */
@@ -387,6 +395,35 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 20px); }
   gap: 10px 28px;
 }
 
+/* Systems cards — title paired with a small quiet status label. */
+.project-head {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.project-head .project-title { margin-top: 0; }
+
+.project-status {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(138, 46, 36, 0.45);
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+
+.project-note {
+  margin-top: 22px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--gray);
+}
+
 /* ---------- 9. Research direction ---------- */
 .direction-body { margin-top: 24px; max-width: 60ch; line-height: 1.65; }
 .direction-name {
@@ -408,6 +445,44 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 20px); }
 }
 .direction-item strong { font-weight: 600; }
 .direction-item p { margin-top: 4px; color: var(--gray); font-size: 0.95rem; }
+
+/* ---------- 9.5. Company ---------- */
+/* A quiet entry card for RIZHICHI — an entity, not a corporate landing. */
+.company-card {
+  margin-top: clamp(28px, 5vh, 48px);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.35);
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.company-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; }
+.company-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.company-en {
+  font-size: 0.5em;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--gray);
+  margin-left: 0.35em;
+}
+.company-sub {
+  margin-top: 8px;
+  font-style: italic;
+  color: var(--gray);
+  font-size: 0.98rem;
+}
+.company-desc {
+  margin-top: 16px;
+  max-width: 60ch;
+  line-height: 1.65;
+}
+.company-desc + .company-desc { margin-top: 10px; }
+.company-card .project-keywords { margin-top: 22px; }
+.company-cta { margin-top: 28px; }
 
 /* ---------- 10. Research experience ---------- */
 .exp-item {

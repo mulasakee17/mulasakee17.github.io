@@ -1,7 +1,10 @@
 # Lucius — Personal Research Website
 
-Personal research website for **Lucius (贺孟元)** — Independent Researcher
-in multi-agent systems, AI × capital allocation, and complex systems.
+Personal website for **Lucius (贺孟元)** — Independent Researcher & Builder
+in multi-agent systems, AI-native computing, and complex systems.
+
+Also hosts **日之炽 · RIZHICHI**, an independent technology venture by Lucius,
+at `/rizhichi/`.
 
 Built as a **static GitHub Pages site**: plain HTML, CSS, and vanilla
 JavaScript. No framework, no build step, no dependencies. Push to GitHub and
@@ -13,14 +16,18 @@ it deploys.
 
 ```
 .
-├── index.html      # Single-page site (all content lives here)
-├── style.css       # All styling — tokens at the top, easy to tweak
-├── script.js       # Vanilla JS: header state, scroll reveal, WeChat modal
-├── favicon.svg     # Asterisk mark used as the browser tab icon
-├── .nojekyll       # Tells GitHub Pages not to run Jekyll
+├── index.html          # Personal homepage (research + systems + company entry)
+├── style.css           # Shared design system — tokens at the top, easy to tweak
+├── script.js           # Vanilla JS: header state, scroll reveal, WeChat modal
+├── favicon.svg         # Asterisk mark used as the browser tab icon
+├── .nojekyll           # Tells GitHub Pages not to run Jekyll
 ├── assets/
-│   ├── README.md   # Drop-in instructions for the QR code
-│   └── wechat-qr.webp   # your WeChat QR (currently the WeChat card image)
+│   ├── README.md       # Drop-in instructions for the QR code
+│   └── wechat-qr.webp  # your WeChat QR (currently the WeChat card image)
+├── rizhichi/           # 日之炽 · RIZHICHI — company page
+│   ├── index.html      # Hero, What We Build, Thesis, Founder, Contact
+│   ├── rizhichi.css    # Small lab-identity layer over ../style.css
+│   └── favicon.svg     # Orbit mark (ring + displaced body)
 └── research/
     ├── phase-reversal-brief.pdf            # "Read Brief" target
     └── phase-reversal-whitepaper-cn.pdf    # "Full Research Note" target
@@ -34,12 +41,13 @@ All initial placeholders are wired up. To change anything:
 
 | Item                            | Where to edit                                        |
 | ------------------------------- | ---------------------------------------------------- |
-| Contact email                   | `index.html` → `mailto:huimouye@qq.com`              |
-| GitHub profile URL              | `index.html` → nav / hero / contact                  |
-| SwarmAlpha repo (`meeting-room`)| `index.html` → the two SwarmAlpha buttons            |
+| Contact email                   | `index.html` / `rizhichi/index.html` → `mailto:huimouye@qq.com` |
+| GitHub profile URL              | `index.html` / `rizhichi/index.html` → nav / hero / contact |
+| SwarmAlpha repo (`swarmalpha`)  | `index.html` + `rizhichi/index.html` → the SwarmAlpha buttons |
+| Personal Agent Runtime link     | `index.html` (Selected Systems) + `rizhichi/index.html` (What We Build) — add `View Project ↗` / `Explore System →` once a repo goes public; until then the `In Development` status label stands in |
 | Phase Reversal brief            | `research/phase-reversal-brief.pdf` (replace the file) |
 | Phase Reversal full note        | `research/phase-reversal-whitepaper-cn.pdf` (replace the file) |
-| Canonical / OG URLs             | `<head>` of `index.html`                             |
+| Canonical / OG URLs             | `<head>` of `index.html` and `rizhichi/index.html`    |
 
 All internal links are relative, so the site works from any domain or
 sub-path — nothing to reconfigure when you change hosting.
