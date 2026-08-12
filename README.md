@@ -44,7 +44,7 @@ All initial placeholders are wired up. To change anything:
 | Contact email                   | `index.html` / `rizhichi/index.html` → `mailto:huimouye@qq.com` |
 | GitHub profile URL              | `index.html` / `rizhichi/index.html` → nav / hero / contact |
 | SwarmAlpha repo (`swarmalpha`)  | `index.html` + `rizhichi/index.html` → the SwarmAlpha buttons |
-| Personal Agent Runtime link     | `index.html` (Selected Systems) + `rizhichi/index.html` (What We Build) — add `View Project ↗` / `Explore System →` once a repo goes public; until then the `In Development` status label stands in |
+| Personal Agent Runtime link     | `index.html` (Selected Systems) + `rizhichi/index.html` (What We Build) → `https://github.com/mulasakee17/personal-agent-runtime` |
 | Phase Reversal brief            | `research/phase-reversal-brief.pdf` (replace the file) |
 | Phase Reversal full note        | `research/phase-reversal-whitepaper-cn.pdf` (replace the file) |
 | Canonical / OG URLs             | `<head>` of `index.html` and `rizhichi/index.html`    |
