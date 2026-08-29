@@ -1,7 +1,12 @@
 # Lucius — Personal Research Website
 
-Personal website for **Lucius (贺孟元)** — Independent Researcher & Builder
-in multi-agent systems, AI-native computing, and complex systems.
+Personal website for **Lucius (贺孟元)** — Independent Researcher · Founder ·
+Builder working on **agent systems, physical AI and collective intelligence**.
+
+Featured work: **Moonblade** (Physical Skill Layer, prototype in development)
+and **SwarmAlpha** (experimental research on multi-agent collective
+decision-making). Earlier work (Phase Reversal notes, Personal Agent Runtime)
+is kept under lower-weight archive sections.
 
 Also hosts **日之炽 · RIZHICHI**, an independent technology venture by Lucius,
 at `/rizhichi/`.
@@ -16,14 +21,15 @@ it deploys.
 
 ```
 .
-├── index.html          # Personal homepage (research + systems + company entry)
+├── index.html          # Personal homepage (work + evidence + notes + company entry)
 ├── style.css           # Shared design system — tokens at the top, easy to tweak
 ├── script.js           # Vanilla JS: header state, scroll reveal, WeChat modal
 ├── favicon.svg         # Asterisk mark used as the browser tab icon
 ├── .nojekyll           # Tells GitHub Pages not to run Jekyll
 ├── assets/
 │   ├── README.md       # Drop-in instructions for the QR code
-│   └── wechat-qr.webp  # your WeChat QR (currently the WeChat card image)
+│   ├── wechat-qr.webp  # your WeChat QR (currently the WeChat card image)
+│   └── og-image.png    # 1200×630 social preview (Open Graph / Twitter)
 ├── rizhichi/           # 日之炽 · RIZHICHI — company page
 │   ├── index.html      # Hero, What We Build, Thesis, Founder, Contact
 │   ├── rizhichi.css    # Small lab-identity layer over ../style.css
@@ -32,6 +38,21 @@ it deploys.
     ├── phase-reversal-brief.pdf            # "Read Brief" target
     └── phase-reversal-whitepaper-cn.pdf    # "Full Research Note" target
 ```
+
+---
+
+## Page structure (index.html)
+
+1. **Hero** — name, role, one-line identity, the guiding research question.
+2. **Selected Work** — the two current headline projects:
+   - `01 Moonblade` — Featured Build (no public repo yet; status chip only)
+   - `02 SwarmAlpha` — Featured Research (evidence table + GitHub links)
+3. **Selected Evidence** — five verifiable facts, nothing louder.
+4. **Selected Notes** — earlier research notes (Phase Reversal Hypothesis).
+5. **Earlier Systems** — previous explorations (Personal Agent Runtime).
+6. **Company** — RIZHICHI entry card.
+7. **Research Experience** — current independent research context.
+8. **Contact** — email / GitHub / WeChat modal.
 
 ---
 
@@ -44,7 +65,10 @@ All initial placeholders are wired up. To change anything:
 | Contact email                   | `index.html` / `rizhichi/index.html` → `mailto:huimouye@qq.com` |
 | GitHub profile URL              | `index.html` / `rizhichi/index.html` → nav / hero / contact |
 | SwarmAlpha repo (`swarmalpha`)  | `index.html` + `rizhichi/index.html` → the SwarmAlpha buttons |
-| Personal Agent Runtime link     | `index.html` (Selected Systems) + `rizhichi/index.html` (What We Build) → `https://github.com/mulasakee17/personal-agent-runtime` |
+| SwarmAlpha working paper        | `index.html` → "Working Paper" → `PAPER_DRAFT.md` in the swarmalpha repo |
+| Personal Agent Runtime link     | `index.html` (Earlier Systems) + `rizhichi/index.html` (What We Build) → `https://github.com/mulasakee17/personal-agent-runtime` |
+| Faculty profile (Xiaogang Peng) | `index.html` (Research Experience) → `https://ai.szu.edu.cn/info/1074/1334.htm` |
+| Moonblade                       | `index.html` + `rizhichi/index.html` — status chip only; add a repo link when one exists |
 | Phase Reversal brief            | `research/phase-reversal-brief.pdf` (replace the file) |
 | Phase Reversal full note        | `research/phase-reversal-whitepaper-cn.pdf` (replace the file) |
 | Canonical / OG URLs             | `<head>` of `index.html` and `rizhichi/index.html`    |
@@ -74,17 +98,15 @@ Everything is static, so this works fine for a first look.
 
 ---
 
-## How to modify research projects
+## How to modify the featured projects
 
-Each project is one `<article class="project">` block in `index.html` under
-`<section id="research">`:
+Each project is one `<article class="project">` block in `index.html`:
 
-- Change the title, subtitle, and description text directly.
-- Add or remove keywords in the `.project-keywords` list.
-- Update the buttons' `href` attributes.
-
-The two projects are connected by the **Constraint Migration** section —
-keep that section short; it exists to link them, not to stand alone.
+- `project--featured` marks the two headline projects (larger title).
+- `project--note` marks archive-tier entries (smaller title).
+- The `.evidence` list renders the restrained Research Question / Method /
+  Evidence / Status rows.
+- Keep claims limited to what the linked repositories actually show.
 
 ---
 
@@ -99,6 +121,14 @@ To update a document, overwrite the PDF (keep the same filename) and push —
 GitHub Pages serves PDFs as-is, no extra setup. If you rename a file, update
 the matching `href` in `index.html`. The buttons open the PDF in a new tab so
 visitors stay on the landing page.
+
+---
+
+## How to replace the social preview image
+
+`assets/og-image.png` (1200×630) is the Open Graph / Twitter card image. To
+regenerate it, render a new PNG with the same name and push — keep the exact
+filename so the `<meta property="og:image">` tags keep working.
 
 ---
 
