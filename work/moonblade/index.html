@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moonblade — Lucius He
+    </title>
+    <meta name="description" content="Object-grounded understanding, inspectable evidence, and the limits of a software prototype.">
+    <meta name="theme-color" content="#F7F4EF">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://mulasakee17.github.io/work/moonblade/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lucius He">
+    <meta property="og:title" content="Moonblade — Lucius He">
+    <meta property="og:description" content="Object-grounded understanding, inspectable evidence, and the limits of a software prototype.">
+    <meta property="og:url" content="https://mulasakee17.github.io/work/moonblade/">
+    <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Intelligence, grounded in reality. Understanding, built to last.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moonblade — Lucius He">
+    <meta name="twitter:description" content="Object-grounded understanding, inspectable evidence, and the limits of a software prototype.">
+    <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body id="top">
+    <!-- Design: extend the existing warm white, ink and oxblood identity. Real records lead the work; static reading and native links carry the experience. --><a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner"><a class="wordmark" href="../../">Lucius <span lang="zh-CN">贺孟元</span></a>
+        <nav aria-label="Primary"><a href="../../#work">Work</a><a href="../../#approach">Approach</a><a href="../../#about">About</a><a href="../../#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="case-hero container"><a class="back-link" href="../../#work">Back to work</a>
+        <h1>Understanding a particular object.
+        </h1>
+        <p class="lead">How can the next person or AI inherit what was understood about a physical object—and know when that understanding needs to be checked again?
+        </p>
+        <p class="status">Moonblade · Engineering prototype
+        </p>
+      </section>
+      <section class="section container split">
+        <h2>What exists
+        </h2>
+        <div>
+          <p>Moonblade is a software prototype for binding object-specific context and skills to an interaction, with checks and evidence around the decision. Its replay module reads an evidence sequence and reports sessions, state transitions, contradictions, and events.
+          </p>
+          <p>This shifts the focus from an AI that can describe equipment to a record that another operator can inspect. Replay exists; complete persistent object memory, cross-model inheritance, and cross-device repair are not established by it.
+          </p>
+        </div>
+      </section>
+      <section id="evidence" class="section container">
+        <div class="section-heading">
+          <h2>Inspect a recorded interaction.
+          </h2>
+          <p>The exhibit below is a browseable export of an actual software execution. The page does not run a model or operate hardware.
+          </p>
+        </div>
+        <div class="evidence-panel" data-trace-browser>
+          <h3>Eight inputs. A recovery record.
+          </h3>
+          <p class="status">Synthetic software trace · Executed 7 October 2026
+          </p>
+          <p>The existing <code>mini_skill</code> fixture supplies observations to a deterministic Runtime. A reversed orientation triggers a failure and recovery. Conflicting observations are recorded; later inputs resolve the conflict, and the final input reaches the software state <code>COMPLETED</code>.
+          </p>
+          <p class="boundary">All observations and timestamps are synthetic. No model or hardware was called. Software completion does not establish real task success, persistent object memory, cross-model inheritance, or field repair. This sequence does not exhibit BLOCK.
+          </p>
+          <ol class="trace-steps">
+            <li data-step>
+            <h4>Input 1: ready
+            </h4>
+            <p>Input: <code>ready = true</code>; confidence 0.93.
+            </p>
+            <p>Recorded state: <code>NORMAL</code>, current step <code>s2</code>. Unresolved contradictions: 0.
+            </p>
+            <p>Transition: <code>s1 → s2</code>. all success conditions satisfied by world model.
+            </p>
+            </li>
+            <li data-step>
+            <h4>Input 2: present
+            </h4>
+            <p>Input: <code>present = true</code>; confidence 0.92.
+            </p>
+            <p>Recorded state: <code>NORMAL</code>, current step <code>s2</code>. Unresolved contradictions: 0.
+            </p>
+            <p>No state transition was recorded for this input.
+            </p>
+            </li>
+            <li data-step>
+            <h4>Input 3: orientation
+            </h4>
+            <p>Input: <code>orientation = &quot;reversed&quot;</code>; confidence 0.94.
+            </p>
+            <p>Recorded state: <code>RECOVERING</code>, current step <code>s2</code>. Unresolved contradictions: 0.
+            </p>
+            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>&quot;reversed&quot;</code>.
+            </p>
+            <p>Transition: <code>s2 → FAILED:s2</code>. orientation == reversed.
+            </p>
+            <p>Transition: <code>FAILED:s2 → RECOVERING:fix_orientation</code>. step declares recovery &#x27;fix_orientation&#x27;.
+            </p>
+            </li>
+            <li data-step>
+            <h4>Input 4: orientation
+            </h4>
+            <p>Input: <code>orientation = &quot;correct&quot;</code>; confidence 0.95.
+            </p>
+            <p>Recorded state: <code>RECOVERING</code>, current step <code>s2</code>. Unresolved contradictions: 1.
+            </p>
+            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>&quot;reversed&quot;</code>.
+            </p>
+            <p>No state transition was recorded for this input.
+            </p>
+            </li>
+            <li data-step>
+            <h4>Input 5: orientation
+            </h4>
+            <p>Input: <code>orientation = &quot;correct&quot;</code>; confidence 0.94.
+            </p>
+            <p>Recorded state: <code>RECOVERING</code>, current step <code>s2</code>. Unresolved contradictions: 1.
+            </p>
+            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>&quot;reversed&quot;</code>.
+            </p>
+            <p>No state transition was recorded for this input.
+            </p>
+            </li>
+            <li data-step>
+            <h4>Input 6: orientation
+            </h4>
+            <p>Input: <code>orientation = &quot;correct&quot;</code>; confidence 0.94.
+            </p>
+            <p>Recorded state: <code>RECOVERING</code>, current step <code>s2</code>. Unresolved contradictions: 1.
+            </p>
+            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>&quot;reversed&quot;</code>.
+            </p>
+            <p>No state transition was recorded for this input.
+            </p>
+            </li>
+            <li data-step>
+            <h4>Input 7: orientation
+            </h4>
+            <p>Input: <code>orientation = &quot;correct&quot;</code>; confidence 0.94.
+            </p>
+            <p>Recorded state: <code>NORMAL</code>, current step <code>s3</code>. Unresolved contradictions: 0.
+            </p>
+            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>&quot;correct&quot;</code>.
+            </p>
+            <p>Transition: <code>RECOVERING:fix_orientation → s2</code>. recovery target_state fully satisfied by world model.
+            </p>
+            <p>Transition: <code>s2 → s3</code>. all success conditions satisfied by world model.
+            </p>
+            </li>
+            <li data-step>
+            <h4>Input 8: screws
+            </h4>
+            <p>Input: <code>screws = 2</code>; confidence 0.9.
+            </p>
+            <p>Recorded state: <code>COMPLETED</code>, current step <code>s3</code>. Unresolved contradictions: 0.
+            </p>
+            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>&quot;correct&quot;</code>.
+            </p>
+            <p>Transition: <code>s3 → COMPLETED</code>. final step completed; no further steps declared.
+            </p>
+            </li>
+          </ol>
+          <details>
+            <summary>Read the checks and provenance
+            </summary>
+            <p>Five existing replay tests passed in this session. Replaying the same sequence twice produced the same report.
+            </p>
+            <p class="source-note">Source: <code>mulasakee17/moonblade</code>, version <code>31f168972379323f257aeabcd8c440b93bc5ea66</code>. Executed in local development checkout <code>e88fb8e1a970f38c90f41c0c75185649d1dcb4f2</code>; the relevant replay, runtime, helper, schema, configuration, and test surfaces matched the source version. This was not a clean full-repository checkout. The repository is private; this standalone export is the public evidence.
+            </p>
+            <p>The downloadable record contains inputs, task conditions, transitions, contradiction history, events, source hashes, and the execution boundary. The fixture’s historical source label is not evidence of a physical observation.
+            </p>
+          </details>
+          <div class="actions"><a href="../../assets/evidence/moonblade-replay.json">Open the full exported record (JSON)</a><a href="../../assets/evidence/moonblade-replay.json" download>Download the record</a>
+          </div>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2>Role and choices
+        </h2>
+        <div>
+          <p>I set the object-grounded question, system boundaries, and acceptance criteria; AI supports implementation, analysis, and checks. The design choice emphasized here is to preserve evidence that can be read again, rather than treating a model’s fluent answer as sufficient authority to act.
+          </p>
+          <p>The record must tell a later reader what was observed, what the system permitted, and what remains to be verified. The case does not claim that the entire inheritance direction is already implemented.
+          </p>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2>The next useful check
+        </h2>
+        <div>
+          <p>A real task must test whether the inherited context remains useful after the object changes, whether stale assumptions are detected, and whether another operator can recover the relevant evidence. The current software exhibit cannot answer those physical-world questions.
+          </p>
+          <p><a href="mailto:huimouye@qq.com?subject=Moonblade%20validation">Discuss a bounded validation task</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Lucius He
+        </p>
+        <div><a href="../../archive/">Archive</a><a href="../../rizhichi/">RIZHICHI</a><a href="../../#contact">Contact</a>
+        </div>
+        <p>Static pages · No tracking
+        </p>
+      </div>
+    </footer>
+    <script src="../../script.js" defer>
+    </script>
+  </body>
+</html>

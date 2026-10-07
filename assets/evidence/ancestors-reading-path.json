@@ -1,0 +1,57 @@
+{
+  "title": "When should an anomaly change an explanation?",
+  "evidence_type": "Reviewed general reading path — English editorial slice",
+  "prepared_at": "2026-10-07",
+  "question": "A prediction fails. Should we question the observation, revise the model, or change the research programme?",
+  "answers": [
+    {
+      "author": "Karl Popper",
+      "answer": "A claim must risk an observable failure. Accepting a falsification also requires a testable refuting effect; a stray contradictory observation alone does not settle the case.",
+      "source_title": "The Logic of Scientific Discovery, chapter 4, sections 19–22",
+      "locator": "Chapter 4, especially section 22; excerpt printed pages 57–66",
+      "url": "https://fenix.ciencias.ulisboa.pt/downloadFile/1688987299217625/Falsiability.pdf",
+      "source_nature": "University-hosted chapter excerpt; underlying excerpt edition not established",
+      "anonymous_check": "Opened without authenticated repository access on 2026-10-07"
+    },
+    {
+      "author": "Imre Lakatos",
+      "answer": "Evaluate the sequence of revisions: does it lead to new predictions that later receive support, or only accommodate facts already known? A young programme may need time; that is not unlimited protection.",
+      "source_title": "Science and Pseudoscience, 1973 talk",
+      "locator": "Four-page transcript, pages 2–4; editorial bracketed additions distinguished",
+      "url": "https://www.inf.fu-berlin.de/lehre/pmo/eng/Lakatos-Science.pdf",
+      "source_nature": "University-hosted transcript of the 1973 Open University talk",
+      "anonymous_check": "Opened without authenticated repository access on 2026-10-07"
+    },
+    {
+      "author": "Thomas S. Kuhn",
+      "answer": "Researchers can share values such as accuracy and scope while applying and weighting them differently. The absence of a compulsory choice algorithm does not make every choice equally defensible.",
+      "source_title": "Objectivity, Value Judgment, and Theory Choice",
+      "locator": "Collection chapter 13; existing collection read checked anthology pages 357–358 and 362–363",
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/E/bo5970650.html",
+      "source_nature": "Publisher catalogue verifies chapter identity; the catalogue is not the essay text",
+      "anonymous_check": "Publisher catalogue opened on 2026-10-07; this round did not reverify the course scan text"
+    }
+  ],
+  "disagreement": "These are different units and purposes of evaluation: a testable refutation, the progress of a programme, and reasoned choices within a community. The reading path does not fuse them into one verdict procedure.",
+  "boundary": "An editorial comparison of bounded source readings, not a new historical study or a validated personal decision method. Original texts remain copyrighted; no scans, source bodies, long quotations or private personal material are distributed.",
+  "next_question": "What dated record would distinguish a new prediction from a revision made after the result?",
+  "provenance": {
+    "collection": "The Ancestors",
+    "repository_access": "Private; repository access is not a visitor-facing link",
+    "source_commit": "c33856665718be17d790e676ec7294a1becb9e2f",
+    "selected_path": "outputs/The-Ancestors/阅读导航/从问题进入/反常出现，解释怎么改.md",
+    "path_blob": "da17e8859a53c940fc3c5ea6b9c08ea8c113256c",
+    "supporting_exhibits": [
+      {
+        "id": "E-000014",
+        "blob": "2190e635b93f83b9d3978c145dd11ed5744cac7f"
+      },
+      {
+        "id": "E-000015",
+        "blob": "592875a5f97d5fd47e787e36c9d923515ea16e84"
+      }
+    ],
+    "publication_basis": "The owner requested a public general collection slice. This export rewrites only the reviewed general reading path in English and links to external sources. Private revision, user archives, chats and relationship material are excluded.",
+    "execution": "Bounded authenticated file reading and anonymous source-link checks. No reader study was executed."
+  }
+}

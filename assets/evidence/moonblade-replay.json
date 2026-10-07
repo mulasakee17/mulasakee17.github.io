@@ -1,0 +1,1685 @@
+{
+  "title": "Moonblade — synthetic software trace",
+  "evidence_type": "Synthetic software trace",
+  "executed_at": "2026-10-07",
+  "fixture": "tests/runtime/test_replay.py::test_nontrivial_path_is_deterministic",
+  "provenance": {
+    "repository": "mulasakee17/moonblade",
+    "source_commit": "31f168972379323f257aeabcd8c440b93bc5ea66",
+    "execution_checkout_commit": "e88fb8e1a970f38c90f41c0c75185649d1dcb4f2",
+    "source_match": "Replay, runtime, skill schema, helper and test surfaces match origin/main; selected replay/helper/config/test blob IDs separately matched authenticated GitHub reads. This was run in the local development checkout, not a clean full-repository checkout.",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "source_sha256": {
+      "runtime/replay.py": "4be421887cd83c74a1f14613b63d8f52a47adc73ae552529288c7707b1203a08",
+      "runtime/session.py": "fcf5b9021f21b559aa2f34846102e02fcdd33df878cc63e69a3a9a460c48b928",
+      "runtime/config.yaml": "c841a078bdcb81bac60f1302a14f692b05c82d63ac6f60e4788cb9ec3e246c11",
+      "tests/runtime/test_replay.py": "7f95c428292ca95208b7e2eaebf52c39c1ec365aa2f322bc1f3c7d41d63c4042",
+      "tests/runtime/helpers.py": "96be965f1ac8d93f4e29381c941982c304e948bd2fbca51562d0dcf1f5c55c94",
+      "schemas/skill.py": "97d2b60fef09195c96d15b3d214f90fce39489c862ee2884fb299f6107380e3f"
+    },
+    "repository_access": "private; the standalone trace is the visitor-facing evidence",
+    "publication_basis": "The owner explicitly requested a minimal public software evidence export. No project source, model response, hardware record or private personal material is redistributed.",
+    "execution_command": "python -B -X utf8 -m pytest tests/runtime/test_replay.py -q -p no:cacheprovider --basetemp <new-directory-outside-project>",
+    "export_mechanism": "The existing test_nontrivial_path_is_deterministic sequence was reconstructed with EvFactory, mini_skill() and strict_config(); replay_report(skill, records, config) was called twice and compared, then once per input prefix. Selected report fields were exported without rewriting Runtime outcomes."
+  },
+  "boundary": "This is the existing mini_skill synthetic test input and the actual deterministic Runtime output. All observations and timestamps are fixture-generated. The fixture uses a historical source label and default synthetic=false field; neither denotes a model call or physical observation. This export labels the fixture by its actual origin. No model or hardware was called. COMPLETED is a software state, not a real task result. This does not establish durable object identity, cross-model inheritance or field repair.",
+  "task_contract": {
+    "steps": [
+      {
+        "id": "s1",
+        "description": "prepare",
+        "success_conditions": [
+          {
+            "predicate": "ready",
+            "operator": "==",
+            "value": true
+          }
+        ],
+        "failure_conditions": [],
+        "requires": [],
+        "recovery": null
+      },
+      {
+        "id": "s2",
+        "description": "install motor",
+        "success_conditions": [
+          {
+            "predicate": "present",
+            "operator": "==",
+            "value": true
+          },
+          {
+            "predicate": "orientation",
+            "operator": "==",
+            "value": "correct"
+          }
+        ],
+        "failure_conditions": [
+          {
+            "predicate": "orientation",
+            "operator": "==",
+            "value": "reversed"
+          }
+        ],
+        "requires": [
+          {
+            "predicate": "ready",
+            "operator": "==",
+            "value": true
+          }
+        ],
+        "recovery": "fix_orientation"
+      },
+      {
+        "id": "s3",
+        "description": "screws",
+        "success_conditions": [
+          {
+            "predicate": "screws",
+            "operator": ">=",
+            "value": 2
+          }
+        ],
+        "failure_conditions": [],
+        "requires": [
+          {
+            "predicate": "present",
+            "operator": "==",
+            "value": true
+          }
+        ],
+        "recovery": null
+      }
+    ],
+    "recoveries": {
+      "fix_orientation": {
+        "name": "fix_orientation",
+        "description": "reinstall motor",
+        "target_state": {
+          "orientation": "correct",
+          "present": true
+        },
+        "instructions": [
+          "remove",
+          "rotate",
+          "reinstall"
+        ]
+      }
+    }
+  },
+  "checks": {
+    "same_sequence_same_report_twice": true,
+    "existing_replay_tests": "5 passed in 0.17s on 2026-10-07; bounded existing replay file only"
+  },
+  "summary": {
+    "session_id": "complex",
+    "skill_id": "mini_v1",
+    "phase": "COMPLETED",
+    "current_step": "s3",
+    "completed_steps": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "failed_step": "s2",
+    "recovery_name": null,
+    "n_evidence": 8,
+    "n_transitions": 6,
+    "n_contradictions": 1,
+    "n_unresolved_contradictions": 0,
+    "started_at": "2026-01-01T10:00:05",
+    "updated_at": "2026-01-01T10:00:40"
+  },
+  "steps": [
+    {
+      "sequence": 1,
+      "input": {
+        "id": "ev_000001",
+        "timestamp": "2026-01-01T10:00:05",
+        "predicate": "ready",
+        "value": true,
+        "confidence": 0.93,
+        "sufficient": true
+      },
+      "session": {
+        "phase": "NORMAL",
+        "current_step": "s2",
+        "completed_steps": [
+          "s1"
+        ],
+        "recovery_name": null,
+        "n_evidence": 1,
+        "n_unresolved_contradictions": 0
+      },
+      "world_model": {
+        "ready": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.93,
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        }
+      },
+      "new_transitions": [
+        {
+          "id": "tr_0001",
+          "session_id": "complex",
+          "seq": 1,
+          "timestamp": "2026-01-01T10:00:05",
+          "from_state": "s1",
+          "to_state": "s2",
+          "trigger": "all_success_conditions_satisfied",
+          "reason": "all success conditions satisfied by world model",
+          "condition_results": [
+            {
+              "condition": "ready == True",
+              "predicate": "ready",
+              "result": "SATISFIED",
+              "observed": true,
+              "evidence_ids": [
+                "ev_000001"
+              ]
+            }
+          ],
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "metadata": {
+            "step_status": "COMPLETED"
+          }
+        }
+      ],
+      "new_events": [
+        {
+          "seq": 1,
+          "timestamp": "2026-01-01T10:00:05",
+          "type": "EVIDENCE_RECEIVED",
+          "payload": {
+            "evidence_id": "ev_000001",
+            "predicate": "ready",
+            "value": true,
+            "confidence": 0.93,
+            "sufficient": true
+          }
+        },
+        {
+          "seq": 2,
+          "timestamp": "2026-01-01T10:00:05",
+          "type": "WORLD_MODEL_UPDATED",
+          "payload": {
+            "predicate": "ready",
+            "evidence_id": "ev_000001",
+            "old_status": "UNKNOWN",
+            "new_status": "KNOWN",
+            "old_value": null,
+            "new_value": true,
+            "old_confidence": 0.0,
+            "new_confidence": 0.93,
+            "rule": "accept_high",
+            "detail": ""
+          }
+        },
+        {
+          "seq": 3,
+          "timestamp": "2026-01-01T10:00:05",
+          "type": "STEP_EVALUATED",
+          "payload": {
+            "step_id": "s1",
+            "status": "COMPLETED",
+            "reason": "all success conditions satisfied"
+          }
+        },
+        {
+          "seq": 4,
+          "timestamp": "2026-01-01T10:00:05",
+          "type": "STEP_COMPLETED",
+          "payload": {
+            "step_id": "s1",
+            "evidence_ids": [
+              "ev_000001"
+            ]
+          }
+        },
+        {
+          "seq": 5,
+          "timestamp": "2026-01-01T10:00:05",
+          "type": "STATE_TRANSITIONED",
+          "payload": {
+            "id": "tr_0001",
+            "session_id": "complex",
+            "seq": 1,
+            "timestamp": "2026-01-01T10:00:05",
+            "from_state": "s1",
+            "to_state": "s2",
+            "trigger": "all_success_conditions_satisfied",
+            "reason": "all success conditions satisfied by world model",
+            "condition_results": [
+              {
+                "condition": "ready == True",
+                "predicate": "ready",
+                "result": "SATISFIED",
+                "observed": true,
+                "evidence_ids": [
+                  "ev_000001"
+                ]
+              }
+            ],
+            "evidence_ids": [
+              "ev_000001"
+            ],
+            "metadata": {
+              "step_status": "COMPLETED"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "input": {
+        "id": "ev_000002",
+        "timestamp": "2026-01-01T10:00:10",
+        "predicate": "present",
+        "value": true,
+        "confidence": 0.92,
+        "sufficient": true
+      },
+      "session": {
+        "phase": "NORMAL",
+        "current_step": "s2",
+        "completed_steps": [
+          "s1"
+        ],
+        "recovery_name": null,
+        "n_evidence": 2,
+        "n_unresolved_contradictions": 0
+      },
+      "world_model": {
+        "ready": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.93,
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "present": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.92,
+          "evidence_ids": [
+            "ev_000002"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        }
+      },
+      "new_transitions": [],
+      "new_events": [
+        {
+          "seq": 6,
+          "timestamp": "2026-01-01T10:00:10",
+          "type": "EVIDENCE_RECEIVED",
+          "payload": {
+            "evidence_id": "ev_000002",
+            "predicate": "present",
+            "value": true,
+            "confidence": 0.92,
+            "sufficient": true
+          }
+        },
+        {
+          "seq": 7,
+          "timestamp": "2026-01-01T10:00:10",
+          "type": "WORLD_MODEL_UPDATED",
+          "payload": {
+            "predicate": "present",
+            "evidence_id": "ev_000002",
+            "old_status": "UNKNOWN",
+            "new_status": "KNOWN",
+            "old_value": null,
+            "new_value": true,
+            "old_confidence": 0.0,
+            "new_confidence": 0.92,
+            "rule": "accept_high",
+            "detail": ""
+          }
+        },
+        {
+          "seq": 8,
+          "timestamp": "2026-01-01T10:00:10",
+          "type": "STEP_EVALUATED",
+          "payload": {
+            "step_id": "s2",
+            "status": "UNCERTAIN",
+            "reason": "cannot complete due to unknown: orientation == correct"
+          }
+        },
+        {
+          "seq": 9,
+          "timestamp": "2026-01-01T10:00:10",
+          "type": "NO_CHANGE",
+          "payload": {
+            "step_id": "s2",
+            "status": "UNCERTAIN",
+            "reason": "cannot complete due to unknown: orientation == correct"
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "input": {
+        "id": "ev_000003",
+        "timestamp": "2026-01-01T10:00:15",
+        "predicate": "orientation",
+        "value": "reversed",
+        "confidence": 0.94,
+        "sufficient": true
+      },
+      "session": {
+        "phase": "RECOVERING",
+        "current_step": "s2",
+        "completed_steps": [
+          "s1"
+        ],
+        "recovery_name": "fix_orientation",
+        "n_evidence": 3,
+        "n_unresolved_contradictions": 0
+      },
+      "world_model": {
+        "ready": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.93,
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "present": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.92,
+          "evidence_ids": [
+            "ev_000002"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "orientation": {
+          "value": "reversed",
+          "status": "KNOWN",
+          "confidence": 0.94,
+          "evidence_ids": [
+            "ev_000003"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        }
+      },
+      "new_transitions": [
+        {
+          "id": "tr_0002",
+          "session_id": "complex",
+          "seq": 2,
+          "timestamp": "2026-01-01T10:00:15",
+          "from_state": "s2",
+          "to_state": "FAILED:s2",
+          "trigger": "failure_condition_satisfied",
+          "reason": "orientation == reversed",
+          "condition_results": [
+            {
+              "condition": "orientation == reversed",
+              "predicate": "orientation",
+              "result": "SATISFIED",
+              "observed": "reversed",
+              "evidence_ids": [
+                "ev_000003"
+              ]
+            }
+          ],
+          "evidence_ids": [
+            "ev_000001",
+            "ev_000002",
+            "ev_000003"
+          ],
+          "metadata": {
+            "failed_conditions": [
+              "orientation == reversed"
+            ]
+          }
+        },
+        {
+          "id": "tr_0003",
+          "session_id": "complex",
+          "seq": 3,
+          "timestamp": "2026-01-01T10:00:15",
+          "from_state": "FAILED:s2",
+          "to_state": "RECOVERING:fix_orientation",
+          "trigger": "recovery_activated",
+          "reason": "step declares recovery 'fix_orientation'",
+          "condition_results": [],
+          "evidence_ids": [],
+          "metadata": {
+            "instructions": [
+              "remove",
+              "rotate",
+              "reinstall"
+            ]
+          }
+        }
+      ],
+      "new_events": [
+        {
+          "seq": 10,
+          "timestamp": "2026-01-01T10:00:15",
+          "type": "EVIDENCE_RECEIVED",
+          "payload": {
+            "evidence_id": "ev_000003",
+            "predicate": "orientation",
+            "value": "reversed",
+            "confidence": 0.94,
+            "sufficient": true
+          }
+        },
+        {
+          "seq": 11,
+          "timestamp": "2026-01-01T10:00:15",
+          "type": "WORLD_MODEL_UPDATED",
+          "payload": {
+            "predicate": "orientation",
+            "evidence_id": "ev_000003",
+            "old_status": "UNKNOWN",
+            "new_status": "KNOWN",
+            "old_value": null,
+            "new_value": "reversed",
+            "old_confidence": 0.0,
+            "new_confidence": 0.94,
+            "rule": "accept_high",
+            "detail": ""
+          }
+        },
+        {
+          "seq": 12,
+          "timestamp": "2026-01-01T10:00:15",
+          "type": "STEP_EVALUATED",
+          "payload": {
+            "step_id": "s2",
+            "status": "FAILED",
+            "reason": "failure condition satisfied: orientation == reversed"
+          }
+        },
+        {
+          "seq": 13,
+          "timestamp": "2026-01-01T10:00:15",
+          "type": "FAILURE_DETECTED",
+          "payload": {
+            "step_id": "s2",
+            "failed_conditions": [
+              "orientation == reversed"
+            ]
+          }
+        },
+        {
+          "seq": 14,
+          "timestamp": "2026-01-01T10:00:15",
+          "type": "STATE_TRANSITIONED",
+          "payload": {
+            "id": "tr_0002",
+            "session_id": "complex",
+            "seq": 2,
+            "timestamp": "2026-01-01T10:00:15",
+            "from_state": "s2",
+            "to_state": "FAILED:s2",
+            "trigger": "failure_condition_satisfied",
+            "reason": "orientation == reversed",
+            "condition_results": [
+              {
+                "condition": "orientation == reversed",
+                "predicate": "orientation",
+                "result": "SATISFIED",
+                "observed": "reversed",
+                "evidence_ids": [
+                  "ev_000003"
+                ]
+              }
+            ],
+            "evidence_ids": [
+              "ev_000001",
+              "ev_000002",
+              "ev_000003"
+            ],
+            "metadata": {
+              "failed_conditions": [
+                "orientation == reversed"
+              ]
+            }
+          }
+        },
+        {
+          "seq": 15,
+          "timestamp": "2026-01-01T10:00:15",
+          "type": "STATE_TRANSITIONED",
+          "payload": {
+            "id": "tr_0003",
+            "session_id": "complex",
+            "seq": 3,
+            "timestamp": "2026-01-01T10:00:15",
+            "from_state": "FAILED:s2",
+            "to_state": "RECOVERING:fix_orientation",
+            "trigger": "recovery_activated",
+            "reason": "step declares recovery 'fix_orientation'",
+            "condition_results": [],
+            "evidence_ids": [],
+            "metadata": {
+              "instructions": [
+                "remove",
+                "rotate",
+                "reinstall"
+              ]
+            }
+          }
+        },
+        {
+          "seq": 16,
+          "timestamp": "2026-01-01T10:00:15",
+          "type": "RECOVERY_ACTIVATED",
+          "payload": {
+            "step_id": "s2",
+            "recovery": "fix_orientation",
+            "target_state": {
+              "orientation": "correct",
+              "present": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "input": {
+        "id": "ev_000004",
+        "timestamp": "2026-01-01T10:00:20",
+        "predicate": "orientation",
+        "value": "correct",
+        "confidence": 0.95,
+        "sufficient": true
+      },
+      "session": {
+        "phase": "RECOVERING",
+        "current_step": "s2",
+        "completed_steps": [
+          "s1"
+        ],
+        "recovery_name": "fix_orientation",
+        "n_evidence": 4,
+        "n_unresolved_contradictions": 1
+      },
+      "world_model": {
+        "ready": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.93,
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "present": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.92,
+          "evidence_ids": [
+            "ev_000002"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "orientation": {
+          "value": "reversed",
+          "status": "CONFLICTED",
+          "confidence": 0.95,
+          "evidence_ids": [
+            "ev_000003",
+            "ev_000004"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        }
+      },
+      "new_transitions": [],
+      "new_events": [
+        {
+          "seq": 17,
+          "timestamp": "2026-01-01T10:00:20",
+          "type": "EVIDENCE_RECEIVED",
+          "payload": {
+            "evidence_id": "ev_000004",
+            "predicate": "orientation",
+            "value": "correct",
+            "confidence": 0.95,
+            "sufficient": true
+          }
+        },
+        {
+          "seq": 18,
+          "timestamp": "2026-01-01T10:00:20",
+          "type": "WORLD_MODEL_UPDATED",
+          "payload": {
+            "predicate": "orientation",
+            "evidence_id": "ev_000004",
+            "old_status": "KNOWN",
+            "new_status": "CONFLICTED",
+            "old_value": "reversed",
+            "new_value": "reversed",
+            "old_confidence": 0.94,
+            "new_confidence": 0.95,
+            "rule": "C_conflict_detected",
+            "detail": "old='reversed' new='correct' both high-confidence"
+          }
+        },
+        {
+          "seq": 19,
+          "timestamp": "2026-01-01T10:00:20",
+          "type": "CONTRADICTION_DETECTED",
+          "payload": {
+            "id": "ct_0001",
+            "session_id": "complex",
+            "predicate_id": "orientation",
+            "detected_at": "2026-01-01T10:00:20",
+            "evidence_ids": [
+              "ev_000003",
+              "ev_000004"
+            ],
+            "values": [
+              {
+                "evidence_id": "ev_000003",
+                "value": "reversed",
+                "confidence": 0.94
+              },
+              {
+                "evidence_id": "ev_000004",
+                "value": "correct",
+                "confidence": 0.95
+              }
+            ],
+            "resolved": false,
+            "resolved_at": null,
+            "resolution_value": null,
+            "resolution_evidence_ids": []
+          }
+        },
+        {
+          "seq": 20,
+          "timestamp": "2026-01-01T10:00:20",
+          "type": "RECOVERY_PROGRESS",
+          "payload": {
+            "recovery": "fix_orientation",
+            "satisfied": false,
+            "conditions": [
+              [
+                "orientation == correct",
+                "CONFLICTED"
+              ],
+              [
+                "present == True",
+                "SATISFIED"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "input": {
+        "id": "ev_000005",
+        "timestamp": "2026-01-01T10:00:25",
+        "predicate": "orientation",
+        "value": "correct",
+        "confidence": 0.94,
+        "sufficient": true
+      },
+      "session": {
+        "phase": "RECOVERING",
+        "current_step": "s2",
+        "completed_steps": [
+          "s1"
+        ],
+        "recovery_name": "fix_orientation",
+        "n_evidence": 5,
+        "n_unresolved_contradictions": 1
+      },
+      "world_model": {
+        "ready": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.93,
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "present": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.92,
+          "evidence_ids": [
+            "ev_000002"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "orientation": {
+          "value": "reversed",
+          "status": "CONFLICTED",
+          "confidence": 0.95,
+          "evidence_ids": [
+            "ev_000003",
+            "ev_000004",
+            "ev_000005"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {
+            "\"correct\"": 1
+          }
+        }
+      },
+      "new_transitions": [],
+      "new_events": [
+        {
+          "seq": 21,
+          "timestamp": "2026-01-01T10:00:25",
+          "type": "EVIDENCE_RECEIVED",
+          "payload": {
+            "evidence_id": "ev_000005",
+            "predicate": "orientation",
+            "value": "correct",
+            "confidence": 0.94,
+            "sufficient": true
+          }
+        },
+        {
+          "seq": 22,
+          "timestamp": "2026-01-01T10:00:25",
+          "type": "WORLD_MODEL_UPDATED",
+          "payload": {
+            "predicate": "orientation",
+            "evidence_id": "ev_000005",
+            "old_status": "CONFLICTED",
+            "new_status": "CONFLICTED",
+            "old_value": "reversed",
+            "new_value": "reversed",
+            "old_confidence": 0.95,
+            "new_confidence": 0.95,
+            "rule": "conflict_vote",
+            "detail": "votes['correct']=1 of 3"
+          }
+        },
+        {
+          "seq": 23,
+          "timestamp": "2026-01-01T10:00:25",
+          "type": "RECOVERY_PROGRESS",
+          "payload": {
+            "recovery": "fix_orientation",
+            "satisfied": false,
+            "conditions": [
+              [
+                "orientation == correct",
+                "CONFLICTED"
+              ],
+              [
+                "present == True",
+                "SATISFIED"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "input": {
+        "id": "ev_000006",
+        "timestamp": "2026-01-01T10:00:30",
+        "predicate": "orientation",
+        "value": "correct",
+        "confidence": 0.94,
+        "sufficient": true
+      },
+      "session": {
+        "phase": "RECOVERING",
+        "current_step": "s2",
+        "completed_steps": [
+          "s1"
+        ],
+        "recovery_name": "fix_orientation",
+        "n_evidence": 6,
+        "n_unresolved_contradictions": 1
+      },
+      "world_model": {
+        "ready": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.93,
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "present": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.92,
+          "evidence_ids": [
+            "ev_000002"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "orientation": {
+          "value": "reversed",
+          "status": "CONFLICTED",
+          "confidence": 0.95,
+          "evidence_ids": [
+            "ev_000003",
+            "ev_000004",
+            "ev_000005",
+            "ev_000006"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {
+            "\"correct\"": 2
+          }
+        }
+      },
+      "new_transitions": [],
+      "new_events": [
+        {
+          "seq": 24,
+          "timestamp": "2026-01-01T10:00:30",
+          "type": "EVIDENCE_RECEIVED",
+          "payload": {
+            "evidence_id": "ev_000006",
+            "predicate": "orientation",
+            "value": "correct",
+            "confidence": 0.94,
+            "sufficient": true
+          }
+        },
+        {
+          "seq": 25,
+          "timestamp": "2026-01-01T10:00:30",
+          "type": "WORLD_MODEL_UPDATED",
+          "payload": {
+            "predicate": "orientation",
+            "evidence_id": "ev_000006",
+            "old_status": "CONFLICTED",
+            "new_status": "CONFLICTED",
+            "old_value": "reversed",
+            "new_value": "reversed",
+            "old_confidence": 0.95,
+            "new_confidence": 0.95,
+            "rule": "conflict_vote",
+            "detail": "votes['correct']=2 of 3"
+          }
+        },
+        {
+          "seq": 26,
+          "timestamp": "2026-01-01T10:00:30",
+          "type": "RECOVERY_PROGRESS",
+          "payload": {
+            "recovery": "fix_orientation",
+            "satisfied": false,
+            "conditions": [
+              [
+                "orientation == correct",
+                "CONFLICTED"
+              ],
+              [
+                "present == True",
+                "SATISFIED"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "input": {
+        "id": "ev_000007",
+        "timestamp": "2026-01-01T10:00:35",
+        "predicate": "orientation",
+        "value": "correct",
+        "confidence": 0.94,
+        "sufficient": true
+      },
+      "session": {
+        "phase": "NORMAL",
+        "current_step": "s3",
+        "completed_steps": [
+          "s1",
+          "s2"
+        ],
+        "recovery_name": null,
+        "n_evidence": 7,
+        "n_unresolved_contradictions": 0
+      },
+      "world_model": {
+        "ready": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.93,
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "present": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.92,
+          "evidence_ids": [
+            "ev_000002"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "orientation": {
+          "value": "correct",
+          "status": "KNOWN",
+          "confidence": 0.94,
+          "evidence_ids": [
+            "ev_000003",
+            "ev_000004",
+            "ev_000005",
+            "ev_000006",
+            "ev_000007"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        }
+      },
+      "new_transitions": [
+        {
+          "id": "tr_0004",
+          "session_id": "complex",
+          "seq": 4,
+          "timestamp": "2026-01-01T10:00:35",
+          "from_state": "RECOVERING:fix_orientation",
+          "to_state": "s2",
+          "trigger": "recovery_target_satisfied",
+          "reason": "recovery target_state fully satisfied by world model",
+          "condition_results": [
+            {
+              "condition": "orientation == correct",
+              "result": "SATISFIED"
+            },
+            {
+              "condition": "present == True",
+              "result": "SATISFIED"
+            }
+          ],
+          "evidence_ids": [],
+          "metadata": {}
+        },
+        {
+          "id": "tr_0005",
+          "session_id": "complex",
+          "seq": 5,
+          "timestamp": "2026-01-01T10:00:35",
+          "from_state": "s2",
+          "to_state": "s3",
+          "trigger": "all_success_conditions_satisfied",
+          "reason": "all success conditions satisfied by world model",
+          "condition_results": [
+            {
+              "condition": "present == True",
+              "predicate": "present",
+              "result": "SATISFIED",
+              "observed": true,
+              "evidence_ids": [
+                "ev_000002"
+              ]
+            },
+            {
+              "condition": "orientation == correct",
+              "predicate": "orientation",
+              "result": "SATISFIED",
+              "observed": "correct",
+              "evidence_ids": [
+                "ev_000003",
+                "ev_000004",
+                "ev_000005",
+                "ev_000006",
+                "ev_000007"
+              ]
+            }
+          ],
+          "evidence_ids": [
+            "ev_000001",
+            "ev_000002",
+            "ev_000003",
+            "ev_000004",
+            "ev_000005",
+            "ev_000006",
+            "ev_000007"
+          ],
+          "metadata": {
+            "step_status": "COMPLETED"
+          }
+        }
+      ],
+      "new_events": [
+        {
+          "seq": 27,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "EVIDENCE_RECEIVED",
+          "payload": {
+            "evidence_id": "ev_000007",
+            "predicate": "orientation",
+            "value": "correct",
+            "confidence": 0.94,
+            "sufficient": true
+          }
+        },
+        {
+          "seq": 28,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "WORLD_MODEL_UPDATED",
+          "payload": {
+            "predicate": "orientation",
+            "evidence_id": "ev_000007",
+            "old_status": "CONFLICTED",
+            "new_status": "KNOWN",
+            "old_value": "reversed",
+            "new_value": "correct",
+            "old_confidence": 0.95,
+            "new_confidence": 0.94,
+            "rule": "conflict_resolved",
+            "detail": "3 consecutive HIGH observations agree on 'correct'"
+          }
+        },
+        {
+          "seq": 29,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "CONTRADICTION_RESOLVED",
+          "payload": {
+            "id": "ct_0001",
+            "session_id": "complex",
+            "predicate_id": "orientation",
+            "detected_at": "2026-01-01T10:00:20",
+            "evidence_ids": [
+              "ev_000003",
+              "ev_000004"
+            ],
+            "values": [
+              {
+                "evidence_id": "ev_000003",
+                "value": "reversed",
+                "confidence": 0.94
+              },
+              {
+                "evidence_id": "ev_000004",
+                "value": "correct",
+                "confidence": 0.95
+              }
+            ],
+            "resolved": true,
+            "resolved_at": "2026-01-01T10:00:35",
+            "resolution_value": "correct",
+            "resolution_evidence_ids": [
+              "ev_000005",
+              "ev_000006",
+              "ev_000007"
+            ]
+          }
+        },
+        {
+          "seq": 30,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "RECOVERY_PROGRESS",
+          "payload": {
+            "recovery": "fix_orientation",
+            "satisfied": true,
+            "conditions": [
+              [
+                "orientation == correct",
+                "SATISFIED"
+              ],
+              [
+                "present == True",
+                "SATISFIED"
+              ]
+            ]
+          }
+        },
+        {
+          "seq": 31,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "STATE_TRANSITIONED",
+          "payload": {
+            "id": "tr_0004",
+            "session_id": "complex",
+            "seq": 4,
+            "timestamp": "2026-01-01T10:00:35",
+            "from_state": "RECOVERING:fix_orientation",
+            "to_state": "s2",
+            "trigger": "recovery_target_satisfied",
+            "reason": "recovery target_state fully satisfied by world model",
+            "condition_results": [
+              {
+                "condition": "orientation == correct",
+                "result": "SATISFIED"
+              },
+              {
+                "condition": "present == True",
+                "result": "SATISFIED"
+              }
+            ],
+            "evidence_ids": [],
+            "metadata": {}
+          }
+        },
+        {
+          "seq": 32,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "RECOVERY_COMPLETED",
+          "payload": {
+            "recovery": "fix_orientation",
+            "step_id": "s2"
+          }
+        },
+        {
+          "seq": 33,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "STEP_EVALUATED",
+          "payload": {
+            "step_id": "s2",
+            "status": "COMPLETED",
+            "reason": "all success conditions satisfied"
+          }
+        },
+        {
+          "seq": 34,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "STEP_COMPLETED",
+          "payload": {
+            "step_id": "s2",
+            "evidence_ids": [
+              "ev_000001",
+              "ev_000002",
+              "ev_000003",
+              "ev_000004",
+              "ev_000005",
+              "ev_000006",
+              "ev_000007"
+            ]
+          }
+        },
+        {
+          "seq": 35,
+          "timestamp": "2026-01-01T10:00:35",
+          "type": "STATE_TRANSITIONED",
+          "payload": {
+            "id": "tr_0005",
+            "session_id": "complex",
+            "seq": 5,
+            "timestamp": "2026-01-01T10:00:35",
+            "from_state": "s2",
+            "to_state": "s3",
+            "trigger": "all_success_conditions_satisfied",
+            "reason": "all success conditions satisfied by world model",
+            "condition_results": [
+              {
+                "condition": "present == True",
+                "predicate": "present",
+                "result": "SATISFIED",
+                "observed": true,
+                "evidence_ids": [
+                  "ev_000002"
+                ]
+              },
+              {
+                "condition": "orientation == correct",
+                "predicate": "orientation",
+                "result": "SATISFIED",
+                "observed": "correct",
+                "evidence_ids": [
+                  "ev_000003",
+                  "ev_000004",
+                  "ev_000005",
+                  "ev_000006",
+                  "ev_000007"
+                ]
+              }
+            ],
+            "evidence_ids": [
+              "ev_000001",
+              "ev_000002",
+              "ev_000003",
+              "ev_000004",
+              "ev_000005",
+              "ev_000006",
+              "ev_000007"
+            ],
+            "metadata": {
+              "step_status": "COMPLETED"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "input": {
+        "id": "ev_000008",
+        "timestamp": "2026-01-01T10:00:40",
+        "predicate": "screws",
+        "value": 2,
+        "confidence": 0.9,
+        "sufficient": true
+      },
+      "session": {
+        "phase": "COMPLETED",
+        "current_step": "s3",
+        "completed_steps": [
+          "s1",
+          "s2",
+          "s3"
+        ],
+        "recovery_name": null,
+        "n_evidence": 8,
+        "n_unresolved_contradictions": 0
+      },
+      "world_model": {
+        "ready": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.93,
+          "evidence_ids": [
+            "ev_000001"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "present": {
+          "value": true,
+          "status": "KNOWN",
+          "confidence": 0.92,
+          "evidence_ids": [
+            "ev_000002"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "orientation": {
+          "value": "correct",
+          "status": "KNOWN",
+          "confidence": 0.94,
+          "evidence_ids": [
+            "ev_000003",
+            "ev_000004",
+            "ev_000005",
+            "ev_000006",
+            "ev_000007"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        },
+        "screws": {
+          "value": 2,
+          "status": "KNOWN",
+          "confidence": 0.9,
+          "evidence_ids": [
+            "ev_000008"
+          ],
+          "streak_count": 1,
+          "resolution_counts": {}
+        }
+      },
+      "new_transitions": [
+        {
+          "id": "tr_0006",
+          "session_id": "complex",
+          "seq": 6,
+          "timestamp": "2026-01-01T10:00:40",
+          "from_state": "s3",
+          "to_state": "COMPLETED",
+          "trigger": "skill_completed",
+          "reason": "final step completed; no further steps declared",
+          "condition_results": [
+            {
+              "condition": "screws >= 2",
+              "predicate": "screws",
+              "result": "SATISFIED",
+              "observed": 2,
+              "evidence_ids": [
+                "ev_000008"
+              ]
+            }
+          ],
+          "evidence_ids": [
+            "ev_000002",
+            "ev_000008"
+          ],
+          "metadata": {}
+        }
+      ],
+      "new_events": [
+        {
+          "seq": 36,
+          "timestamp": "2026-01-01T10:00:40",
+          "type": "EVIDENCE_RECEIVED",
+          "payload": {
+            "evidence_id": "ev_000008",
+            "predicate": "screws",
+            "value": 2,
+            "confidence": 0.9,
+            "sufficient": true
+          }
+        },
+        {
+          "seq": 37,
+          "timestamp": "2026-01-01T10:00:40",
+          "type": "WORLD_MODEL_UPDATED",
+          "payload": {
+            "predicate": "screws",
+            "evidence_id": "ev_000008",
+            "old_status": "UNKNOWN",
+            "new_status": "KNOWN",
+            "old_value": null,
+            "new_value": 2,
+            "old_confidence": 0.0,
+            "new_confidence": 0.9,
+            "rule": "accept_high",
+            "detail": ""
+          }
+        },
+        {
+          "seq": 38,
+          "timestamp": "2026-01-01T10:00:40",
+          "type": "STEP_EVALUATED",
+          "payload": {
+            "step_id": "s3",
+            "status": "COMPLETED",
+            "reason": "all success conditions satisfied"
+          }
+        },
+        {
+          "seq": 39,
+          "timestamp": "2026-01-01T10:00:40",
+          "type": "STEP_COMPLETED",
+          "payload": {
+            "step_id": "s3",
+            "evidence_ids": [
+              "ev_000002",
+              "ev_000008"
+            ]
+          }
+        },
+        {
+          "seq": 40,
+          "timestamp": "2026-01-01T10:00:40",
+          "type": "STATE_TRANSITIONED",
+          "payload": {
+            "id": "tr_0006",
+            "session_id": "complex",
+            "seq": 6,
+            "timestamp": "2026-01-01T10:00:40",
+            "from_state": "s3",
+            "to_state": "COMPLETED",
+            "trigger": "skill_completed",
+            "reason": "final step completed; no further steps declared",
+            "condition_results": [
+              {
+                "condition": "screws >= 2",
+                "predicate": "screws",
+                "result": "SATISFIED",
+                "observed": 2,
+                "evidence_ids": [
+                  "ev_000008"
+                ]
+              }
+            ],
+            "evidence_ids": [
+              "ev_000002",
+              "ev_000008"
+            ],
+            "metadata": {}
+          }
+        },
+        {
+          "seq": 41,
+          "timestamp": "2026-01-01T10:00:40",
+          "type": "SKILL_COMPLETED",
+          "payload": {
+            "completed_steps": [
+              "s1",
+              "s2",
+              "s3"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "id": "tr_0001",
+      "session_id": "complex",
+      "seq": 1,
+      "timestamp": "2026-01-01T10:00:05",
+      "from_state": "s1",
+      "to_state": "s2",
+      "trigger": "all_success_conditions_satisfied",
+      "reason": "all success conditions satisfied by world model",
+      "condition_results": [
+        {
+          "condition": "ready == True",
+          "predicate": "ready",
+          "result": "SATISFIED",
+          "observed": true,
+          "evidence_ids": [
+            "ev_000001"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "ev_000001"
+      ],
+      "metadata": {
+        "step_status": "COMPLETED"
+      }
+    },
+    {
+      "id": "tr_0002",
+      "session_id": "complex",
+      "seq": 2,
+      "timestamp": "2026-01-01T10:00:15",
+      "from_state": "s2",
+      "to_state": "FAILED:s2",
+      "trigger": "failure_condition_satisfied",
+      "reason": "orientation == reversed",
+      "condition_results": [
+        {
+          "condition": "orientation == reversed",
+          "predicate": "orientation",
+          "result": "SATISFIED",
+          "observed": "reversed",
+          "evidence_ids": [
+            "ev_000003"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "ev_000001",
+        "ev_000002",
+        "ev_000003"
+      ],
+      "metadata": {
+        "failed_conditions": [
+          "orientation == reversed"
+        ]
+      }
+    },
+    {
+      "id": "tr_0003",
+      "session_id": "complex",
+      "seq": 3,
+      "timestamp": "2026-01-01T10:00:15",
+      "from_state": "FAILED:s2",
+      "to_state": "RECOVERING:fix_orientation",
+      "trigger": "recovery_activated",
+      "reason": "step declares recovery 'fix_orientation'",
+      "condition_results": [],
+      "evidence_ids": [],
+      "metadata": {
+        "instructions": [
+          "remove",
+          "rotate",
+          "reinstall"
+        ]
+      }
+    },
+    {
+      "id": "tr_0004",
+      "session_id": "complex",
+      "seq": 4,
+      "timestamp": "2026-01-01T10:00:35",
+      "from_state": "RECOVERING:fix_orientation",
+      "to_state": "s2",
+      "trigger": "recovery_target_satisfied",
+      "reason": "recovery target_state fully satisfied by world model",
+      "condition_results": [
+        {
+          "condition": "orientation == correct",
+          "result": "SATISFIED"
+        },
+        {
+          "condition": "present == True",
+          "result": "SATISFIED"
+        }
+      ],
+      "evidence_ids": [],
+      "metadata": {}
+    },
+    {
+      "id": "tr_0005",
+      "session_id": "complex",
+      "seq": 5,
+      "timestamp": "2026-01-01T10:00:35",
+      "from_state": "s2",
+      "to_state": "s3",
+      "trigger": "all_success_conditions_satisfied",
+      "reason": "all success conditions satisfied by world model",
+      "condition_results": [
+        {
+          "condition": "present == True",
+          "predicate": "present",
+          "result": "SATISFIED",
+          "observed": true,
+          "evidence_ids": [
+            "ev_000002"
+          ]
+        },
+        {
+          "condition": "orientation == correct",
+          "predicate": "orientation",
+          "result": "SATISFIED",
+          "observed": "correct",
+          "evidence_ids": [
+            "ev_000003",
+            "ev_000004",
+            "ev_000005",
+            "ev_000006",
+            "ev_000007"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "ev_000001",
+        "ev_000002",
+        "ev_000003",
+        "ev_000004",
+        "ev_000005",
+        "ev_000006",
+        "ev_000007"
+      ],
+      "metadata": {
+        "step_status": "COMPLETED"
+      }
+    },
+    {
+      "id": "tr_0006",
+      "session_id": "complex",
+      "seq": 6,
+      "timestamp": "2026-01-01T10:00:40",
+      "from_state": "s3",
+      "to_state": "COMPLETED",
+      "trigger": "skill_completed",
+      "reason": "final step completed; no further steps declared",
+      "condition_results": [
+        {
+          "condition": "screws >= 2",
+          "predicate": "screws",
+          "result": "SATISFIED",
+          "observed": 2,
+          "evidence_ids": [
+            "ev_000008"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "ev_000002",
+        "ev_000008"
+      ],
+      "metadata": {}
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "ct_0001",
+      "session_id": "complex",
+      "predicate_id": "orientation",
+      "detected_at": "2026-01-01T10:00:20",
+      "evidence_ids": [
+        "ev_000003",
+        "ev_000004"
+      ],
+      "values": [
+        {
+          "evidence_id": "ev_000003",
+          "value": "reversed",
+          "confidence": 0.94
+        },
+        {
+          "evidence_id": "ev_000004",
+          "value": "correct",
+          "confidence": 0.95
+        }
+      ],
+      "resolved": true,
+      "resolved_at": "2026-01-01T10:00:35",
+      "resolution_value": "correct",
+      "resolution_evidence_ids": [
+        "ev_000005",
+        "ev_000006",
+        "ev_000007"
+      ]
+    }
+  ],
+  "next_validation": "A separately authorized real object trial would need verified identity/revision, frozen task conditions and independent physical outcome evidence. No real trial was executed here."
+}

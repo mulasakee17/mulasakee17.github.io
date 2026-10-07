@@ -1,0 +1,80 @@
+{
+  "title": "SwarmAlpha — inspectable experiment design",
+  "evidence_type": "Public design and record manifest; no new result chart",
+  "prepared_at": "2026-10-07",
+  "question": "From a shared discussion state, how do changes in the information shown to agents change probability reports and offline Brier loss?",
+  "status": "Research stopped; archived research and handoff engineering",
+  "design": {
+    "unit": "A task × seed block",
+    "conditions": [
+      {
+        "name": "CONTROL",
+        "description": "The baseline continuation used in the existing fork comparison."
+      },
+      {
+        "name": "SUPPORTS",
+        "description": "The implemented disclosure bundle of model-self-labeled supporting relations."
+      },
+      {
+        "name": "ATTACKS",
+        "description": "The implemented disclosure bundle of model-self-labeled attacking relations."
+      }
+    ],
+    "qualification": "The frozen analysis requires one row per condition, matching task, seed, model, resolution and Round-1 state hash; actual Round-1 probability arrays must match. Final Brier is recomputed from final agent beliefs.",
+    "missing": "A contrast needs non-null final Brier in all three conditions. Incomplete blocks remain missing; they are not set to zero, repaired or imputed.",
+    "offline_measure": "V_ATTACKS = Brier_CONTROL − Brier_ATTACKS; V_SUPPORTS = Brier_CONTROL − Brier_SUPPORTS; GAP_AS = Brier_SUPPORTS − Brier_ATTACKS.",
+    "interpretation": "This is a descriptive post-hoc complete-block comparison. Model self-labels are not oracle relations, and a probability change is not a measurement of internal cognition or pure social influence."
+  },
+  "public_record_manifest": {
+    "nature": "A separate publicly tracked GLM-4.6V seed-1 trajectory record slice. This is not the three-arm comparison dataset or its analysis denominator.",
+    "source_url": "https://github.com/mulasakee17/swarmalpha/blob/master/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-manifest.json",
+    "source_blob": "ddbf051a9059ab7b56f158020a22f36978551a27",
+    "record": {
+      "planHash": "sha256:7212455275fefee6c988d23bdfe480775b07b8f03a86872eda2bef1f424aa528",
+      "sourceTaskIds": [
+        1,
+        8,
+        15,
+        22,
+        29
+      ],
+      "artifactHashes": [
+        "sha256:7afa76dcfeccf88f2fff6cd4a4e6cfea20d3af9606dd5727c547192669165de8",
+        "sha256:26694b1356d2867c4c37430df2201b21a50772b01ccba26259c8834f4d35deed",
+        "sha256:58145ca99e337cfc111d04b1e2cfcd0c0baa1711845f2491f9f41fa617ee6141",
+        "sha256:a9df57c677a0b09c41568068de8eaaa8b5af27245adbe0f2a974a2950b98e993",
+        "sha256:92000349e683aadeaf042dd337228f8446a321dd95d7f8f7a3812a853eca063f"
+      ]
+    },
+    "sample_url": "https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json"
+  },
+  "boundaries": [
+    "No new model calls, experiment execution or result recomputation took place in this website task.",
+    "The handoff's 90-file/270-arm and 40-task figures were not adopted as independently verified public datasets. The relevant frozen-input manifest was not available through the current public repository path; raw inputs are withheld.",
+    "The current candidate submission and complete handoff package remain private. No publication, acceptance or governance-policy validation is claimed."
+  ],
+  "sources": [
+    {
+      "title": "Current status and handoff boundaries",
+      "url": "https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/ACTIVE_RESEARCH_SURFACE.md",
+      "blob": "5bc3d8170aa691a36164d30b47489166b310eeb1"
+    },
+    {
+      "title": "Frozen polarity-bundle comparison design",
+      "url": "https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_ANALYSIS_FREEZE_V1.md"
+    },
+    {
+      "title": "Public historical report with result boundaries",
+      "url": "https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md"
+    }
+  ],
+  "provenance": {
+    "repository": "mulasakee17/swarmalpha",
+    "source_commit": "4fcfff940b32e9dd867d4df257ee27455485488d",
+    "repository_access": "Public, confirmed by GitHub metadata; per-link anonymous status checked separately",
+    "license": "MIT — Copyright (c) 2025 SwarmAlpha. License notice is supplied with this export.",
+    "publication_basis": "Existing public design documentation and a minimal explicitly public manifest. Third-party benchmark prompts, answer keys and model messages are not copied.",
+    "execution": "Documentation and manifest inspection only. No new research execution or numerical result reproduction."
+  },
+  "next_validation": "A future authorized continuation would need matched ordinary re-presentation controls, explicit arm-order handling and missingness accounting before stronger mechanism claims."
+}
