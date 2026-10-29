@@ -41,6 +41,7 @@
         </p>
         <p class="status" data-reveal>SwarmAlpha · Research archive / Engineering handoff
         </p>
+        <a class="text-link case-evidence-link" href="#evidence">Inspect the comparison design</a>
       </section>
       <section class="section container split">
         <h2 data-reveal>The artifact
@@ -66,42 +67,23 @@
           </p>
           <p>Unit: <strong>A task × seed block</strong>. The conditions below continue from a shared discussion state.
           </p>
-          <div class="table-wrap">
-            <table class="comparison">
-              <thead>
-                <tr>
-                  <th scope="col">Condition
-                  </th>
-                  <th scope="col">What is shown
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">CONTROL
-                  </th>
-                  <td>The baseline continuation used in the existing fork comparison.
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">SUPPORTS
-                  </th>
-                  <td>The implemented disclosure bundle of model-self-labeled supporting relations.
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">ATTACKS
-                  </th>
-                  <td>The implemented disclosure bundle of model-self-labeled attacking relations.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <figure class="experiment-map" aria-labelledby="experiment-caption">
+            <div class="experiment-origin"><span class="diagram-label">Hold the starting point fixed</span><strong>Shared Round-1 discussion state</strong><span>Same task, seed, model and resolution</span></div>
+            <div class="experiment-arms">
+              <div><span class="diagram-label">CONTROL</span><h4>Baseline continuation</h4><p>The existing fork comparison’s baseline.</p></div>
+              <div><span class="diagram-label">SUPPORTS</span><h4>Supporting relations</h4><p>Show the implemented bundle of model-self-labeled supporting relations.</p></div>
+              <div><span class="diagram-label">ATTACKS</span><h4>Attacking relations</h4><p>Show the implemented bundle of model-self-labeled attacking relations.</p></div>
+            </div>
+            <div class="experiment-output"><span class="diagram-label">Observe, then score offline</span><strong>Final probability reports → Brier loss</strong><span>Compare only blocks with all three final scores.</span></div>
+            <figcaption id="experiment-caption">The intervention is information exposure. The measured output is a report and its score.</figcaption>
+          </figure>
+          <details>
+            <summary>What makes a block comparable?</summary>
           <p>The frozen analysis requires one row per condition, matching task, seed, model, resolution and Round-1 state hash; actual Round-1 probability arrays must match. Final Brier is recomputed from final agent beliefs.
           </p>
           <p>A contrast needs non-null final Brier in all three conditions. Incomplete blocks remain missing; they are not set to zero, repaired or imputed.
           </p>
+          </details>
           <p class="boundary">This is a descriptive post-hoc complete-block comparison. Model self-labels are not oracle relations, and a probability change is not a measurement of internal cognition or pure social influence. This website task inspected documentation and a manifest; it did not run new experiments or reproduce numerical results.
           </p>
           <details>

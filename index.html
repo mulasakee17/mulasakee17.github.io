@@ -38,13 +38,18 @@
         <h1 data-reveal>Intelligence,<br>grounded in reality.<br><span>Understanding,<br>built to last.</span>
         </h1>
         <div class="hero-intro">
-          <p data-reveal>I build and study systems that connect AI to the physical world, make collective decisions inspectable, and help people carry understanding forward.
+          <p data-reveal>I build software for checking what AI does: an object-interaction replay, a multi-agent experiment archive, and a source-backed reading system.
           </p>
           <p data-reveal>The question behind this work: how can increasingly capable intelligence become something people can check, inherit, and remain in control of?
           </p>
           <a class="button" href="#work" data-reveal>Inspect the work</a>
         </div>
       </section>
+      <nav class="project-index container" aria-label="Explore the three projects">
+        <a href="work/moonblade/"><strong>Moonblade</strong><span>Replay an object interaction</span><span class="index-kind">Engineering prototype</span></a>
+        <a href="work/swarmalpha/"><strong>SwarmAlpha</strong><span>Inspect an experiment’s design</span><span class="index-kind">Research archive · Handoff</span></a>
+        <a href="work/ancestors/"><strong>The Ancestors</strong><span>Follow a question to its sources</span><span class="index-kind">Public reading slice</span></a>
+      </nav>
       <section id="work" class="section container">
         <div class="section-heading">
           <h2 data-reveal>Work that can be checked.
@@ -52,7 +57,7 @@
           <p data-reveal>Three projects, at different stages. Each opens onto a specific artifact, its provenance, and the limits of what it demonstrates.
           </p>
         </div>
-        <article class="work-row flagship" data-reveal>
+        <article id="moonblade" class="work-row flagship" data-reveal>
           <div class="work-copy">
             <h3><a href="work/moonblade/">Moonblade</a>
             </h3>
@@ -82,7 +87,7 @@
             <a href="work/moonblade/#evidence">Inspect the executed trace</a>
           </div>
         </article>
-        <article class="work-row" data-reveal>
+        <article id="swarmalpha" class="work-row" data-reveal>
           <div class="work-copy">
             <h3><a href="work/swarmalpha/">SwarmAlpha</a>
             </h3>
@@ -99,10 +104,16 @@
             </h4>
             <p>Read the documented research surface and inspect the conditions being compared.
             </p>
+            <dl class="artifact-map">
+              <div><dt>Change</dt><dd>Information exposure</dd></div>
+              <div><dt>Observe</dt><dd>Probability reports</dd></div>
+              <div><dt>Score</dt><dd>Offline Brier loss</dd></div>
+            </dl>
+            <p class="boundary">Stopped research, preserved for inspection and engineering handoff.</p>
             <a href="work/swarmalpha/#evidence">Inspect the research evidence</a>
           </div>
         </article>
-        <article class="work-row" data-reveal>
+        <article id="ancestors" class="work-row" data-reveal>
           <div class="work-copy">
             <h3><a href="work/ancestors/">The Ancestors</a>
             </h3>
@@ -119,6 +130,12 @@
             </h4>
             <p>Compare Popper, Lakatos, and Kuhn on a failed prediction—then return to the sources and their conditions.
             </p>
+            <dl class="artifact-map">
+              <div><dt>Popper</dt><dd>A testable refutation</dd></div>
+              <div><dt>Lakatos</dt><dd>The progress of a programme</dd></div>
+              <div><dt>Kuhn</dt><dd>Reasoned theory choice</dd></div>
+            </dl>
+            <p class="boundary">A bounded editorial comparison. The personal collection remains private.</p>
             <a href="work/ancestors/#evidence">Enter the reading path</a>
           </div>
         </article>
