@@ -41,15 +41,16 @@
         </p>
       </section>
       <section class="section container">
-        <article class="archive-row" data-reveal>
+        <article id="personal-agent-runtime" class="archive-row" data-reveal>
           <h2>Personal Agent Runtime
           </h2>
           <div>
-            <p>An earlier exploration of intent-driven personal computing and skill-based agent interaction: agents propose, a runtime governs, and verifiers check.
+            <p>A model can propose an action without being the authority that permits it. This earlier engineering exploration puts a registered capability and policy boundary between a proposed plan and its execution, then checks the outcome.
             </p>
-            <p>The original project link is retained as a historical reference; its availability may change.
+            <p>The architecture separates planning, permission, execution, verification, and bounded recovery. Its offline acceptance path uses a fake client; this is software evidence rather than a demonstrated live-network run.
             </p>
-            <a href="https://github.com/mulasakee17/personal-agent-runtime">Original repository</a>
+            <ol class="runtime-path" aria-label="Runtime responsibility chain"><li>Model proposes a plan</li><li>Runtime checks capability and policy</li><li>Execute within the boundary</li><li>Verify, then finish or recover</li></ol>
+            <div class="actions"><a href="https://github.com/mulasakee17/personal-agent-runtime">Read the public repository</a><a href="https://github.com/mulasakee17/personal-agent-runtime/blob/main/docs/adr/ADR-017.md">Read the architecture decision</a></div>
           </div>
         </article>
         <article class="archive-row" data-reveal>

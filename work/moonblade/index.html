@@ -44,12 +44,12 @@
         <a class="text-link case-evidence-link" href="#evidence">Inspect the eight-input trace</a>
       </section>
       <section class="section container split">
-        <h2 data-reveal>What exists
+        <h2 data-reveal>Let the object carry its context
         </h2>
         <div data-reveal>
-          <p>Moonblade is a software prototype for binding object-specific context and skills to an interaction, with checks and evidence around the decision. Its replay module reads an evidence sequence and reports sessions, state transitions, contradictions, and events.
+          <p>The direction is to give a particular physical object a durable identity, knowledge, task skills, and real-world context that compatible AI can inherit. When the object changes, that understanding should be checked again.
           </p>
-          <p>This shifts the focus from an AI that can describe equipment to a record that another operator can inspect. Replay exists; complete persistent object memory, cross-model inheritance, and cross-device repair are not established by it.
+          <p>The current prototype makes part of that idea concrete: a Runtime resolves evidence, checks task conditions, preserves contradictions, and records transitions. The replay below exposes that mechanism in one small, executed software case.
           </p>
         </div>
       </section>
@@ -57,7 +57,7 @@
         <div class="section-heading">
           <h2 data-reveal>Inspect a recorded interaction.
           </h2>
-          <p data-reveal>The exhibit below is a browseable export of an actual software execution. The page does not run a model or operate hardware.
+          <p data-reveal>A reversed orientation stops normal progress. Conflicting observations remain visible until later evidence supports continuing. Browse the eight recorded inputs to see the distinction.
           </p>
         </div>
         <div class="evidence-panel" data-trace-browser>
@@ -67,8 +67,9 @@
           </p>
           <p>The existing <code>mini_skill</code> fixture supplies observations to a deterministic Runtime. A reversed orientation triggers a failure and recovery. Conflicting observations are recorded; later inputs resolve the conflict, and the final input reaches the software state <code>COMPLETED</code>.
           </p>
-          <p class="boundary">All observations and timestamps are synthetic. No model or hardware was called. Software completion does not establish real task success, persistent object memory, cross-model inheritance, or field repair. This sequence does not exhibit BLOCK.
+          <p class="boundary">Evidence scope: deterministic execution of synthetic inputs and timestamps, with no model or hardware calls. COMPLETED is a software state. Physical task success and durable inheritance require separate validation; this sequence contains recovery, not BLOCK.
           </p>
+          <ol class="recovery-path" aria-label="What to look for in the trace"><li><strong>Detect</strong><span>Input 3: reversed orientation enters recovery.</span></li><li><strong>Keep the conflict</strong><span>Inputs 4–6: new claims do not silently overwrite evidence.</span></li><li><strong>Resume</strong><span>Input 7: the conflict resolves and the task advances.</span></li></ol>
           <ol class="trace-steps">
             <li data-step>
             <h4>Input 1: ready
@@ -170,7 +171,7 @@
           <details>
             <summary>Read the checks and provenance
             </summary>
-            <p>Five existing replay tests passed in this session. Replaying the same sequence twice produced the same report.
+            <p>In the 7 October 2026 evidence preparation, five existing replay tests passed. Replaying the same sequence twice produced the same report.
             </p>
             <p class="source-note">Source: <code>mulasakee17/moonblade</code>, version <code>31f168972379323f257aeabcd8c440b93bc5ea66</code>. Executed in local development checkout <code>e88fb8e1a970f38c90f41c0c75185649d1dcb4f2</code>; the relevant replay, runtime, helper, schema, configuration, and test surfaces matched the source version. This was not a clean full-repository checkout. The repository is private; this standalone export is the public evidence.
             </p>
@@ -182,12 +183,12 @@
         </div>
       </section>
       <section class="section container split">
-        <h2 data-reveal>Role and choices
+        <h2 data-reveal>Keep disagreement in the record
         </h2>
         <div data-reveal>
-          <p>I set the object-grounded question, system boundaries, and acceptance criteria; AI supports implementation, analysis, and checks. The design choice emphasized here is to preserve evidence that can be read again, rather than treating a model’s fluent answer as sufficient authority to act.
+          <p>The important choice is visible between inputs 3 and 7: a new observation does not simply replace the previous one. The Runtime records the contradiction, retains the earlier value while conflicted, and waits for its recovery conditions to be satisfied.
           </p>
-          <p>The record must tell a later reader what was observed, what the system permitted, and what remains to be verified. The case does not claim that the entire inheritance direction is already implemented.
+          <p>That record gives the next operator something to inspect when understanding is inherited. I set the object-grounded question, system boundaries, and acceptance criteria; AI supports implementation, analysis, and checks.
           </p>
         </div>
       </section>
@@ -195,7 +196,7 @@
         <h2 data-reveal>The next useful check
         </h2>
         <div data-reveal>
-          <p>A real task must test whether the inherited context remains useful after the object changes, whether stale assumptions are detected, and whether another operator can recover the relevant evidence. The current software exhibit cannot answer those physical-world questions.
+          <p>The next useful test is a bounded physical task: change the object, check whether stale assumptions are detected, and ask another operator to recover the relevant evidence. This would connect the implemented recovery mechanism to the larger inheritance question.
           </p>
           <p><a href="mailto:huimouye@qq.com?subject=Moonblade%20validation">Discuss a bounded validation task</a>
           </p>

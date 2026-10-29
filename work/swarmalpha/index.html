@@ -37,35 +37,74 @@
       <section class="case-hero container"><a class="back-link" href="../../#work">Back to work</a>
         <h1 data-reveal>Change what agents see.<br>Inspect what they report.
         </h1>
-        <p class="lead" data-reveal>How does information exposure change probability reports and offline Brier loss in an LLM multi-agent experiment?
+        <p class="lead" data-reveal>How do information structures shape the decisions a group of AI agents makes together?
         </p>
         <p class="status" data-reveal>SwarmAlpha · Research archive / Engineering handoff
         </p>
-        <a class="text-link case-evidence-link" href="#evidence">Inspect the comparison design</a>
+        <a class="text-link case-evidence-link" href="#evidence">Explore the historical findings</a>
       </section>
       <section class="section container split">
         <h2 data-reveal>The artifact
         </h2>
         <div data-reveal>
-          <p>SwarmAlpha provides a controlled experimental pipeline and documented research surface. The intervention changes the information available to agents; the measured outputs are probability reports and an offline scoring loss.
+          <p>SwarmAlpha studies collective decision processes: what agents see, how their reports change through discussion, and what an external observer can measure. Controlled interventions make parts of that larger question testable.
           </p>
-          <p>The distinction matters: these measurements do not reveal internal cognition, isolate pure social influence, or validate a general governance strategy. Research has stopped; the repository now records its boundary and engineering handoff.
+          <p>The work produced an experimental pipeline, historical comparisons, and an increasingly careful account of what those comparisons can establish. Research is now archived for engineering handoff.
           </p>
         </div>
       </section>
       <section id="evidence" class="section container">
         <div class="section-heading">
-          <h2 data-reveal>Read the experiment at its boundary.
+          <h2 data-reveal>What the experiments changed.
           </h2>
-          <p data-reveal>A design is useful evidence when the treatment, unit of analysis, and measured output are explicit. No result curve is drawn here without a releasable, recomputable dataset.
+          <p data-reveal>An average effect, a task that went the other way, and a later correction to the explanation. These are reported historical findings, not a new reproduction.
           </p>
         </div>
+        <div class="research-findings">
+          <article class="finding-main">
+            <h3>Attacking information improved the average score.</h3>
+            <p>The 15 August 2026 report compared CONTROL, SUPPORTS, and ATTACKS across <strong>45 tasks, one seed, and three arms</strong> using <code>deepseek-chat</code> on a hidden benchmark. Lower Brier loss means more accurate probability reports.</p>
+            <figure class="effect-chart" aria-labelledby="effect-caption">
+              <svg viewBox="0 0 700 170" role="img" aria-labelledby="effect-title effect-desc">
+                <title id="effect-title">Reported mean ATTACKS minus SUPPORTS Brier loss: −0.343</title>
+                <desc id="effect-desc">The 95 percent confidence interval is minus 0.507 to minus 0.193, entirely below zero. This is a reported historical result for 45 tasks and one seed.</desc>
+                <line class="chart-axis" x1="60" x2="650" y1="100" y2="100"/>
+                <line class="chart-zero" x1="566" x2="566" y1="25" y2="115"/>
+                <line class="chart-interval" x1="139" x2="403" y1="65" y2="65"/>
+                <line class="chart-cap" x1="139" x2="139" y1="54" y2="76"/>
+                <line class="chart-cap" x1="403" x2="403" y1="54" y2="76"/>
+                <circle class="chart-point" cx="277" cy="65" r="7"/>
+                <text x="277" y="35" text-anchor="middle">−0.343</text>
+                <text x="60" y="135" text-anchor="middle">−0.6</text>
+                <text x="229" y="135" text-anchor="middle">−0.4</text>
+                <text x="397" y="135" text-anchor="middle">−0.2</text>
+                <text x="566" y="135" text-anchor="middle">0</text>
+                <text x="650" y="135" text-anchor="middle">+0.1</text>
+              </svg>
+              <figcaption id="effect-caption"><strong>ATTACKS − SUPPORTS: −0.343 mean Brier loss.</strong> Reported 95% CI [−0.507, −0.193]; task-level paired cluster bootstrap, 10,000 resamples. The plot transcribes the report’s estimate and interval.</figcaption>
+            </figure>
+            <p class="source-note"><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/FORK_CONFIRMATORY_RESULTS_2026-08-15.md">Read the historical result and statistical method</a>. This is a benchmark- and model-specific finding from one seed.</p>
+          </article>
+          <article class="finding-note">
+            <h3>The average leaves a counterexample.</h3>
+            <p>On <strong>task 17</strong>, SUPPORTS scored <strong>0.354</strong> and ATTACKS scored <strong>1.068</strong>. Attacking information performed worse on this task.</p>
+            <p>The useful question becomes when an intervention helps or harms a group—not whether criticism is always beneficial.</p>
+            <p class="source-note">Same 15 August report and experiment; task 17 is an individual counterexample, not a second aggregate result.</p>
+          </article>
+          <article class="finding-note">
+            <h3>A narrower explanation did not hold.</h3>
+            <p>The 22 August post-hoc offline bundle analysis corrected the idea that the advantage was specific to rescuing initially wrong groups. In its separate GLM correct-state analysis, <code>GAP_AS = SUPPORTS − ATTACKS</code> was <strong>+0.3349</strong>, with reported 95% CI <strong>[0.0883, 0.6868]</strong>.</p>
+            <p>The ATTACKS–SUPPORTS difference also appeared in the GLM correct-state stratum (12 task/seed blocks). Without a frozen interaction test, the evidence did not support a claim that the effect existed only in wrong states.</p>
+            <p class="source-note"><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">Read the follow-up and revised interpretation</a>. Different analysis and model; do not pool it with the 45-task deepseek-chat comparison. GAP_AS has the opposite sign convention to the chart above.</p>
+          </article>
+        </div>
+        <details class="design-disclosure"><summary>Inspect the comparison design, records, and provenance</summary>
         <div class="evidence-panel">
           <h3>The three-arm comparison contract
           </h3>
           <p class="status">Public design and manifest · Inspected 7 October 2026
           </p>
-          <p>Unit: <strong>A task × seed block</strong>. The conditions below continue from a shared discussion state.
+          <p>Paired block: <strong>task × seed</strong>. Statistical unit: <strong>task</strong>. The conditions below continue from a shared discussion state.
           </p>
           <figure class="experiment-map" aria-labelledby="experiment-caption">
             <div class="experiment-origin"><span class="diagram-label">Hold the starting point fixed</span><strong>Shared Round-1 discussion state</strong><span>Same task, seed, model and resolution</span></div>
@@ -84,7 +123,7 @@
           <p>A contrast needs non-null final Brier in all three conditions. Incomplete blocks remain missing; they are not set to zero, repaired or imputed.
           </p>
           </details>
-          <p class="boundary">This is a descriptive post-hoc complete-block comparison. Model self-labels are not oracle relations, and a probability change is not a measurement of internal cognition or pure social influence. This website task inspected documentation and a manifest; it did not run new experiments or reproduce numerical results.
+          <p class="boundary">The three-arm comparison design below is a distinct documented analysis surface. Model self-labels describe the implemented information bundle; probability reports are observable outputs, rather than direct measurements of internal cognition. This website transcribes public reports and did not run new experiments or recompute their results.
           </p>
           <details>
             <summary>Inspect a separate public record slice
@@ -93,10 +132,10 @@
             </p>
             <p>Source task identifiers: <code>1, 8, 15, 22, 29</code>. These five records are not the main research denominator. They cannot be combined with the handoff’s file, arm, or task counts.
             </p>
-            <div class="actions"><a href="https://github.com/mulasakee17/swarmalpha/blob/master/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-manifest.json">Open the public manifest</a><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json">Inspect task 1’s recorded trajectory</a>
+            <div class="actions"><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-manifest.json">Open the public manifest</a><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json">Inspect task 1’s recorded trajectory</a>
             </div>
           </details>
-          <p class="source-note">Source: <code>mulasakee17/swarmalpha</code>, public source version <code>4fcfff940b32e9dd867d4df257ee27455485488d</code>. Minimal design and manifest export prepared 7 October 2026. The frozen-input manifest for the handoff figures was unavailable at the public path checked; no result chart or candidate submission package is reproduced.
+          <p class="source-note">Source: <code>mulasakee17/swarmalpha</code>, public source version <code>4fcfff940b32e9dd867d4df257ee27455485488d</code>. Minimal design and manifest export prepared 7 October 2026. The frozen-input manifest for the handoff figures was unavailable at the public path checked. The chart above uses only the separate public 15 August report; private candidate-submission material is excluded.
           </p>
           <ul class="reading-links">
             <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/ACTIVE_RESEARCH_SURFACE.md">Current status and handoff boundaries</a>
@@ -109,14 +148,15 @@
           <div class="actions"><a href="../../assets/evidence/swarmalpha-design.json">Open the evidence and source record (JSON)</a><a href="../../assets/evidence/swarmalpha-LICENSE.txt">MIT license notice</a>
           </div>
         </div>
+        </details>
       </section>
       <section class="section container split">
-        <h2 data-reveal>Role and choices
+        <h2 data-reveal>Separate the intervention from the explanation
         </h2>
         <div data-reveal>
-          <p>I own the research question, experiment boundaries, and interpretation of the outputs, with AI assistance in analysis, implementation, drafting, and checks. The key choice is to separate the exposure condition from the score, and to preserve the record needed to check how a comparison was formed.
+          <p>Changing the information agents see can reveal a response without settling why it happened. The follow-up’s correction matters because an attractive “targeted rescue” story was narrower than the evidence allowed. Keeping the condition, measured output, and interpretation separate makes that correction visible.
           </p>
-          <p>A probability report is an observable output. The Brier loss scores that output against the task outcome; it should not be renamed a measurement of an agent’s internal beliefs. Missing, failed, primary, and recovery runs require separate accounting.
+          <p>I own the research question, experiment boundaries, and interpretation, with AI assistance in analysis, implementation, drafting, and checks. The historical reports preserve the decisions and their qualifications. <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/research/SWARMALPHA_RESEARCH_IDENTITY_AND_DESIGN_PHILOSOPHY.md">Read the research identity and design philosophy</a>.
           </p>
         </div>
       </section>
@@ -124,7 +164,7 @@
         <h2 data-reveal>What would be valuable next?
         </h2>
         <div data-reveal>
-          <p>Independent inspection of the experiment’s units, matched conditions, missing-data treatment, and interpretation would be more useful than a broader claim. The archive is a basis for that conversation, not a claim of publication or acceptance.
+          <p>The next useful conversation is about the mechanism: which information, for which initial group state, under which matched conditions? The archive keeps the units, missing-data treatment, and interpretation available for that inspection.
           </p>
           <p><a href="mailto:huimouye@qq.com?subject=SwarmAlpha%20experimental%20design">Discuss the experimental design</a>
           </p>

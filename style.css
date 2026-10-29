@@ -558,3 +558,57 @@ html.js-reveal [data-reveal]:focus-within{
   .collection-scale > div { flex-direction: row; justify-content: space-between; align-items: baseline; gap: var(--small-gap); }
   .collection-scale dd { font-size: 2.8rem; }
 }
+
+/* Second-round reading hierarchy: keep the incumbent paper, ink and oxblood. */
+:root {
+  --reading-gap: 32px;
+  --chart-height: 170px;
+  --finding-heading-size: clamp(1.65rem, 2.4vw, 2.2rem);
+}
+.hero { padding-block: clamp(48px, 6vw, 80px); }
+.hero-intro p:first-child { font-size: 1.15rem; }
+.hero-intro p + p { color: var(--gray); }
+.project-index { padding-bottom: clamp(48px, 6vw, 80px); }
+.recovery-path, .runtime-path { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--case-diagram-gap); margin-block: var(--entry-gap); }
+.recovery-path li, .runtime-path li { padding-block: var(--small-gap); border-block: 1px solid var(--line); }
+.recovery-path strong { display: block; color: var(--accent); margin-bottom: 8px; }
+.recovery-path span { display: block; font-size: .95rem; }
+.snapshot-fields { margin-top: var(--small-gap); }
+.snapshot-fields > div { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: var(--small-gap); padding-block: var(--small-gap); border-top: 1px solid var(--line); }
+.snapshot-fields dt { color: var(--gray); }
+.snapshot-fields dd { min-width: 0; overflow-wrap: anywhere; }
+.replay-snapshot h4 { margin-bottom: var(--small-gap); }
+.research-findings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--reading-gap) var(--gap); }
+.finding-main { grid-column: 1 / -1; background: var(--paper); padding: clamp(24px, 4vw, 48px); }
+.research-findings h3 { font-size: var(--finding-heading-size); line-height: 1.2; margin-bottom: 20px; max-width: 29ch; }
+.finding-main > p { max-width: 75ch; }
+.finding-note { border-top: 1px solid var(--line); padding-top: var(--reading-gap); }
+.source-note { color: var(--gray); font-size: .88rem; }
+.research-findings .source-note { margin-top: var(--entry-gap); }
+.effect-chart { max-width: 800px; margin-block: var(--reading-gap); }
+.effect-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.effect-chart text { fill: var(--ink); font-family: var(--body); font-size: 18px; }
+.chart-axis, .chart-zero { stroke: var(--gray); stroke-width: 1; }
+.chart-zero { stroke-dasharray: 4 4; }
+.chart-interval, .chart-cap { stroke: var(--accent); stroke-width: 3; }
+.chart-point { fill: var(--accent); }
+.effect-chart figcaption { color: var(--gray); font-size: .95rem; max-width: 75ch; }
+.effect-chart figcaption strong { color: var(--ink); font-weight: 500; }
+.design-disclosure { margin-top: var(--reading-gap); border-top: 1px solid var(--line); }
+.design-disclosure > summary { padding-block: 24px; cursor: pointer; color: var(--accent); min-height: 48px; }
+.runtime-path { grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: .95rem; }
+@media (max-width: 800px) {
+  .research-findings { grid-template-columns: 1fr; }
+  .effect-chart text { font-size: 30px; }
+  .recovery-path { grid-template-columns: 1fr; gap: 0; }
+  .recovery-path li + li { border-top: 0; }
+  .snapshot-fields > div { grid-template-columns: 1fr; gap: 6px; }
+  .hero { padding-block: 36px 32px; gap: 28px; }
+  .hero h1 { font-size: clamp(2.3rem, 8vw, 3.6rem); }
+  .hero-intro { max-width: 60ch; }
+  .hero-intro p:first-child { font-size: 1.05rem; line-height: 1.55; }
+  .hero-intro p + p { display: none; }
+  .hero-intro .button { margin-top: 20px; }
+  .project-index { padding-bottom: 48px; }
+  .project-index a { padding-block: 18px; gap: 4px; }
+}

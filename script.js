@@ -103,9 +103,21 @@
     function show(position) {
       index = position;
       snapshot.replaceChildren();
-      Array.from(steps[index].children).forEach(function (element) {
-        snapshot.appendChild(element.cloneNode(true));
+      snapshot.appendChild(steps[index].querySelector('h4').cloneNode(true));
+      var fields = document.createElement('dl');
+      fields.className = 'snapshot-fields';
+      Array.from(steps[index].querySelectorAll('p')).forEach(function (element) {
+        var row = document.createElement('div');
+        var label = document.createElement('dt');
+        var value = document.createElement('dd');
+        var text = element.textContent.trim();
+        var separator = text.indexOf(':');
+        label.textContent = separator > -1 ? text.slice(0, separator) : 'Transition';
+        value.innerHTML = separator > -1 ? element.innerHTML.replace(/^[^:]+:\s*/, '') : element.innerHTML;
+        row.append(label, value);
+        fields.appendChild(row);
       });
+      snapshot.appendChild(fields);
       buttons.forEach(function (button, position) {
         button.setAttribute('aria-pressed', String(position === index));
       });
