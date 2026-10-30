@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SwarmAlpha — Lucius He
     </title>
-    <meta name="description" content="An inspectable archive of information exposure, probability reports, and offline Brier loss.">
+    <meta name="description" content="Research into collective decisions: external observation, information-disclosure experiments, and the evidence that revised the interpretation.">
     <meta name="theme-color" content="#F7F4EF">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://mulasakee17.github.io/work/swarmalpha/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lucius He">
     <meta property="og:title" content="SwarmAlpha — Lucius He">
-    <meta property="og:description" content="An inspectable archive of information exposure, probability reports, and offline Brier loss.">
+    <meta property="og:description" content="Research into collective decisions: external observation, information-disclosure experiments, and the evidence that revised the interpretation.">
     <meta property="og:url" content="https://mulasakee17.github.io/work/swarmalpha/">
     <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
     <meta property="og:image:alt" content="Intelligence, grounded in reality. Understanding, built to last.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SwarmAlpha — Lucius He">
-    <meta name="twitter:description" content="An inspectable archive of information exposure, probability reports, and offline Brier loss.">
+    <meta name="twitter:description" content="Research into collective decisions: external observation, information-disclosure experiments, and the evidence that revised the interpretation.">
     <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../style.css">
@@ -35,117 +35,33 @@
     </header>
     <main id="main">
       <section class="case-hero container"><a class="back-link" href="../../#work">Back to work</a>
-        <h1 data-reveal>Change what agents see.<br>Inspect what they report.
-        </h1>
-        <p class="lead" data-reveal>How does information exposure change probability reports and offline Brier loss in an LLM multi-agent experiment?
-        </p>
-        <p class="status" data-reveal>SwarmAlpha · Research archive / Engineering handoff
-        </p>
+        <h1 data-reveal>How do partial views<br>become a collective judgment?</h1>
+        <p class="lead" data-reveal>SwarmAlpha is my experimental research into how AI agents with different local information form collective judgments—and what an outside observer can learn from the process.</p>
+        <p class="status" data-reveal>SwarmAlpha · Multi-agent research archive</p>
+        <div class="actions"><a class="button" href="https://github.com/mulasakee17/swarmalpha/tree/b0d9f16b499dd949391bc7d6b84640fa98d43b42">View GitHub Repository</a><a class="text-link" href="#evidence">Read the findings</a></div>
+        <p class="source-note">Repository link opens the reviewed research-evolution README, pending merge into the default branch.</p>
       </section>
       <section class="section container split">
-        <h2 data-reveal>The artifact
-        </h2>
+        <h2 data-reveal>Research Question</h2>
         <div data-reveal>
-          <p>SwarmAlpha provides a controlled experimental pipeline and documented research surface. The intervention changes the information available to agents; the measured outputs are probability reports and an offline scoring loss.
-          </p>
-          <p>The distinction matters: these measurements do not reveal internal cognition, isolate pure social influence, or validate a general governance strategy. Research has stopped; the repository now records its boundary and engineering handoff.
-          </p>
-        </div>
-      </section>
-      <section id="evidence" class="section container">
-        <div class="section-heading">
-          <h2 data-reveal>Read the experiment at its boundary.
-          </h2>
-          <p data-reveal>A design is useful evidence when the treatment, unit of analysis, and measured output are explicit. No result curve is drawn here without a releasable, recomputable dataset.
-          </p>
-        </div>
-        <div class="evidence-panel">
-          <h3>The three-arm comparison contract
-          </h3>
-          <p class="status">Public design and manifest · Inspected 7 October 2026
-          </p>
-          <p>Unit: <strong>A task × seed block</strong>. The conditions below continue from a shared discussion state.
-          </p>
-          <div class="table-wrap">
-            <table class="comparison">
-              <thead>
-                <tr>
-                  <th scope="col">Condition
-                  </th>
-                  <th scope="col">What is shown
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">CONTROL
-                  </th>
-                  <td>The baseline continuation used in the existing fork comparison.
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">SUPPORTS
-                  </th>
-                  <td>The implemented disclosure bundle of model-self-labeled supporting relations.
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">ATTACKS
-                  </th>
-                  <td>The implemented disclosure bundle of model-self-labeled attacking relations.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>The frozen analysis requires one row per condition, matching task, seed, model, resolution and Round-1 state hash; actual Round-1 probability arrays must match. Final Brier is recomputed from final agent beliefs.
-          </p>
-          <p>A contrast needs non-null final Brier in all three conditions. Incomplete blocks remain missing; they are not set to zero, repaired or imputed.
-          </p>
-          <p class="boundary">This is a descriptive post-hoc complete-block comparison. Model self-labels are not oracle relations, and a probability change is not a measurement of internal cognition or pure social influence. This website task inspected documentation and a manifest; it did not run new experiments or reproduce numerical results.
-          </p>
-          <details>
-            <summary>Inspect a separate public record slice
-            </summary>
-            <p>A separate publicly tracked GLM-4.6V seed-1 trajectory record slice. This is not the three-arm comparison dataset or its analysis denominator.
-            </p>
-            <p>Source task identifiers: <code>1, 8, 15, 22, 29</code>. These five records are not the main research denominator. They cannot be combined with the handoff’s file, arm, or task counts.
-            </p>
-            <div class="actions"><a href="https://github.com/mulasakee17/swarmalpha/blob/master/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-manifest.json">Open the public manifest</a><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json">Inspect task 1’s recorded trajectory</a>
-            </div>
-          </details>
-          <p class="source-note">Source: <code>mulasakee17/swarmalpha</code>, public source version <code>4fcfff940b32e9dd867d4df257ee27455485488d</code>. Minimal design and manifest export prepared 7 October 2026. The frozen-input manifest for the handoff figures was unavailable at the public path checked; no result chart or candidate submission package is reproduced.
-          </p>
-          <ul class="reading-links">
-            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/ACTIVE_RESEARCH_SURFACE.md">Current status and handoff boundaries</a>
-            </li>
-            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_ANALYSIS_FREEZE_V1.md">Frozen polarity-bundle comparison design</a>
-            </li>
-            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">Public historical report with result boundaries</a>
-            </li>
-          </ul>
-          <div class="actions"><a href="../../assets/evidence/swarmalpha-design.json">Open the evidence and source record (JSON)</a><a href="../../assets/evidence/swarmalpha-LICENSE.txt">MIT license notice</a>
-          </div>
+          <p>A group of agents can see different evidence, disagree, and revise its reports through discussion. How does that local information become a collective judgment? Which changes in the group can we observe and describe from outside its conversation?</p>
+          <p>I approached these questions by building an observation and experiment layer around the agents, then testing what happens when the information available to them changes.</p>
         </div>
       </section>
       <section class="section container split">
-        <h2 data-reveal>Role and choices
-        </h2>
+        <h2 data-reveal>What I Built</h2>
         <div data-reveal>
-          <p>I own the research question, experiment boundaries, and interpretation of the outputs, with AI assistance in analysis, implementation, drafting, and checks. The key choice is to separate the exposure condition from the score, and to preserve the record needed to check how a comparison was formed.
-          </p>
-          <p>A probability report is an observable output. The Brier loss scores that output against the task outcome; it should not be renamed a measurement of an agent’s internal beliefs. Missing, failed, primary, and recovery runs require separate accounting.
-          </p>
+          <p>The work produced a multi-agent experiment system with controlled information disclosure, comparisons branching from a shared discussion state, and records of actual model runs. It also produced tools for describing group processes through information exposure, evidence use, source records, responses, and resource use.</p>
+          <p>The archive brings together reusable code, experiment designs, and measurement contracts. I set the research direction, experiment boundaries, and interpretation, with AI assisting in implementation and analysis. The process descriptor is implemented and structurally checked; its empirical validity remains a research question.</p>
+          <p><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json">Inspect a recorded GLM-4.6V run</a> · <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/architecture/COLLECTIVE_DECISION_PROCESS_STATE_V0.md">Read the measurement contract</a></p>
         </div>
       </section>
-      <section class="section container split">
-        <h2 data-reveal>What would be valuable next?
-        </h2>
+      <section id="evidence" class="section container split">
+        <h2 data-reveal>Research &amp; Findings</h2>
         <div data-reveal>
-          <p>Independent inspection of the experiment’s units, matched conditions, missing-data treatment, and interpretation would be more useful than a broader claim. The archive is a basis for that conversation, not a claim of publication or acceptance.
-          </p>
-          <p><a href="mailto:huimouye@qq.com?subject=SwarmAlpha%20experimental%20design">Discuss the experimental design</a>
-          </p>
+          <p>Experiments with real models found that information disclosure can change agents’ reported judgments. In a post-hoc replication across 45 tasks and two seeds with <code>deepseek-chat</code>, disclosing attacking relations produced lower average Brier loss than disclosing supporting relations, with individual tasks showing the reverse. This measured probability reports; it did not establish a general rule for choosing interventions. <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/FORK_CONFIRMATORY_RESULTS_V3_2026-08-16.md">Read the experiment report</a>.</p>
+          <p>Some early predictive hypotheses were not supported by later checks. The research consequently moved toward more careful descriptions of group states and clearer measurement contracts. The README and reports preserve that evolution, including negative findings and the limits of the experiments. Active research has stopped; the code and records remain available for further study and engineering handoff.</p>
+          <p><a href="https://github.com/mulasakee17/swarmalpha/tree/b0d9f16b499dd949391bc7d6b84640fa98d43b42#readme">Read the research overview</a> · <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">Follow-up analysis</a> · <a href="mailto:huimouye@qq.com?subject=SwarmAlpha%20experimental%20design">Discuss the work</a></p>
         </div>
       </section>
     </main>

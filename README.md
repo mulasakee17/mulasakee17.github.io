@@ -1,170 +1,40 @@
-# Lucius — Personal Research Website
+# Lucius He — Personal website
 
-Personal website for **Lucius (贺孟元)** — Independent Researcher · Founder ·
-Builder working on **agent systems, physical AI and collective intelligence**.
+A static portfolio for Lucius He (贺孟元). Plain HTML, CSS, and vanilla JavaScript; no framework, build step, analytics, or external runtime dependencies.
 
-Featured work: **Moonblade** (Physical Skill Layer, prototype in development)
-and **SwarmAlpha** (experimental research on multi-agent collective
-decision-making). Earlier work (Phase Reversal notes, Personal Agent Runtime)
-is kept under lower-weight archive sections.
+## Pages and evidence
 
-Also hosts **日之炽 · RIZHICHI**, an independent technology venture by Lucius,
-at `/rizhichi/`.
+- `index.html`: introduction, three project entries, approach, about, and contact.
+- `work/moonblade/`: engineering prototype and an eight-input synthetic software trace. The interactive browser reads the published HTML record; it makes no model or hardware calls. Full records remain readable without JavaScript.
+- `work/swarmalpha/`: stopped research archive and engineering handoff, with the public experimental design and its interpretation boundaries.
+- `work/ancestors/`: a bounded public reading path; the personal collection remains private.
+- `assets/evidence/`: published JSON evidence exports and the SwarmAlpha license notice. Preserve provenance and limitations when changing their presentation.
+- `archive/`: earlier systems and research, with PDFs in `research/`.
+- `rizhichi/`: secondary RIZHICHI page.
 
-Built as a **static GitHub Pages site**: plain HTML, CSS, and vanilla
-JavaScript. No framework, no build step, no dependencies. Push to GitHub and
-it deploys.
+`style.css` owns shared tokens and layout. `script.js` provides progressive enhancement: header state, motion-aware reveals, and the Moonblade record browser. Contact email, GitHub, and WeChat QR use ordinary links.
 
----
+## Local preview
 
-## File structure
+From the repository root:
 
-```
-.
-├── index.html          # Personal homepage (work + evidence + notes + company entry)
-├── style.css           # Shared design system — tokens at the top, easy to tweak
-├── script.js           # Vanilla JS: header state, scroll reveal, WeChat modal
-├── favicon.svg         # Asterisk mark used as the browser tab icon
-├── .nojekyll           # Tells GitHub Pages not to run Jekyll
-├── assets/
-│   ├── README.md       # Drop-in instructions for the QR code
-│   ├── wechat-qr.webp  # your WeChat QR (currently the WeChat card image)
-│   └── og-image.png    # 1200×630 social preview (Open Graph / Twitter)
-├── rizhichi/           # 日之炽 · RIZHICHI — company page
-│   ├── index.html      # Hero, What We Build, Thesis, Founder, Contact
-│   ├── rizhichi.css    # Small lab-identity layer over ../style.css
-│   └── favicon.svg     # Orbit mark (ring + displaced body)
-└── research/
-    ├── phase-reversal-brief.pdf            # "Read Brief" target
-    └── phase-reversal-whitepaper-cn.pdf    # "Full Research Note" target
-```
-
----
-
-## Page structure (index.html)
-
-1. **Hero** — name, role, one-line identity, the guiding research question.
-2. **Selected Work** — the two current headline projects:
-   - `01 Moonblade` — Featured Build (no public repo yet; status chip only)
-   - `02 SwarmAlpha` — Featured Research (evidence table + GitHub links)
-3. **Selected Evidence** — five verifiable facts, nothing louder.
-4. **Selected Notes** — earlier research notes (Phase Reversal Hypothesis).
-5. **Earlier Systems** — previous explorations (Personal Agent Runtime).
-6. **Company** — RIZHICHI entry card.
-7. **Research Experience** — current independent research context.
-8. **Contact** — email / GitHub / WeChat modal.
-
----
-
-## Links & content — where everything lives now
-
-All initial placeholders are wired up. To change anything:
-
-| Item                            | Where to edit                                        |
-| ------------------------------- | ---------------------------------------------------- |
-| Contact email                   | `index.html` / `rizhichi/index.html` → `mailto:huimouye@qq.com` |
-| GitHub profile URL              | `index.html` / `rizhichi/index.html` → nav / hero / contact |
-| SwarmAlpha repo (`swarmalpha`)  | `index.html` + `rizhichi/index.html` → the SwarmAlpha buttons |
-| SwarmAlpha working paper        | `index.html` → "Working Paper" → `PAPER_DRAFT.md` in the swarmalpha repo |
-| Personal Agent Runtime link     | `index.html` (Earlier Systems) + `rizhichi/index.html` (What We Build) → `https://github.com/mulasakee17/personal-agent-runtime` |
-| Faculty profile (Xiaogang Peng) | `index.html` (Research Experience) → `https://ai.szu.edu.cn/info/1074/1334.htm` |
-| Moonblade                       | `index.html` + `rizhichi/index.html` — status chip only; add a repo link when one exists |
-| Phase Reversal brief            | `research/phase-reversal-brief.pdf` (replace the file) |
-| Phase Reversal full note        | `research/phase-reversal-whitepaper-cn.pdf` (replace the file) |
-| Canonical / OG URLs             | `<head>` of `index.html` and `rizhichi/index.html`    |
-
-All internal links are relative, so the site works from any domain or
-sub-path — nothing to reconfigure when you change hosting.
-
----
-
-## How to run locally
-
-Any static server works — no build tools needed.
-
-**Option A — Python (easiest if installed):**
-
-```bash
-cd mulasakee17.github.io
+```sh
 python -m http.server 8000
-# open http://localhost:8000
 ```
 
-**Option B — VS Code:** install the *Live Server* extension, right-click
-`index.html` → *Open with Live Server*.
+Open `http://localhost:8000/`. No installation is required. Direct file opening also supports the static pages and trace browser.
 
-**Option C — quick check:** double-click `index.html` to open it directly.
-Everything is static, so this works fine for a first look.
+## Editing and checks
 
----
+Keep claims within the published source boundaries. Preserve existing anchor destinations and relative links. Check the homepage and each case at desktop and phone widths, including keyboard focus and reduced motion. The Moonblade browser must match the full record and remain usable at its first and last inputs.
 
-## How to modify the featured projects
+```sh
+node --check script.js
+git diff --check
+```
 
-Each project is one `<article class="project">` block in `index.html`:
+The social image is `assets/og-image.png`; metadata lives in each page head. The WeChat image is `assets/wechat-qr.webp`, opened as an ordinary image link.
 
-- `project--featured` marks the two headline projects (larger title).
-- `project--note` marks archive-tier entries (smaller title).
-- The `.evidence` list renders the restrained Research Question / Method /
-  Evidence / Status rows.
-- Keep claims limited to what the linked repositories actually show.
+## Publication
 
----
-
-## How to replace the research PDFs
-
-The two Phase Reversal documents are PDFs in `research/`:
-
-- `research/phase-reversal-brief.pdf` — linked from "Read Brief"
-- `research/phase-reversal-whitepaper-cn.pdf` — linked from "Full Research Note"
-
-To update a document, overwrite the PDF (keep the same filename) and push —
-GitHub Pages serves PDFs as-is, no extra setup. If you rename a file, update
-the matching `href` in `index.html`. The buttons open the PDF in a new tab so
-visitors stay on the landing page.
-
----
-
-## How to replace the social preview image
-
-`assets/og-image.png` (1200×630) is the Open Graph / Twitter card image. To
-regenerate it, render a new PNG with the same name and push — keep the exact
-filename so the `<meta property="og:image">` tags keep working.
-
----
-
-## How to replace the WeChat QR code
-
-1. Export your WeChat QR (a square crop of just the QR is recommended) as a `.webp`.
-2. Save it as `assets/wechat-qr.webp` (overwrite the file).
-
-The current file is the full WeChat card image (640 × 838). A clean square
-crop of the QR scans more reliably and keeps the modal compact.
-
-If the image is missing, the WeChat modal gracefully shows
-*"WeChat QR coming soon."* — nothing breaks.
-
----
-
-## How to deploy to GitHub Pages
-
-1. Commit and push your changes to the `main` branch.
-2. On GitHub, open the repo → **Settings** → **Pages**.
-3. Under **Build and deployment** → **Source**, choose
-   **"Deploy from a branch"**.
-4. Set **Branch** to `main` and **folder** to `/` (root) → **Save**.
-5. Wait ~1 minute. Your site is live at
-   `https://<your-username>.github.io/`.
-
-The `.nojekyll` file ensures GitHub Pages serves your files as-is (no Jekyll
-processing).
-
----
-
-## Privacy & maintenance notes
-
-- No analytics, no tracking scripts, no cookies.
-- The footer states *"No tracking"* — keep it that way.
-- Favicon, styles, and scripts are all local files; the page makes **zero**
-  external requests, which keeps QR-code scans fast even on slow connections.
-
-Built with plain HTML5, CSS3, and vanilla JavaScript.
+The repository is configured for static GitHub Pages. A push to a publishing branch may publish changes. Local review work should remain local until publication is explicitly authorized; do not push or merge merely to preview.
