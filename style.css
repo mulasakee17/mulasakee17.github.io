@@ -612,3 +612,11 @@ html.js-reveal [data-reveal]:focus-within{
   .project-index { padding-bottom: 48px; }
   .project-index a { padding-block: 18px; gap: 4px; }
 }
+
+/* The new reading route stays in the existing editorial grid. */
+.reading-story > div { max-width: 70ch; }
+.historical-reading { margin-top: var(--entry-gap); border-top: 1px solid var(--line); }
+.historical-reading > summary { padding-block: var(--entry-padding); color: var(--accent); cursor: pointer; }
+.historical-reading .reading-lenses { grid-template-columns: 1fr; }
+.historical-reading .reading-lenses article + article { margin-top: var(--entry-gap); }
+.historical-reading .evidence-panel { padding: 0; background: transparent; }

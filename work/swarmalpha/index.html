@@ -62,102 +62,16 @@
           <p class="source-note">This is a retrospective thread through a changing research programme. The implemented descriptor has synthetic structural checks; empirical validity and general governance remain unresolved. <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/architecture/COLLECTIVE_DECISION_PROCESS_STATE_V0.md">Inspect the descriptor contract</a>, <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_PROCESS_STATE_FAILURE_PREDICTION_AUDIT_2026-08-13.md">prediction audit</a>, and <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/COLLECTIVE_DYNAMICS_D1_CROSS_CHANNEL_CONSTRUCT_AUDIT_2026-08-29.md">cross-channel audit</a>.</p>
         </div>
       </section>
-      <section id="evidence" class="section container">
-        <div class="section-heading">
-          <h2 data-reveal>What the experiments changed.
-          </h2>
-          <p data-reveal>An average effect, a task that went the other way, and a later correction to the explanation. These are reported historical findings, not a new reproduction.
-          </p>
+      <section id="evidence" class="section container split">
+        <h2 data-reveal>A finding worth keeping. A question still open.</h2>
+        <div data-reveal>
+          <p>The experiments branched from a shared discussion state and varied the information agents received: a baseline continuation, supporting relations, or attacking relations. They then compared final probability reports using Brier loss, where lower is better.</p>
+          <p>The 16 August 2026 V3 report records a post-hoc replication across <strong>45 tasks and two seeds</strong> with <code>deepseek-chat</code>. ATTACKS − SUPPORTS averaged <strong>−0.412 Brier loss</strong>, with a reported 95% task-cluster bootstrap interval of [−0.571, −0.267]. Seed 0 reused the earlier run; seed 1 was new. <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/FORK_CONFIRMATORY_RESULTS_V3_2026-08-16.md">Read the V3 report</a> or the <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/FORK_CONFIRMATORY_RESULTS_2026-08-15.md">earlier one-seed report</a>.</p>
+          <p>An average difference can exist before we know when to choose an intervention. A development-stage within-task association between evidence reuse and Brier loss did not replicate in V3’s confirmation set. A later, separate analysis also found that the ATTACKS advantage was not confined to initially wrong groups, narrowing an appealing “targeted rescue” interpretation. <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">Read the revised interpretation</a>.</p>
+          <p class="source-note">Historical reported findings, not a new reproduction. Fixed arm order, missing reports, and insufficient re-presentation controls limit mechanism claims; complete V3 raw outputs are absent from public Git. The task is the statistical unit, with seeds averaged within each task. The later analysis reused V3 data alongside a separate GLM batch; it is not an independent replication of V3.</p>
+          <p><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json">Inspect a public GLM-4.6V experiment trajectory</a>. This separate recorded experiment is not V3 raw output or part of its analysis denominator.</p>
+          <p><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_ANALYSIS_FREEZE_V1.md">Later analysis contract</a> · <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/ACTIVE_RESEARCH_SURFACE.md">Archive and handoff boundaries</a> · <a href="../../assets/evidence/swarmalpha-design.json">Earlier design and source record (JSON)</a> · <a href="../../assets/evidence/swarmalpha-LICENSE.txt">MIT notice</a></p>
         </div>
-        <div class="research-findings">
-          <article class="finding-main">
-            <h3>Attacking information improved the average score.</h3>
-            <p>The 15 August 2026 report compared CONTROL, SUPPORTS, and ATTACKS across <strong>45 tasks, one seed, and three arms</strong> using <code>deepseek-chat</code> on a hidden benchmark. Lower Brier loss means more accurate probability reports.</p>
-            <figure class="effect-chart" aria-labelledby="effect-caption">
-              <svg viewBox="0 0 700 170" role="img" aria-labelledby="effect-title effect-desc">
-                <title id="effect-title">Reported mean ATTACKS minus SUPPORTS Brier loss: −0.343</title>
-                <desc id="effect-desc">The 95 percent confidence interval is minus 0.507 to minus 0.193, entirely below zero. This is a reported historical result for 45 tasks and one seed.</desc>
-                <line class="chart-axis" x1="60" x2="650" y1="100" y2="100"/>
-                <line class="chart-zero" x1="566" x2="566" y1="25" y2="115"/>
-                <line class="chart-interval" x1="139" x2="403" y1="65" y2="65"/>
-                <line class="chart-cap" x1="139" x2="139" y1="54" y2="76"/>
-                <line class="chart-cap" x1="403" x2="403" y1="54" y2="76"/>
-                <circle class="chart-point" cx="277" cy="65" r="7"/>
-                <text x="277" y="35" text-anchor="middle">−0.343</text>
-                <text x="60" y="135" text-anchor="middle">−0.6</text>
-                <text x="229" y="135" text-anchor="middle">−0.4</text>
-                <text x="397" y="135" text-anchor="middle">−0.2</text>
-                <text x="566" y="135" text-anchor="middle">0</text>
-                <text x="650" y="135" text-anchor="middle">+0.1</text>
-              </svg>
-              <figcaption id="effect-caption"><strong>ATTACKS − SUPPORTS: −0.343 mean Brier loss.</strong> Reported 95% CI [−0.507, −0.193]; task-level paired cluster bootstrap, 10,000 resamples. The plot transcribes the report’s estimate and interval.</figcaption>
-            </figure>
-            <p class="source-note"><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/FORK_CONFIRMATORY_RESULTS_2026-08-15.md">Read the historical result and statistical method</a>. This is a benchmark- and model-specific finding from one seed.</p>
-          </article>
-          <article class="finding-note">
-            <h3>The average leaves a counterexample.</h3>
-            <p>On <strong>task 17</strong>, SUPPORTS scored <strong>0.354</strong> and ATTACKS scored <strong>1.068</strong>. Attacking information performed worse on this task.</p>
-            <p>The useful question becomes when an intervention helps or harms a group—not whether criticism is always beneficial.</p>
-            <p class="source-note">Same 15 August report and experiment; task 17 is an individual counterexample, not a second aggregate result.</p>
-          </article>
-          <article class="finding-note">
-            <h3>A narrower explanation did not hold.</h3>
-            <p>The 22 August post-hoc offline bundle analysis corrected the idea that the advantage was specific to rescuing initially wrong groups. In its separate GLM correct-state analysis, <code>GAP_AS = Brier_SUPPORTS − Brier_ATTACKS</code> was <strong>+0.3349</strong>, with reported 95% CI <strong>[0.0883, 0.6868]</strong>.</p>
-            <p>The ATTACKS–SUPPORTS difference also appeared in the GLM correct-state stratum (12 task/seed blocks). Without a frozen interaction test, the evidence did not support a claim that the effect existed only in wrong states.</p>
-            <p class="source-note"><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">Read the follow-up and revised interpretation</a>. Different analysis and model; do not pool it with the 45-task deepseek-chat comparison. GAP_AS has the opposite sign convention to the chart above.</p>
-          </article>
-        </div>
-        <details class="design-disclosure"><summary>Inspect the comparison design, records, and provenance</summary>
-        <div class="evidence-panel">
-          <h3>The three-arm comparison contract
-          </h3>
-          <p class="status">Public design and manifest · Inspected 7 October 2026
-          </p>
-          <p>Paired block: <strong>task × seed</strong>. Statistical unit: <strong>task</strong>. The conditions below continue from a shared discussion state.
-          </p>
-          <figure class="experiment-map" aria-labelledby="experiment-caption">
-            <div class="experiment-origin"><span class="diagram-label">Hold the starting point fixed</span><strong>Shared Round-1 discussion state</strong><span>Same task, seed, model and resolution</span></div>
-            <div class="experiment-arms">
-              <div><span class="diagram-label">CONTROL</span><h4>Baseline continuation</h4><p>The existing fork comparison’s baseline.</p></div>
-              <div><span class="diagram-label">SUPPORTS</span><h4>Supporting relations</h4><p>Show the implemented bundle of model-self-labeled supporting relations.</p></div>
-              <div><span class="diagram-label">ATTACKS</span><h4>Attacking relations</h4><p>Show the implemented bundle of model-self-labeled attacking relations.</p></div>
-            </div>
-            <div class="experiment-output"><span class="diagram-label">Observe, then score offline</span><strong>Final probability reports → Brier loss</strong><span>Compare only blocks with all three final scores.</span></div>
-            <figcaption id="experiment-caption">The intervention is information exposure. The measured output is a report and its score.</figcaption>
-          </figure>
-          <details>
-            <summary>What makes a block comparable?</summary>
-          <p>The frozen analysis requires one row per condition, matching task, seed, model, resolution and Round-1 state hash; actual Round-1 probability arrays must match. Final Brier is recomputed from final agent beliefs.
-          </p>
-          <p>A contrast needs non-null final Brier in all three conditions. Incomplete blocks remain missing; they are not set to zero, repaired or imputed.
-          </p>
-          </details>
-          <p class="boundary">The three-arm comparison design below is a distinct documented analysis surface. Model self-labels describe the implemented information bundle; probability reports are observable outputs, rather than direct measurements of internal cognition. This website transcribes public reports and did not run new experiments or recompute their results.
-          </p>
-          <details>
-            <summary>Inspect a separate public record slice
-            </summary>
-            <p>A separate publicly tracked GLM-4.6V seed-1 trajectory record slice. This is not the three-arm comparison dataset or its analysis denominator.
-            </p>
-            <p>Source task identifiers: <code>1, 8, 15, 22, 29</code>. These five records are not the main research denominator. They cannot be combined with the handoff’s file, arm, or task counts.
-            </p>
-            <div class="actions"><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-manifest.json">Open the public manifest</a><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json">Inspect task 1’s recorded trajectory</a>
-            </div>
-          </details>
-          <p class="source-note">Source: <code>mulasakee17/swarmalpha</code>, public source version <code>4fcfff940b32e9dd867d4df257ee27455485488d</code>. Minimal design and manifest export prepared 7 October 2026. The frozen-input manifest for the handoff figures was unavailable at the public path checked. The chart above uses only the separate public 15 August report; private candidate-submission material is excluded.
-          </p>
-          <ul class="reading-links">
-            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/ACTIVE_RESEARCH_SURFACE.md">Current status and handoff boundaries</a>
-            </li>
-            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_ANALYSIS_FREEZE_V1.md">Frozen polarity-bundle comparison design</a>
-            </li>
-            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">Public historical report with result boundaries</a>
-            </li>
-          </ul>
-          <div class="actions"><a href="../../assets/evidence/swarmalpha-design.json">Open the evidence and source record (JSON)</a><a href="../../assets/evidence/swarmalpha-LICENSE.txt">MIT license notice</a>
-          </div>
-        </div>
-        </details>
       </section>
       <section class="section container split">
         <h2 data-reveal>Separate the intervention from the explanation
