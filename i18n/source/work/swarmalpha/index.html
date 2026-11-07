@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SwarmAlpha — Lucius He
+    </title>
+    <meta name="description" content="Research into collective decisions: external observation, information-disclosure experiments, and the evidence that revised the interpretation.">
+    <meta name="theme-color" content="#F7F4EF">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://mulasakee17.github.io/work/swarmalpha/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lucius He">
+    <meta property="og:title" content="SwarmAlpha — Lucius He">
+    <meta property="og:description" content="Research into collective decisions: external observation, information-disclosure experiments, and the evidence that revised the interpretation.">
+    <meta property="og:url" content="https://mulasakee17.github.io/work/swarmalpha/">
+    <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Intelligence, grounded in reality. Understanding, built to last.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SwarmAlpha — Lucius He">
+    <meta name="twitter:description" content="Research into collective decisions: external observation, information-disclosure experiments, and the evidence that revised the interpretation.">
+    <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body id="top">
+    <!-- Design: extend the existing warm white, ink and oxblood identity. Real records lead the work; static reading and native links carry the experience. --><a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner"><a class="wordmark" href="../../">Lucius <span lang="zh-CN">贺孟元</span></a>
+        <nav aria-label="Primary"><a href="../../#work">Work</a><a href="../../#approach">Approach</a><a href="../../#about">About</a><a href="../../#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="case-hero container"><a class="back-link" href="../../#work">Back to work</a>
+        <h1 data-reveal>How do partial views<br>become a collective judgment?</h1>
+        <p class="lead" data-reveal>SwarmAlpha is my experimental research into how AI agents with different local information form collective judgments—and what an outside observer can learn from the process.</p>
+        <p class="status" data-reveal>SwarmAlpha · Multi-agent research archive</p>
+        <div class="actions"><a class="button" href="https://github.com/mulasakee17/swarmalpha/tree/b0d9f16b499dd949391bc7d6b84640fa98d43b42">View GitHub Repository</a><a class="text-link" href="#evidence">Read the findings</a></div>
+        <p class="source-note">Repository link opens the reviewed research-evolution README, pending merge into the default branch.</p>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>Research Question</h2>
+        <div data-reveal>
+          <p>A group of agents can see different evidence, disagree, and revise its reports through discussion. How does that local information become a collective judgment? Which changes in the group can we observe and describe from outside its conversation?</p>
+          <p>I approached these questions by building an observation and experiment layer around the agents, then testing what happens when the information available to them changes.</p>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>What I Built</h2>
+        <div data-reveal>
+          <p>The work produced a multi-agent experiment system with controlled information disclosure, comparisons branching from a shared discussion state, and records of actual model runs. It also produced tools for describing group processes through information exposure, evidence use, source records, responses, and resource use.</p>
+          <p>The archive brings together reusable code, experiment designs, and measurement contracts. I set the research direction, experiment boundaries, and interpretation, with AI assisting in implementation and analysis. The process descriptor is implemented and structurally checked; its empirical validity remains a research question.</p>
+          <p><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json">Inspect a recorded GLM-4.6V run</a> · <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/architecture/COLLECTIVE_DECISION_PROCESS_STATE_V0.md">Read the measurement contract</a></p>
+        </div>
+      </section>
+      <section id="evidence" class="section container split">
+        <h2 data-reveal>Research &amp; Findings</h2>
+        <div data-reveal>
+          <p>Experiments with real models found that information disclosure can change agents’ reported judgments. In a post-hoc replication across 45 tasks and two seeds with <code>deepseek-chat</code>, disclosing attacking relations produced lower average Brier loss than disclosing supporting relations, with individual tasks showing the reverse. This measured probability reports; it did not establish a general rule for choosing interventions. <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/FORK_CONFIRMATORY_RESULTS_V3_2026-08-16.md">Read the experiment report</a>.</p>
+          <p>Some early predictive hypotheses were not supported by later checks. The research consequently moved toward more careful descriptions of group states and clearer measurement contracts. The README and reports preserve that evolution, including negative findings and the limits of the experiments. Active research has stopped; the code and records remain available for further study and engineering handoff.</p>
+          <p><a href="https://github.com/mulasakee17/swarmalpha/tree/b0d9f16b499dd949391bc7d6b84640fa98d43b42#readme">Read the research overview</a> · <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">Follow-up analysis</a> · <a href="mailto:huimouye@qq.com?subject=SwarmAlpha%20experimental%20design">Discuss the work</a></p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Lucius He
+        </p>
+        <div><a href="../../archive/">Archive</a><a href="../../rizhichi/">RIZHICHI</a><a href="../../#contact">Contact</a>
+        </div>
+        <p>Static pages · No tracking
+        </p>
+      </div>
+    </footer>
+    <script src="../../script.js" defer>
+    </script>
+  </body>
+</html>

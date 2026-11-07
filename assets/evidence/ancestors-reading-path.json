@@ -38,20 +38,16 @@
   "provenance": {
     "collection": "The Ancestors",
     "repository_access": "Private; repository access is not a visitor-facing link",
-    "source_commit": "c33856665718be17d790e676ec7294a1becb9e2f",
-    "selected_path": "outputs/The-Ancestors/阅读导航/从问题进入/反常出现，解释怎么改.md",
-    "path_blob": "da17e8859a53c940fc3c5ea6b9c08ea8c113256c",
-    "supporting_exhibits": [
-      {
-        "id": "E-000014",
-        "blob": "2190e635b93f83b9d3978c145dd11ed5744cac7f"
-      },
-      {
-        "id": "E-000015",
-        "blob": "592875a5f97d5fd47e787e36c9d923515ea16e84"
-      }
-    ],
     "publication_basis": "The owner requested a public general collection slice. This export rewrites only the reviewed general reading path in English and links to external sources. Private revision, user archives, chats and relationship material are excluded.",
     "execution": "Bounded authenticated file reading and anonymous source-link checks. No reader study was executed."
+  },
+  "collection_snapshot": {
+    "as_of": "2026-10-06",
+    "structured_records": 503,
+    "exhibits": 67,
+    "reviewed_relationships": 381,
+    "source": "Internal collection audit, 6 October 2026",
+    "publication_basis": "Owner-approved aggregate counts only; the private audit is not distributed.",
+    "boundary": "Historical collection scale and review status, not a claim of learning outcomes or that all records were reviewed."
   }
 }

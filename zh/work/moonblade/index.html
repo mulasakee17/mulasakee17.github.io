@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>月刃 Moonblade — Lucius He
+    </title>
+    <meta name="description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta name="theme-color" content="#F7F4EF">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://mulasakee17.github.io/zh/work/moonblade/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lucius He">
+    <meta property="og:title" content="月刃 Moonblade — Lucius He">
+    <meta property="og:description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta property="og:url" content="https://mulasakee17.github.io/zh/work/moonblade/">
+    <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="让智能立足现实，让理解长久留存。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="月刃 Moonblade — Lucius He">
+    <meta name="twitter:description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" hreflang="en" href="https://mulasakee17.github.io/work/moonblade/">
+<link rel="alternate" hreflang="zh-CN" href="https://mulasakee17.github.io/zh/work/moonblade/">
+<link rel="alternate" hreflang="x-default" href="https://mulasakee17.github.io/work/moonblade/">
+<meta property="og:locale" content="zh_CN">
+<script src="/i18n/language.js" defer></script>
+</head>
+  <body id="top">
+    <!-- Design: extend the existing warm white, ink and oxblood identity. Real records lead the work; static reading and native links carry the experience. --><a class="skip-link" href="#main">跳至正文</a>
+    <header class="site-header">
+      <div class="container header-inner"><nav class="language-switch" aria-label="语言"><a data-language="en" lang="en" hreflang="en" href="/work/moonblade/?lang=en">EN</a><a data-language="zh-CN" lang="zh-CN" hreflang="zh-CN" href="/zh/work/moonblade/" aria-current="page">中文</a></nav><a class="wordmark" href="/zh/">Lucius <span lang="zh-CN">贺孟元</span></a>
+        <nav aria-label="主导航"><a href="/zh/#work">作品</a><a href="/zh/#approach">方法</a><a href="/zh/#about">关于</a><a href="/zh/#contact">联系</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="case-hero container"><a class="back-link" href="/zh/#work">返回作品</a>
+        <h1 data-reveal>理解某一个具体物体。
+        </h1>
+        <p class="lead" data-reveal>下一个人或 AI 如何接续对某个实物的理解，并知道何时需要重新核查？
+        </p>
+        <p class="status" data-reveal>月刃 · 工程原型
+        </p>
+        <a class="text-link case-evidence-link" href="#evidence">查看八次输入的执行记录</a>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>让实物承载自身的上下文
+        </h2>
+        <div data-reveal>
+          <p>这一方向希望赋予某个具体实物持久的身份、知识、任务技能与现实上下文，供兼容的 AI 接续使用。实物发生变化时，对它的理解也应重新核查。
+          </p>
+          <p>目前的原型实现了这一构想的一部分：运行时处理证据、检查任务条件、保留矛盾，并记录状态转换。下面的回放通过一个已经执行的小型软件案例，展示这套机制。
+          </p>
+        </div>
+      </section>
+      <section id="evidence" class="section container">
+        <div class="section-heading">
+          <h2 data-reveal>查看一段交互记录。
+          </h2>
+          <p data-reveal>方向反转使任务停止正常推进。相互冲突的观测始终保留，直到后续证据支持继续执行。浏览八次输入记录，查看这一过程。
+          </p>
+        </div>
+        <div class="evidence-panel" data-trace-browser>
+          <h3>八次输入，一份恢复记录。
+          </h3>
+          <p class="status">合成输入的软件执行记录 · 执行于 2026 年 10 月 7 日
+          </p>
+          <p>现有的 <code>mini_skill</code> 测试样例向确定性运行时提供观测。方向反转触发失败与恢复。相互冲突的观测被记录下来；后续输入解除冲突，最终输入使软件进入状态 <code>COMPLETED</code>。
+          </p>
+          <p class="boundary">证据范围：使用合成输入与时间戳进行确定性执行，未调用模型或硬件。COMPLETED 是软件状态。真实任务的成功与理解的长期传承仍需分别验证；这段序列展示了恢复过程，未展示 BLOCK。
+          </p>
+          <ol class="recovery-path" aria-label="执行记录中的关键环节"><li><strong>发现异常</strong><span>输入 3：方向反转，进入恢复状态。</span></li><li><strong>保留矛盾</strong><span>输入 4—6：新观测不会悄然覆盖已有证据。</span></li><li><strong>继续推进</strong><span>输入 7：矛盾解除，任务继续推进。</span></li></ol>
+          <ol class="trace-steps">
+            <li data-step>
+            <h4>输入 1：ready
+            </h4>
+            <p>输入： <code>ready = true</code>；置信度 0.93。
+            </p>
+            <p>记录状态： <code>NORMAL</code>，当前步骤 <code>s2</code>。未解除的矛盾：0。
+            </p>
+            <p>状态转换： <code>s1 → s2</code>。世界模型满足全部成功条件。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 2：present
+            </h4>
+            <p>输入： <code>present = true</code>；置信度 0.92。
+            </p>
+            <p>记录状态： <code>NORMAL</code>，当前步骤 <code>s2</code>。未解除的矛盾：0。
+            </p>
+            <p>此输入未记录状态转换。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 3：orientation
+            </h4>
+            <p>输入： <code>orientation = "reversed"</code>；置信度 0.94。
+            </p>
+            <p>记录状态： <code>RECOVERING</code>，当前步骤 <code>s2</code>。未解除的矛盾：0。
+            </p>
+            <p>方向证据： <code>KNOWN</code>，保留值 <code>"reversed"</code>。
+            </p>
+            <p>状态转换： <code>s2 → FAILED:s2</code>。orientation == reversed。
+            </p>
+            <p>状态转换： <code>FAILED:s2 → RECOVERING:fix_orientation</code>。步骤声明恢复操作 'fix_orientation'。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 4：orientation
+            </h4>
+            <p>输入： <code>orientation = "correct"</code>；置信度 0.95。
+            </p>
+            <p>记录状态： <code>RECOVERING</code>，当前步骤 <code>s2</code>。未解除的矛盾：1。
+            </p>
+            <p>方向证据： <code>CONFLICTED</code>，保留值 <code>"reversed"</code>。
+            </p>
+            <p>此输入未记录状态转换。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 5：orientation
+            </h4>
+            <p>输入： <code>orientation = "correct"</code>；置信度 0.94。
+            </p>
+            <p>记录状态： <code>RECOVERING</code>，当前步骤 <code>s2</code>。未解除的矛盾：1。
+            </p>
+            <p>方向证据： <code>CONFLICTED</code>，保留值 <code>"reversed"</code>。
+            </p>
+            <p>此输入未记录状态转换。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 6：orientation
+            </h4>
+            <p>输入： <code>orientation = "correct"</code>；置信度 0.94。
+            </p>
+            <p>记录状态： <code>RECOVERING</code>，当前步骤 <code>s2</code>。未解除的矛盾：1。
+            </p>
+            <p>方向证据： <code>CONFLICTED</code>，保留值 <code>"reversed"</code>。
+            </p>
+            <p>此输入未记录状态转换。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 7：orientation
+            </h4>
+            <p>输入： <code>orientation = "correct"</code>；置信度 0.94。
+            </p>
+            <p>记录状态： <code>NORMAL</code>，当前步骤 <code>s3</code>。未解除的矛盾：0。
+            </p>
+            <p>方向证据： <code>KNOWN</code>，保留值 <code>"correct"</code>。
+            </p>
+            <p>状态转换： <code>RECOVERING:fix_orientation → s2</code>。世界模型完全满足恢复目标 target_state。
+            </p>
+            <p>状态转换： <code>s2 → s3</code>。世界模型满足全部成功条件。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 8：screws
+            </h4>
+            <p>输入： <code>screws = 2</code>；置信度 0.9。
+            </p>
+            <p>记录状态： <code>COMPLETED</code>，当前步骤 <code>s3</code>。未解除的矛盾：0。
+            </p>
+            <p>方向证据： <code>KNOWN</code>，保留值 <code>"correct"</code>。
+            </p>
+            <p>状态转换： <code>s3 → COMPLETED</code>。最后一步已完成；未声明后续步骤。
+            </p>
+            </li>
+          </ol>
+          <details>
+            <summary>阅读检查与来源依据
+            </summary>
+            <p>在 2026 年 10 月 7 日整理证据时，五项已有的回放测试通过。同一序列回放两次，得到相同报告。
+            </p>
+            <p class="source-note">来源： <code>mulasakee17/moonblade</code>，版本 <code>31f168972379323f257aeabcd8c440b93bc5ea66</code>。在本地开发检出版本中执行： <code>e88fb8e1a970f38c90f41c0c75185649d1dcb4f2</code>；相关回放、运行时、辅助代码、模式、配置与测试内容均与来源版本一致。这并非一次干净的完整仓库检出。仓库为私有；这份独立导出是公开证据。
+            </p>
+            <p>可下载记录包含输入、任务条件、状态转换、矛盾历史、事件、来源哈希与执行边界。测试样例历史上的来源标签，不构成实物观测的证据。
+            </p>
+          </details>
+          <div class="actions"><a href="/assets/evidence/moonblade-replay.json">打开完整导出记录（JSON）</a><a href="/assets/evidence/moonblade-replay.json" download>下载记录</a>
+          </div>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>让矛盾留在记录中
+        </h2>
+        <div data-reveal>
+          <p>输入 3 到输入 7 之间体现了一个关键选择：新的观测不会直接替换旧观测。运行时记录矛盾，在矛盾尚未解除时保留先前的值，并等待恢复条件得到满足。
+          </p>
+          <p>当理解传递给下一位操作者时，这份记录使其有据可查。我确定围绕具体实物的问题、系统边界与验收标准；AI 协助实现、分析与检查。
+          </p>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>下一项有用的核查
+        </h2>
+        <div data-reveal>
+          <p>下一项有用的测试，是一项范围明确的实物任务：改变物体，检查过时假设能否被发现，再请另一位操作者找回相关证据。这将把已经实现的恢复机制，与理解如何传承这一更大的问题联系起来。
+          </p>
+          <p><a href="mailto:huimouye@qq.com?subject=Moonblade%20validation">讨论一项边界明确的验证任务</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Lucius He
+        </p>
+        <div><a href="/zh/archive/">档案</a><a href="/zh/rizhichi/">日之炽 RIZHICHI</a><a href="/zh/#contact">联系</a>
+        </div>
+        <p>静态页面 · 不追踪访客
+        </p>
+      </div>
+    </footer>
+    <script src="/script.js" defer>
+    </script>
+  </body>
+</html>

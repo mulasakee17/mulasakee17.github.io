@@ -1,2 +1,6 @@
 # Local impeccable tooling state (critique snapshots, backlog) — not part of the site.
 .impeccable/
+
+# Python generator cache
+__pycache__/
+*.pyc
