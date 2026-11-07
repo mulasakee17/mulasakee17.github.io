@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SwarmAlpha — Lucius He
+    </title>
+    <meta name="description" content="有关信息暴露、概率报告与离线 Brier 损失的可检视档案。">
+    <meta name="theme-color" content="#F7F4EF">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://mulasakee17.github.io/zh/work/swarmalpha/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lucius He">
+    <meta property="og:title" content="SwarmAlpha — Lucius He">
+    <meta property="og:description" content="有关信息暴露、概率报告与离线 Brier 损失的可检视档案。">
+    <meta property="og:url" content="https://mulasakee17.github.io/zh/work/swarmalpha/">
+    <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="立足现实的智能，经得起时间检验的理解。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SwarmAlpha — Lucius He">
+    <meta name="twitter:description" content="有关信息暴露、概率报告与离线 Brier 损失的可检视档案。">
+    <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" hreflang="en" href="https://mulasakee17.github.io/work/swarmalpha/">
+<link rel="alternate" hreflang="zh-CN" href="https://mulasakee17.github.io/zh/work/swarmalpha/">
+<link rel="alternate" hreflang="x-default" href="https://mulasakee17.github.io/work/swarmalpha/">
+<meta property="og:locale" content="zh_CN">
+<script src="/i18n/language.js" defer></script>
+</head>
+  <body id="top">
+    <!-- Design: extend the existing warm white, ink and oxblood identity. Real records lead the work; static reading and native links carry the experience. --><a class="skip-link" href="#main">跳至正文</a>
+    <header class="site-header">
+      <div class="container header-inner"><nav class="language-switch" aria-label="语言"><a data-language="en" lang="en" hreflang="en" href="/work/swarmalpha/?lang=en">EN</a><a data-language="zh-CN" lang="zh-CN" hreflang="zh-CN" href="/zh/work/swarmalpha/" aria-current="page">中文</a></nav><a class="wordmark" href="/zh/">Lucius <span lang="zh-CN">贺孟元</span></a>
+        <nav aria-label="主导航"><a href="/zh/#work">作品</a><a href="/zh/#approach">方法</a><a href="/zh/#about">关于</a><a href="/zh/#contact">联系</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="case-hero container"><a class="back-link" href="/zh/#work">返回作品</a>
+        <h1 data-reveal>改变智能体所见的信息。<br>检视它们给出的报告。
+        </h1>
+        <p class="lead" data-reveal>在 LLM 多智能体实验中，信息暴露会怎样改变概率报告与离线 Brier 损失？
+        </p>
+        <p class="status" data-reveal>SwarmAlpha · 研究档案 / 工程交接
+        </p>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>项目成果
+        </h2>
+        <div data-reveal>
+          <p>SwarmAlpha 提供受控实验流程与已记录的研究内容。干预改变智能体可获得的信息；测量输出是概率报告与离线评分损失。
+          </p>
+          <p>这个区别很重要：这些测量既不能揭示内部认知，也不能分离出纯粹的社会影响，更不能验证通用治理策略。研究已停止；仓库现记录其边界与工程交接。
+          </p>
+        </div>
+      </section>
+      <section id="evidence" class="section container">
+        <div class="section-heading">
+          <h2 data-reveal>在边界内阅读实验。
+          </h2>
+          <p data-reveal>只有明确处理条件、分析单位与测量输出，设计才是有用的证据。在没有可公开、可重新计算的数据集时，这里不绘制结果曲线。
+          </p>
+        </div>
+        <div class="evidence-panel">
+          <h3>三条件比较约定
+          </h3>
+          <p class="status">公开设计与清单 · 检查于 2026 年 10 月 7 日
+          </p>
+          <p>分析单位： <strong>一个任务 × 随机种子区组</strong>。以下条件从同一讨论状态继续。
+          </p>
+          <div class="table-wrap">
+            <table class="comparison">
+              <thead>
+                <tr>
+                  <th scope="col">条件
+                  </th>
+                  <th scope="col">展示内容
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">CONTROL
+                  </th>
+                  <td>现有分支比较中采用的基线延续条件。
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">SUPPORTS
+                  </th>
+                  <td>已实现的披露信息包：由模型自行标记的支持关系。
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">ATTACKS
+                  </th>
+                  <td>已实现的披露信息包：由模型自行标记的攻击关系。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>冻结分析要求每个条件一行，任务、随机种子、模型、分辨率与第 1 轮状态哈希匹配；实际的第 1 轮概率数组也必须一致。最终 Brier 根据智能体最终信念重新计算。
+          </p>
+          <p>一次对比要求三个条件的最终 Brier 均非空。不完整区组保持缺失，不置零、不修补、不插补。
+          </p>
+          <p class="boundary">这是描述性的事后完整区组比较。模型自标记不是已知真值关系，概率变化也不是对内部认知或纯粹社会影响的测量。本次网站工作检查了文档与清单；未运行新实验，也未复现数值结果。
+          </p>
+          <details>
+            <summary>查看另一份公开记录选段
+            </summary>
+            <p>另一份公开跟踪的 GLM-4.6V seed-1 轨迹记录选段。它不是三条件比较的数据集，也不是该分析的分母。
+            </p>
+            <p>来源任务编号： <code>1, 8, 15, 22, 29</code>。这五条记录不是主要研究的分母，不能与交接中的文件、条件组或任务计数合并。
+            </p>
+            <div class="actions"><a href="https://github.com/mulasakee17/swarmalpha/blob/master/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-manifest.json">打开公开清单</a><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/results/v6_collective_dynamics_trajectory_sensor_v1_glm46v_seed1/public-task-1-seed-1.json">查看任务 1 的轨迹记录</a>
+            </div>
+          </details>
+          <p class="source-note">来源： <code>mulasakee17/swarmalpha</code>，公开来源版本 <code>4fcfff940b32e9dd867d4df257ee27455485488d</code>。最小设计与清单导出准备于 2026 年 10 月 7 日。在检查的公开路径中，无法获取交接图表所用的冻结输入清单；此处不复现结果图表或候选投稿包。
+          </p>
+          <ul class="reading-links">
+            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/ACTIVE_RESEARCH_SURFACE.md">当前状态与交接边界</a>
+            </li>
+            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_ANALYSIS_FREEZE_V1.md">冻结的极性信息包比较设计</a>
+            </li>
+            <li><a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">保留结果边界的公开历史报告</a>
+            </li>
+          </ul>
+          <div class="actions"><a href="/assets/evidence/swarmalpha-design.json">打开证据与来源记录（JSON）</a><a href="/assets/evidence/swarmalpha-LICENSE.txt">MIT 许可声明</a>
+          </div>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>我的职责与取舍
+        </h2>
+        <div data-reveal>
+          <p>我负责研究问题、实验边界与输出解读，AI 协助分析、实现、起草与检查。关键选择是将暴露条件与评分分开，并保留核查比较如何形成所需的记录。
+          </p>
+          <p>概率报告是可观测输出。Brier 损失依据任务结果为该输出评分；不应将它改称为智能体内部信念的测量。缺失、失败、主要运行与恢复运行需要分别核算。
+          </p>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>下一步怎样更有价值？
+        </h2>
+        <div data-reveal>
+          <p>独立检查实验单位、匹配条件、缺失数据处理与解读，比提出更宽泛的主张更有价值。本档案是展开这种对话的基础，不代表已发表或被接收。
+          </p>
+          <p><a href="mailto:huimouye@qq.com?subject=SwarmAlpha%20experimental%20design">讨论实验设计</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Lucius He
+        </p>
+        <div><a href="/zh/archive/">档案</a><a href="/zh/rizhichi/">RIZHICHI</a><a href="/zh/#contact">联系</a>
+        </div>
+        <p>静态页面 · 不追踪访客
+        </p>
+      </div>
+    </footer>
+    <script src="/script.js" defer>
+    </script>
+  </body>
+</html>

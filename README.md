@@ -1,5 +1,55 @@
 # Lucius — Personal Research Website
 
+## Bilingual maintenance / 双语维护
+
+The six public pages have complete English versions at their existing routes
+and Simplified Chinese equivalents under `/zh/`. HTML is pre-generated; reading,
+navigation and language switching work without JavaScript. Existing evidence
+downloads remain unchanged and retain their original language and identifiers.
+
+六个公开页面均提供英文与简体中文。英文保留原路径，中文位于 `/zh/`。
+正文、导航和语言切换无需 JavaScript；证据下载保留原始语言和标识符。
+
+Edit **`i18n/source/`** for English HTML and **`i18n/zh-CN.json`** for Chinese
+translations. The source is shared: do not edit generated HTML directly.
+Shared CSS and JavaScript stay at the root. No package installation is needed;
+Python 3.9+ builds the pages using its standard library.
+
+```powershell
+python i18n/build.py
+python i18n/build.py --check
+python i18n/check.py
+node --check script.js
+node --check i18n/language.js
+python -m http.server 8000
+```
+
+Preview at `http://localhost:8000/` and `http://localhost:8000/zh/`, served from
+the site root (opening HTML through `file://` is unsupported). Commit source,
+translations and generated pages together. The build fails on missing prose or
+accessible/metadata translations. Structural checks cover all 12 pages, local
+links, anchors, locale pairs, canonical/hreflang metadata and English fidelity.
+Before release, also inspect both languages on desktop and mobile, with
+JavaScript/storage unavailable, and exercise the event controls.
+
+The language switch retains the current page, query and fragment. An explicit
+choice is saved locally when storage is available. Default English URLs, including deep links,
+negotiate language: saved choice first, then the browser's primary language
+(Chinese → Chinese, otherwise English). Chinese URLs remain explicit. Add `?lang=en` to force an English deep link;
+this also saves the English preference.
+No tracking, cookies, external translation service or additional runtime
+dependency is introduced. Social preview artwork and original evidence remain
+shared; their page metadata and alternative descriptions are localized.
+
+语言切换保留当前页面、查询参数与锚点，并在可用时保存明确选择。默认英文路径（含深层链接）
+按已保存选择、浏览器首选语言依次决定语言；中文路径直接显示中文，`?lang=en`
+明确指定英文并保存英文偏好。
+禁用 JavaScript 时直接显示请求页面，语言链接仍可使用。
+
+See `AGENTS.md` for the permanent bilingual policy and `i18n/GLOSSARY.md` for
+translation conventions. The historical notes below describe earlier site
+iterations; the source tree and generated pages are the current authority.
+
 Personal website for **Lucius (贺孟元)** — Independent Researcher · Founder ·
 Builder working on **agent systems, physical AI and collective intelligence**.
 
@@ -12,8 +62,8 @@ Also hosts **日之炽 · RIZHICHI**, an independent technology venture by Luciu
 at `/rizhichi/`.
 
 Built as a **static GitHub Pages site**: plain HTML, CSS, and vanilla
-JavaScript. No framework, no build step, no dependencies. Push to GitHub and
-it deploys.
+JavaScript. No framework or runtime dependencies. The bilingual pages are
+generated with the standard-library command above before publication.
 
 ---
 

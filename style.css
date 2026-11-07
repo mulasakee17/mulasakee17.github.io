@@ -1,5 +1,6 @@
 /* Existing palette and system fonts, shared across static reading surfaces. */
 :root{
+  --language-target:44px;
   --bg:#f7f4ef;
   --ink:#1c1b19;
   --gray:#5f5b54;
@@ -21,6 +22,31 @@
   --title-size:clamp(2.7rem,6.1vw,5.2rem);
   --subhead-size:clamp(2rem,3.5vw,3rem);
   --line-height:1.65;
+}
+
+/* The language selector shares the existing header and palette. */
+.header-inner > nav:not(.language-switch) { margin-left:auto; }
+.header-inner .language-switch { gap:0; flex-shrink:0; }
+.language-switch a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:var(--language-target);
+  min-height:var(--language-target);
+}
+.language-switch a[aria-current="page"] {
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:.35em;
+}
+html:lang(zh-CN) h1, html:lang(zh-CN) h2, html:lang(zh-CN) h3 {
+  line-height:1.25;
+  letter-spacing:0;
+}
+@media(max-width:800px) {
+  .header-inner > nav:not(.language-switch) { order:3; margin-left:0; }
+  .header-inner .language-switch { width:auto; }
+  .header-inner .wordmark { margin-left:auto; }
 }
 *{
   box-sizing:border-box}

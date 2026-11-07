@@ -1,6 +1,7 @@
 /* Progressive enhancement: every exported record remains readable without JavaScript. */
 (function () {
   'use strict';
+  var chinese = document.documentElement.lang === 'zh-CN';
 
   /* Restore the original ordinary scroll reveal; native scrolling is unchanged. */
   var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -68,8 +69,8 @@
     var next = document.createElement('button');
     var status = document.createElement('span');
     previous.type = next.type = 'button';
-    previous.textContent = 'Previous event';
-    next.textContent = 'Next event';
+    previous.textContent = chinese ? '上一个事件' : 'Previous event';
+    next.textContent = chinese ? '下一个事件' : 'Next event';
     status.setAttribute('aria-live', 'polite');
     nav.append(previous, next, status);
     panel.appendChild(nav);
@@ -83,7 +84,7 @@
           ? 'auto'
           : 'smooth'
       });
-      status.textContent = 'Event ' + (index + 1) + ' of ' + steps.length;
+      status.textContent = chinese ? '事件 ' + (index + 1) + ' / ' + steps.length : 'Event ' + (index + 1) + ' of ' + steps.length;
     }
 
     previous.addEventListener('click', function () { move(-1); });

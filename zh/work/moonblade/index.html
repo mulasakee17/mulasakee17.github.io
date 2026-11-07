@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moonblade — Lucius He
+    </title>
+    <meta name="description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta name="theme-color" content="#F7F4EF">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://mulasakee17.github.io/zh/work/moonblade/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lucius He">
+    <meta property="og:title" content="Moonblade — Lucius He">
+    <meta property="og:description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta property="og:url" content="https://mulasakee17.github.io/zh/work/moonblade/">
+    <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="立足现实的智能，经得起时间检验的理解。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moonblade — Lucius He">
+    <meta name="twitter:description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" hreflang="en" href="https://mulasakee17.github.io/work/moonblade/">
+<link rel="alternate" hreflang="zh-CN" href="https://mulasakee17.github.io/zh/work/moonblade/">
+<link rel="alternate" hreflang="x-default" href="https://mulasakee17.github.io/work/moonblade/">
+<meta property="og:locale" content="zh_CN">
+<script src="/i18n/language.js" defer></script>
+</head>
+  <body id="top">
+    <!-- Design: extend the existing warm white, ink and oxblood identity. Real records lead the work; static reading and native links carry the experience. --><a class="skip-link" href="#main">跳至正文</a>
+    <header class="site-header">
+      <div class="container header-inner"><nav class="language-switch" aria-label="语言"><a data-language="en" lang="en" hreflang="en" href="/work/moonblade/?lang=en">EN</a><a data-language="zh-CN" lang="zh-CN" hreflang="zh-CN" href="/zh/work/moonblade/" aria-current="page">中文</a></nav><a class="wordmark" href="/zh/">Lucius <span lang="zh-CN">贺孟元</span></a>
+        <nav aria-label="主导航"><a href="/zh/#work">作品</a><a href="/zh/#approach">方法</a><a href="/zh/#about">关于</a><a href="/zh/#contact">联系</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="case-hero container"><a class="back-link" href="/zh/#work">返回作品</a>
+        <h1 data-reveal>理解某一个具体物体。
+        </h1>
+        <p class="lead" data-reveal>下一个人或 AI 如何接续对某个实物的理解，并知道何时需要重新核查？
+        </p>
+        <p class="status" data-reveal>Moonblade · 工程原型
+        </p>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>已有内容
+        </h2>
+        <div data-reveal>
+          <p>Moonblade 是一个软件原型，将特定物体的上下文与技能绑定到一次交互，并围绕决策设置核查与证据。其回放模块读取证据序列，报告会话、状态转换、矛盾与事件。
+          </p>
+          <p>这将关注点从能够描述设备的 AI，转向另一位操作者可以检视的记录。回放已经存在；它并不能证明完整持久的物体记忆、跨模型继承或跨设备修复已实现。
+          </p>
+        </div>
+      </section>
+      <section id="evidence" class="section container">
+        <div class="section-heading">
+          <h2 data-reveal>查看一段交互记录。
+          </h2>
+          <p data-reveal>以下展示是一段真实软件执行的可浏览导出。本页面不运行模型，也不操作硬件。
+          </p>
+        </div>
+        <div class="evidence-panel" data-trace-browser>
+          <h3>八次输入，一份恢复记录。
+          </h3>
+          <p class="status">合成输入的软件执行记录 · 执行于 2026 年 10 月 7 日
+          </p>
+          <p>现有的 <code>mini_skill</code> 测试样例向确定性运行时提供观测。方向反转触发失败与恢复。相互冲突的观测被记录下来；后续输入解除冲突，最终输入使软件进入状态 <code>COMPLETED</code>。
+          </p>
+          <p class="boundary">所有观测与时间戳均为合成数据。未调用模型或硬件。软件完成不代表真实任务成功、持久物体记忆、跨模型继承或现场修复。这段序列没有展示 BLOCK。
+          </p>
+          <ol class="trace-steps">
+            <li data-step>
+            <h4>输入 1：ready
+            </h4>
+            <p>输入： <code>ready = true</code>；置信度 0.93。
+            </p>
+            <p>记录状态： <code>NORMAL</code>，当前步骤 <code>s2</code>。未解除的矛盾：0。
+            </p>
+            <p>状态转换： <code>s1 → s2</code>。世界模型满足全部成功条件。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 2：present
+            </h4>
+            <p>输入： <code>present = true</code>；置信度 0.92。
+            </p>
+            <p>记录状态： <code>NORMAL</code>，当前步骤 <code>s2</code>。未解除的矛盾：0。
+            </p>
+            <p>此输入未记录状态转换。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 3：orientation
+            </h4>
+            <p>输入： <code>orientation = &quot;reversed&quot;</code>；置信度 0.94。
+            </p>
+            <p>记录状态： <code>RECOVERING</code>，当前步骤 <code>s2</code>。未解除的矛盾：0。
+            </p>
+            <p>方向证据： <code>KNOWN</code>，保留值 <code>&quot;reversed&quot;</code>。
+            </p>
+            <p>状态转换： <code>s2 → FAILED:s2</code>。orientation == reversed。
+            </p>
+            <p>状态转换： <code>FAILED:s2 → RECOVERING:fix_orientation</code>。步骤声明恢复操作 &#x27;fix_orientation&#x27;。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 4：orientation
+            </h4>
+            <p>输入： <code>orientation = &quot;correct&quot;</code>；置信度 0.95。
+            </p>
+            <p>记录状态： <code>RECOVERING</code>，当前步骤 <code>s2</code>。未解除的矛盾：1。
+            </p>
+            <p>方向证据： <code>CONFLICTED</code>，保留值 <code>&quot;reversed&quot;</code>。
+            </p>
+            <p>此输入未记录状态转换。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 5：orientation
+            </h4>
+            <p>输入： <code>orientation = &quot;correct&quot;</code>；置信度 0.94。
+            </p>
+            <p>记录状态： <code>RECOVERING</code>，当前步骤 <code>s2</code>。未解除的矛盾：1。
+            </p>
+            <p>方向证据： <code>CONFLICTED</code>，保留值 <code>&quot;reversed&quot;</code>。
+            </p>
+            <p>此输入未记录状态转换。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 6：orientation
+            </h4>
+            <p>输入： <code>orientation = &quot;correct&quot;</code>；置信度 0.94。
+            </p>
+            <p>记录状态： <code>RECOVERING</code>，当前步骤 <code>s2</code>。未解除的矛盾：1。
+            </p>
+            <p>方向证据： <code>CONFLICTED</code>，保留值 <code>&quot;reversed&quot;</code>。
+            </p>
+            <p>此输入未记录状态转换。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 7：orientation
+            </h4>
+            <p>输入： <code>orientation = &quot;correct&quot;</code>；置信度 0.94。
+            </p>
+            <p>记录状态： <code>NORMAL</code>，当前步骤 <code>s3</code>。未解除的矛盾：0。
+            </p>
+            <p>方向证据： <code>KNOWN</code>，保留值 <code>&quot;correct&quot;</code>。
+            </p>
+            <p>状态转换： <code>RECOVERING:fix_orientation → s2</code>。世界模型完全满足恢复目标 target_state。
+            </p>
+            <p>状态转换： <code>s2 → s3</code>。世界模型满足全部成功条件。
+            </p>
+            </li>
+            <li data-step>
+            <h4>输入 8：screws
+            </h4>
+            <p>输入： <code>screws = 2</code>；置信度 0.9。
+            </p>
+            <p>记录状态： <code>COMPLETED</code>，当前步骤 <code>s3</code>。未解除的矛盾：0。
+            </p>
+            <p>方向证据： <code>KNOWN</code>，保留值 <code>&quot;correct&quot;</code>。
+            </p>
+            <p>状态转换： <code>s3 → COMPLETED</code>。最后一步已完成；未声明后续步骤。
+            </p>
+            </li>
+          </ol>
+          <details>
+            <summary>阅读检查与来源依据
+            </summary>
+            <p>本次执行中，五项已有的回放测试通过。同一序列回放两次，得到相同报告。
+            </p>
+            <p class="source-note">来源： <code>mulasakee17/moonblade</code>，版本 <code>31f168972379323f257aeabcd8c440b93bc5ea66</code>。在本地开发检出版本中执行： <code>e88fb8e1a970f38c90f41c0c75185649d1dcb4f2</code>；相关回放、运行时、辅助代码、模式、配置与测试内容均与来源版本一致。这并非一次干净的完整仓库检出。仓库为私有；这份独立导出是公开证据。
+            </p>
+            <p>可下载记录包含输入、任务条件、状态转换、矛盾历史、事件、来源哈希与执行边界。测试样例历史上的来源标签，不构成实物观测的证据。
+            </p>
+          </details>
+          <div class="actions"><a href="/assets/evidence/moonblade-replay.json">打开完整导出记录（JSON）</a><a href="/assets/evidence/moonblade-replay.json" download>下载记录</a>
+          </div>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>我的职责与取舍
+        </h2>
+        <div data-reveal>
+          <p>我确定以具体实物为基础的问题、系统边界与验收标准；AI 协助实现、分析与检查。这里强调的设计选择，是保留能够再次阅读的证据，而不把模型流畅的回答视为足以授权行动的依据。
+          </p>
+          <p>记录必须告诉后来的读者：观测到了什么、系统允许了什么，以及哪些内容仍待验证。本案例不主张理解传承的整个方向已经实现。
+          </p>
+        </div>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>下一项有用的核查
+        </h2>
+        <div data-reveal>
+          <p>真实任务必须检验：物体发生变化后，继承的上下文是否仍然有用；过时假设能否被发现；另一位操作者能否找回相关证据。当前软件展示无法回答这些物理世界的问题。
+          </p>
+          <p><a href="mailto:huimouye@qq.com?subject=Moonblade%20validation">讨论一项边界明确的验证任务</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Lucius He
+        </p>
+        <div><a href="/zh/archive/">档案</a><a href="/zh/rizhichi/">RIZHICHI</a><a href="/zh/#contact">联系</a>
+        </div>
+        <p>静态页面 · 不追踪访客
+        </p>
+      </div>
+    </footer>
+    <script src="/script.js" defer>
+    </script>
+  </body>
+</html>
