@@ -620,3 +620,29 @@ html.js-reveal [data-reveal]:focus-within{
 .historical-reading .reading-lenses { grid-template-columns: 1fr; }
 .historical-reading .reading-lenses article + article { margin-top: var(--entry-gap); }
 .historical-reading .evidence-panel { padding: 0; background: transparent; }
+
+:root { --language-target:44px; }
+/* The language selector shares the existing header and palette. */
+.header-inner > nav:not(.language-switch) { margin-left:auto; }
+.header-inner .language-switch { gap:0; flex-shrink:0; }
+.language-switch a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:var(--language-target);
+  min-height:var(--language-target);
+}
+.language-switch a[aria-current="page"] {
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:.35em;
+}
+html:lang(zh-CN) h1, html:lang(zh-CN) h2, html:lang(zh-CN) h3 {
+  line-height:1.25;
+  letter-spacing:0;
+}
+@media(max-width:800px) {
+  .header-inner > nav:not(.language-switch) { order:3; margin-left:0; }
+  .header-inner .language-switch { width:auto; }
+  .header-inner .wordmark { margin-left:auto; }
+}

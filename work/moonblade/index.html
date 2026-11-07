@@ -22,19 +22,24 @@
     <meta name="twitter:title" content="Moonblade — Lucius He">
     <meta name="twitter:description" content="Object-grounded understanding, inspectable evidence, and the limits of a software prototype.">
     <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
-    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../../style.css">
-  </head>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" hreflang="en" href="https://mulasakee17.github.io/work/moonblade/">
+<link rel="alternate" hreflang="zh-CN" href="https://mulasakee17.github.io/zh/work/moonblade/">
+<link rel="alternate" hreflang="x-default" href="https://mulasakee17.github.io/work/moonblade/">
+<meta property="og:locale" content="en_US">
+<script src="/i18n/language.js" defer></script>
+</head>
   <body id="top">
     <!-- Design: extend the existing warm white, ink and oxblood identity. Real records lead the work; static reading and native links carry the experience. --><a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="container header-inner"><a class="wordmark" href="../../">Lucius <span lang="zh-CN">贺孟元</span></a>
-        <nav aria-label="Primary"><a href="../../#work">Work</a><a href="../../#approach">Approach</a><a href="../../#about">About</a><a href="../../#contact">Contact</a>
+      <div class="container header-inner"><nav class="language-switch" aria-label="Language"><a data-language="en" lang="en" hreflang="en" href="/work/moonblade/?lang=en" aria-current="page">EN</a><a data-language="zh-CN" lang="zh-CN" hreflang="zh-CN" href="/zh/work/moonblade/">中文</a></nav><a class="wordmark" href="/">Lucius <span lang="zh-CN">贺孟元</span></a>
+        <nav aria-label="Primary"><a href="/#work">Work</a><a href="/#approach">Approach</a><a href="/#about">About</a><a href="/#contact">Contact</a>
         </nav>
       </div>
     </header>
     <main id="main">
-      <section class="case-hero container"><a class="back-link" href="../../#work">Back to work</a>
+      <section class="case-hero container"><a class="back-link" href="/#work">Back to work</a>
         <h1 data-reveal>Understanding a particular object.
         </h1>
         <p class="lead" data-reveal>How can the next person or AI inherit what was understood about a physical object—and know when that understanding needs to be checked again?
@@ -94,25 +99,25 @@
             <li data-step>
             <h4>Input 3: orientation
             </h4>
-            <p>Input: <code>orientation = &quot;reversed&quot;</code>; confidence 0.94.
+            <p>Input: <code>orientation = "reversed"</code>; confidence 0.94.
             </p>
             <p>Recorded state: <code>RECOVERING</code>, current step <code>s2</code>. Unresolved contradictions: 0.
             </p>
-            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>&quot;reversed&quot;</code>.
+            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>"reversed"</code>.
             </p>
             <p>Transition: <code>s2 → FAILED:s2</code>. orientation == reversed.
             </p>
-            <p>Transition: <code>FAILED:s2 → RECOVERING:fix_orientation</code>. step declares recovery &#x27;fix_orientation&#x27;.
+            <p>Transition: <code>FAILED:s2 → RECOVERING:fix_orientation</code>. step declares recovery 'fix_orientation'.
             </p>
             </li>
             <li data-step>
             <h4>Input 4: orientation
             </h4>
-            <p>Input: <code>orientation = &quot;correct&quot;</code>; confidence 0.95.
+            <p>Input: <code>orientation = "correct"</code>; confidence 0.95.
             </p>
             <p>Recorded state: <code>RECOVERING</code>, current step <code>s2</code>. Unresolved contradictions: 1.
             </p>
-            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>&quot;reversed&quot;</code>.
+            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>"reversed"</code>.
             </p>
             <p>No state transition was recorded for this input.
             </p>
@@ -120,11 +125,11 @@
             <li data-step>
             <h4>Input 5: orientation
             </h4>
-            <p>Input: <code>orientation = &quot;correct&quot;</code>; confidence 0.94.
+            <p>Input: <code>orientation = "correct"</code>; confidence 0.94.
             </p>
             <p>Recorded state: <code>RECOVERING</code>, current step <code>s2</code>. Unresolved contradictions: 1.
             </p>
-            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>&quot;reversed&quot;</code>.
+            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>"reversed"</code>.
             </p>
             <p>No state transition was recorded for this input.
             </p>
@@ -132,11 +137,11 @@
             <li data-step>
             <h4>Input 6: orientation
             </h4>
-            <p>Input: <code>orientation = &quot;correct&quot;</code>; confidence 0.94.
+            <p>Input: <code>orientation = "correct"</code>; confidence 0.94.
             </p>
             <p>Recorded state: <code>RECOVERING</code>, current step <code>s2</code>. Unresolved contradictions: 1.
             </p>
-            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>&quot;reversed&quot;</code>.
+            <p>Orientation evidence: <code>CONFLICTED</code>, retained value <code>"reversed"</code>.
             </p>
             <p>No state transition was recorded for this input.
             </p>
@@ -144,11 +149,11 @@
             <li data-step>
             <h4>Input 7: orientation
             </h4>
-            <p>Input: <code>orientation = &quot;correct&quot;</code>; confidence 0.94.
+            <p>Input: <code>orientation = "correct"</code>; confidence 0.94.
             </p>
             <p>Recorded state: <code>NORMAL</code>, current step <code>s3</code>. Unresolved contradictions: 0.
             </p>
-            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>&quot;correct&quot;</code>.
+            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>"correct"</code>.
             </p>
             <p>Transition: <code>RECOVERING:fix_orientation → s2</code>. recovery target_state fully satisfied by world model.
             </p>
@@ -162,7 +167,7 @@
             </p>
             <p>Recorded state: <code>COMPLETED</code>, current step <code>s3</code>. Unresolved contradictions: 0.
             </p>
-            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>&quot;correct&quot;</code>.
+            <p>Orientation evidence: <code>KNOWN</code>, retained value <code>"correct"</code>.
             </p>
             <p>Transition: <code>s3 → COMPLETED</code>. final step completed; no further steps declared.
             </p>
@@ -178,7 +183,7 @@
             <p>The downloadable record contains inputs, task conditions, transitions, contradiction history, events, source hashes, and the execution boundary. The fixture’s historical source label is not evidence of a physical observation.
             </p>
           </details>
-          <div class="actions"><a href="../../assets/evidence/moonblade-replay.json">Open the full exported record (JSON)</a><a href="../../assets/evidence/moonblade-replay.json" download>Download the record</a>
+          <div class="actions"><a href="/assets/evidence/moonblade-replay.json">Open the full exported record (JSON)</a><a href="/assets/evidence/moonblade-replay.json" download>Download the record</a>
           </div>
         </div>
       </section>
@@ -207,13 +212,13 @@
       <div class="container footer-inner">
         <p>© 2026 Lucius He
         </p>
-        <div><a href="../../archive/">Archive</a><a href="../../rizhichi/">RIZHICHI</a><a href="../../#contact">Contact</a>
+        <div><a href="/archive/">Archive</a><a href="/rizhichi/">RIZHICHI</a><a href="/#contact">Contact</a>
         </div>
         <p>Static pages · No tracking
         </p>
       </div>
     </footer>
-    <script src="../../script.js" defer>
+    <script src="/script.js" defer>
     </script>
   </body>
 </html>

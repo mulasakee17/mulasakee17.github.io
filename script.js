@@ -1,6 +1,8 @@
 /* Progressive enhancement: every exported record remains readable without JavaScript. */
 (function () {
   'use strict';
+  var chinese = document.documentElement.lang === 'zh-CN';
+  function localized(en, zh) { return chinese ? zh : en; }
 
   /* Restore the original ordinary scroll reveal; native scrolling is unchanged. */
   var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -66,15 +68,15 @@
     // Read the published HTML record: no generated outcomes or network requests.
     var viewer = document.createElement('section');
     viewer.className = 'replay-viewer';
-    viewer.setAttribute('aria-label', 'Browse the recorded synthetic interaction');
+    viewer.setAttribute('aria-label', localized('Browse the recorded synthetic interaction', '浏览已记录的合成交互'));
     var heading = document.createElement('h4');
-    heading.textContent = 'Browse the recorded sequence';
+    heading.textContent = localized('Browse the recorded sequence', '浏览已记录的执行序列');
     var hint = document.createElement('p');
-    hint.textContent = 'Select an input to inspect its recorded state. This replays the published synthetic record; it does not execute the Runtime.';
+    hint.textContent = localized('Select an input to inspect its recorded state. This replays the published synthetic record; it does not execute the Runtime.', '选择一次输入，查看其记录的状态。这里重放的是已发布的合成记录，并不执行运行时。');
     var timeline = document.createElement('div');
     timeline.className = 'replay-timeline';
     timeline.setAttribute('role', 'group');
-    timeline.setAttribute('aria-label', 'Recorded inputs');
+    timeline.setAttribute('aria-label', localized('Recorded inputs', '已记录的输入'));
     var snapshot = document.createElement('div');
     snapshot.className = 'replay-snapshot';
     snapshot.id = 'replay-snapshot';
@@ -86,8 +88,8 @@
     var previous = document.createElement('button');
     var next = document.createElement('button');
     previous.type = next.type = 'button';
-    previous.textContent = 'Previous input';
-    next.textContent = 'Next input';
+    previous.textContent = localized('Previous input', '上一次输入');
+    next.textContent = localized('Next input', '下一次输入');
     controls.append(previous, next);
     var index = 0;
     var buttons = steps.map(function (step, position) {
@@ -111,9 +113,9 @@
         var label = document.createElement('dt');
         var value = document.createElement('dd');
         var text = element.textContent.trim();
-        var separator = text.indexOf(':');
-        label.textContent = separator > -1 ? text.slice(0, separator) : 'Transition';
-        value.innerHTML = separator > -1 ? element.innerHTML.replace(/^[^:]+:\s*/, '') : element.innerHTML;
+        var separator = text.search(/[:：]/);
+        label.textContent = separator > -1 ? text.slice(0, separator) : localized('Transition', '状态转换');
+        value.innerHTML = separator > -1 ? element.innerHTML.replace(/^[^:：]+[:：]\s*/, '') : element.innerHTML;
         row.append(label, value);
         fields.appendChild(row);
       });
@@ -123,7 +125,7 @@
       });
       previous.disabled = index === 0;
       next.disabled = index === steps.length - 1;
-      status.textContent = 'Input ' + (index + 1) + ' of ' + steps.length;
+      status.textContent = chinese ? '输入 ' + (index + 1) + ' / ' + steps.length : 'Input ' + (index + 1) + ' of ' + steps.length;
     }
     previous.addEventListener('click', function () { show(index - 1); });
     next.addEventListener('click', function () { show(index + 1); });
@@ -131,7 +133,7 @@
     record.before(viewer);
     var fullRecord = document.createElement('details');
     var summary = document.createElement('summary');
-    summary.textContent = 'Read all eight recorded inputs together';
+    summary.textContent = localized('Read all eight recorded inputs together', '展开阅读全部八次输入记录');
     fullRecord.appendChild(summary);
     record.before(fullRecord);
     fullRecord.appendChild(record);
