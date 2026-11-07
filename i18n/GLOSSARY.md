@@ -2,8 +2,11 @@
 
 | English | 中文 | Guidance / 约定 |
 | --- | --- | --- |
-| Moonblade / SwarmAlpha / The Ancestors | 保留英文项目名 | Keep project identity stable. |
-| RIZHICHI / Jingtu | 保留名称 | Do not invent a Chinese product name. |
+| Moonblade | 月刃 | Use the established Chinese project name in Chinese prose and metadata; retain identifiers and URLs. |
+| The Ancestors | 前人馆 | Use the established Chinese project name. |
+| Jingtu | 净土 | Use the established Chinese project name; preserve its whitepaper and design-stage boundary. |
+| RIZHICHI | 日之炽 | Use the established Chinese name. |
+| SwarmAlpha | SwarmAlpha | Keep the project name in English in both languages. |
 | inspectable | 可供检视 | Distinguish inspection from proven correctness. |
 | evidence | 证据 | Do not imply field validation. |
 | provenance | 来源记录 / 来源 | Use 来源记录 for artifacts and evidence chains. |
@@ -42,3 +45,5 @@ the distinction between observation, inference and future work.
 | esteem | 敬重 | Distinguish esteem from appearances of success. |
 
 A technical state such as `COMPLETED` describes software state only. Keep post-hoc analysis, task and seed counts, negative findings, stopped research, and private collection boundaries explicit in both languages.
+
+Chinese project titles and primary navigation entries pair established names with their English brands: `月刃 Moonblade`, `前人馆 The Ancestors`, and `日之炽 RIZHICHI`. Running Chinese prose uses the natural Chinese names. / 中文项目标题与主要导航同时显示既有中文名和英文品牌；正文使用自然中文名。
