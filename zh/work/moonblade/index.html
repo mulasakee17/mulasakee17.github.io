@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>月刃 Moonblade — Lucius He
     </title>
-    <meta name="description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta name="description" content="月刃为何聚焦静态物体上下文、当前仍需验证什么，以及早期运行时实验留下了什么。">
     <meta name="theme-color" content="#F7F4EF">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://mulasakee17.github.io/zh/work/moonblade/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lucius He">
     <meta property="og:title" content="月刃 Moonblade — Lucius He">
-    <meta property="og:description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta property="og:description" content="月刃为何聚焦静态物体上下文、当前仍需验证什么，以及早期运行时实验留下了什么。">
     <meta property="og:url" content="https://mulasakee17.github.io/zh/work/moonblade/">
     <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
     <meta property="og:image:alt" content="让智能立足现实，让理解长久留存。">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="月刃 Moonblade — Lucius He">
-    <meta name="twitter:description" content="以具体实物为基础的理解、可供检视的证据，以及软件原型的边界。">
+    <meta name="twitter:description" content="月刃为何聚焦静态物体上下文、当前仍需验证什么，以及早期运行时实验留下了什么。">
     <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/style.css">
@@ -42,37 +42,37 @@
       <section class="case-hero container"><a class="back-link" href="/zh/#work">返回作品</a>
         <h1 data-reveal>给实物增加一个 AI 接口。
         </h1>
-        <p class="lead" data-reveal>夏令营里的一次无人机装配，让我开始想一个更大的问题：AI 怎样才能可靠地了解人正在操作的那个具体物体？
+        <p class="lead" data-reveal>同学在夏令营装配无人机的经历，引出了一个更大的问题：AI 怎样才能获得人正在操作的那台具体设备的可靠信息？
         </p>
-        <p class="status" data-reveal>月刃 · 工程原型
+        <p class="status" data-reveal>月刃 · 静态物体上下文接口
         </p>
-        <a class="text-link case-evidence-link" href="#evidence">查看八次输入的执行记录</a>
+        <a class="text-link case-evidence-link" href="#evidence">查看历史运行时记录</a>
       </section>
       <section class="section container split">
         <h2 data-reveal>这个问题从哪里来
         </h2>
         <div data-reveal>
-          <p>夏令营里，我看到同学装配无人机，需要反复查教程、设备资料和硬件背景。通用 AI 很难获得这个具体实物的可靠上下文。我开始想，能不能给物体增加一个 AI 接口？
+          <p>同学参加夏令营，装配无人机需要自己查教程、了解硬件基本信息。这段经历让我注意到一个问题：AI 能回答许多技术问题，却很难获得某台具体设备的可靠背景上下文。能不能给实物增加一个 AI 接口？
           </p>
-          <p>如果只是一步步指导装配，有时还不如厂商已有的教程。更难的问题是：AI 怎么知道自己面对的是哪一个物体，发生过哪些变化，哪些信息仍然可信？月刃由此探索让物体承载身份、知识、任务技能和上下文，供兼容的 AI 使用与接续。
+          <p>一步步的实时指导，有时还不如厂商提前准备的视频和说明书。设计问题因此转向了指导之前：AI 需要知道自己面对哪个物体和版本，一条说法来自哪里，以及它现在是否仍然适用。
           </p>
         </div>
       </section>
       <section class="section container split">
-        <h2 data-reveal>目前能运行的部分</h2>
-        <div data-reveal><p>目前的软件原型实现了其中一部分：运行时解析证据、检查任务条件、保留矛盾，并记录状态转换。下面的回放展示了这套机制的一次软件执行。</p></div>
+        <h2 data-reveal>目前聚焦什么</h2>
+        <div data-reveal><p>当前活动产品是静态物体上下文接口（Object Context Interface），以及用于准备、检查和交接物体资料的本地工具。它整理来源、型号与版本范围、未知和分歧，为具体目标提供上下文，并帮助检查资料变化影响了哪些内容。</p><p>例如，一份设备说明更新后，开发者需要知道新资料覆盖哪个版本、哪些说法有来源，以及哪些原有上下文需要重新检查。接口正在围绕这样的交接问题设计。</p><p>目前的工作已有本地检查，但独立使用者和维护者能否从中获益，仍需外部验证。接口尚未公开发行。</p></div>
       </section>
       <section id="evidence" class="section container">
         <div class="section-heading">
-          <h2 data-reveal>查看一段交互记录。
+          <h2 data-reveal>早期工程探索：运行时
           </h2>
-          <p data-reveal>方向反转使任务停止正常推进。相互冲突的观测始终保留，直到后续证据支持继续执行。浏览八次输入记录，查看这一过程。
+          <p data-reveal>在早期运行时工作中，我探索了任务条件、证据冲突和恢复。下面的八次输入回放保留了其中一次合成软件实验；运行时和硬件实验现已归档。
           </p>
         </div>
         <div class="evidence-panel" data-trace-browser>
           <h3>八次输入，一份恢复记录。
           </h3>
-          <p class="status">合成输入的软件执行记录 · 执行于 2026 年 10 月 7 日
+          <p class="status">历史运行时实验 · 合成软件执行记录 · 执行于 2026 年 10 月 7 日
           </p>
           <p>现有的 <code>mini_skill</code> 测试样例向确定性运行时提供观测。方向反转触发失败与恢复。相互冲突的观测被记录下来；后续输入解除冲突，最终输入使软件进入状态 <code>COMPLETED</code>。
           </p>
@@ -197,16 +197,17 @@
         <div data-reveal>
           <p>输入 3 到输入 7 之间体现了一个关键选择：新的观测不会直接替换旧观测。运行时记录矛盾，在矛盾尚未解除时保留先前的值，并等待恢复条件得到满足。
           </p>
-          <p>当理解传递给下一位操作者时，这份记录使其有据可查。我确定围绕具体实物的问题、系统边界与验收标准；AI 协助实现、分析与检查。
+          <p>这段记录展示了历史机制怎样保留分歧，与现行静态接口的验证分开。我负责项目问题、系统边界与验收标准，AI 协助实现、分析和检查。
           </p>
         </div>
       </section>
       <section class="section container split">
-        <h2 data-reveal>下一项有用的核查
+        <h2 data-reveal>接下来验证什么，更远处还有什么
         </h2>
         <div data-reveal>
-          <p>下一项有用的测试，是一项范围明确的实物任务：改变物体，检查过时假设能否被发现，再请另一位操作者找回相关证据。这将把已经实现的恢复机制，与理解如何传承这一更大的问题联系起来。
+          <p>接下来更有价值的检查，是项目之外的人能否使用并维护静态接口：找到相关来源，读懂未知与分歧，并在资料变化后判断哪些内容需要更新。
           </p>
+          <p>更长远地，我仍想探索身份、上下文、记忆、技能与行动怎样连接实物和 AI。这些仍是长期问题，超出了现行静态接口提供的能力。</p>
           <p><a href="mailto:huimouye@qq.com?subject=Moonblade%20validation">讨论一项边界明确的验证任务</a>
           </p>
         </div>
