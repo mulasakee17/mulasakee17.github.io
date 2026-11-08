@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Moonblade — Lucius He
     </title>
-    <meta name="description" content="Why Moonblade now focuses on static object context, what remains to validate, and what its earlier Runtime experiments show.">
+    <meta name="description" content="Moonblade’s static Object Context Interface, the question behind it, and an earlier Runtime experiment.">
     <meta name="theme-color" content="#F7F4EF">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://mulasakee17.github.io/work/moonblade/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lucius He">
     <meta property="og:title" content="Moonblade — Lucius He">
-    <meta property="og:description" content="Why Moonblade now focuses on static object context, what remains to validate, and what its earlier Runtime experiments show.">
+    <meta property="og:description" content="Moonblade’s static Object Context Interface, the question behind it, and an earlier Runtime experiment.">
     <meta property="og:url" content="https://mulasakee17.github.io/work/moonblade/">
     <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
     <meta property="og:image:alt" content="Intelligence, grounded in reality. Understanding, built to last.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Moonblade — Lucius He">
-    <meta name="twitter:description" content="Why Moonblade now focuses on static object context, what remains to validate, and what its earlier Runtime experiments show.">
+    <meta name="twitter:description" content="Moonblade’s static Object Context Interface, the question behind it, and an earlier Runtime experiment.">
     <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../style.css">
@@ -55,7 +55,7 @@
       </section>
       <section class="section container split">
         <h2 data-reveal>The current focus</h2>
-        <div data-reveal><p>The active product is a static Object Context Interface and local tools for preparing, checking, and handing over object information. It organizes sources, model and version scope, unknowns, and disagreements into context for a particular goal, and helps inspect what a change in the information affects.</p><p>For example, when a device manual changes, a developer needs to know which version the new information covers, which claims have sources, and which existing context needs another look. This is the kind of handoff the interface is designed to support.</p><p>The current work has local checks, but its value to independent consumers and maintainers still needs external validation. It has not been publicly released.</p></div>
+        <div data-reveal><p>The active product is a static Object Context Interface with local tools for preparing, checking, and handing over information about a particular object. It brings together sources, applicable models and versions, unknowns, and conflicting claims so AI or another program can read the context for a specific task. When information changes, the tools help inspect which context is affected.</p><p>For example, when a device manual changes, a developer needs to know which version the new information covers, which claims have sources, and which existing context needs another look. This is the kind of handoff the interface is designed to support.</p><p>The interface has local checks and is awaiting external use and maintenance feedback. It has not been publicly released.</p></div>
       </section>
       <section id="evidence" class="section container">
         <div class="section-heading">
@@ -71,7 +71,7 @@
           </p>
           <p>The existing <code>mini_skill</code> fixture supplies observations to a deterministic Runtime. A reversed orientation triggers a failure and recovery. Conflicting observations are recorded; later inputs resolve the conflict, and the final input reaches the software state <code>COMPLETED</code>.
           </p>
-          <p class="boundary">Evidence scope: deterministic execution of synthetic inputs and timestamps, with no model or hardware calls. COMPLETED is a software state. Physical task success and durable inheritance require separate validation; this sequence contains recovery, not BLOCK.
+          <p class="boundary">Evidence scope: deterministic execution of synthetic inputs and timestamps, with no model or hardware calls. COMPLETED is a software state, not a physical task result. This sequence contains recovery, not BLOCK.
           </p>
           <ol class="recovery-path" aria-label="What to look for in the trace"><li><strong>Detect</strong><span>Input 3: reversed orientation enters recovery.</span></li><li><strong>Keep the conflict</strong><span>Inputs 4–6: new claims do not silently overwrite evidence.</span></li><li><strong>Resume</strong><span>Input 7: the conflict resolves and the task advances.</span></li></ol>
           <ol class="trace-steps">
@@ -192,7 +192,7 @@
         <div data-reveal>
           <p>The important choice is visible between inputs 3 and 7: a new observation does not simply replace the previous one. The Runtime records the contradiction, retains the earlier value while conflicted, and waits for its recovery conditions to be satisfied.
           </p>
-          <p>The trace shows how that historical mechanism kept a disagreement visible. It is separate from validation of the current static interface. I set the project question, system boundaries, and acceptance criteria; AI supports implementation, analysis, and checks.
+          <p>Keeping both observations in the record makes the recovery decision easier to inspect. I set the project question, system boundaries, and acceptance criteria; AI supports implementation, analysis, and checks.
           </p>
         </div>
       </section>
@@ -202,7 +202,7 @@
         <div data-reveal>
           <p>The next useful check is whether someone outside the project can use and maintain the static interface: find the relevant sources, understand unknowns and disagreements, and judge what needs updating when the information changes.
           </p>
-          <p>Longer term, I still want to explore how identity, context, memory, skills, and action could connect a physical object with AI. These remain long-term questions, beyond what the current static interface provides.</p>
+          <p>Beyond the static interface, the longer-term questions concern object identity, memory, skills, and action: how might these connect a physical object with AI?</p>
           <p><a href="mailto:huimouye@qq.com?subject=Moonblade%20validation">Discuss a bounded validation task</a>
           </p>
         </div>
