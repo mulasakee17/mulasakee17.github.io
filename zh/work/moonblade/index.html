@@ -40,23 +40,27 @@
     </header>
     <main id="main">
       <section class="case-hero container"><a class="back-link" href="/zh/#work">返回作品</a>
-        <h1 data-reveal>理解某一个具体物体。
+        <h1 data-reveal>给实物增加一个 AI 接口。
         </h1>
-        <p class="lead" data-reveal>下一个人或 AI 如何接续对某个实物的理解，并知道何时需要重新核查？
+        <p class="lead" data-reveal>夏令营里的一次无人机装配，让我开始想一个更大的问题：AI 怎样才能可靠地了解人正在操作的那个具体物体？
         </p>
         <p class="status" data-reveal>月刃 · 工程原型
         </p>
         <a class="text-link case-evidence-link" href="#evidence">查看八次输入的执行记录</a>
       </section>
       <section class="section container split">
-        <h2 data-reveal>让实物承载自身的上下文
+        <h2 data-reveal>这个问题从哪里来
         </h2>
         <div data-reveal>
-          <p>这一方向希望赋予某个具体实物持久的身份、知识、任务技能与现实上下文，供兼容的 AI 接续使用。实物发生变化时，对它的理解也应重新核查。
+          <p>夏令营里，我看到同学装配无人机，需要反复查教程、设备资料和硬件背景。通用 AI 很难获得这个具体实物的可靠上下文。我开始想，能不能给物体增加一个 AI 接口？
           </p>
-          <p>目前的原型实现了这一构想的一部分：运行时处理证据、检查任务条件、保留矛盾，并记录状态转换。下面的回放通过一个已经执行的小型软件案例，展示这套机制。
+          <p>如果只是一步步指导装配，有时还不如厂商已有的教程。更难的问题是：AI 怎么知道自己面对的是哪一个物体，发生过哪些变化，哪些信息仍然可信？月刃由此探索让物体承载身份、知识、任务技能和上下文，供兼容的 AI 使用与接续。
           </p>
         </div>
+      </section>
+      <section class="section container split">
+        <h2 data-reveal>目前能运行的部分</h2>
+        <div data-reveal><p>目前的软件原型实现了其中一部分：运行时解析证据、检查任务条件、保留矛盾，并记录状态转换。下面的回放展示了这套机制的一次软件执行。</p></div>
       </section>
       <section id="evidence" class="section container">
         <div class="section-heading">
