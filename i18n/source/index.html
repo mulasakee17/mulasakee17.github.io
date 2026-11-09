@@ -3,24 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Intelligence, grounded in reality — Lucius He
+    <title>Lucius He — Software, experiments, and human questions
     </title>
-    <meta name="description" content="Systems that connect AI to the physical world, make collective decisions inspectable, and help people carry understanding forward.">
+    <meta name="description" content="Lucius He’s work on AI and physical objects, multi-agent judgment, and the questions we inherit from earlier thinkers.">
     <meta name="theme-color" content="#F7F4EF">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://mulasakee17.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lucius He">
-    <meta property="og:title" content="Intelligence, grounded in reality — Lucius He">
-    <meta property="og:description" content="Systems that connect AI to the physical world, make collective decisions inspectable, and help people carry understanding forward.">
+    <meta property="og:title" content="Lucius He — Software, experiments, and human questions">
+    <meta property="og:description" content="Lucius He’s work on AI and physical objects, multi-agent judgment, and the questions we inherit from earlier thinkers.">
     <meta property="og:url" content="https://mulasakee17.github.io/">
     <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Intelligence, grounded in reality. Understanding, built to last.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Intelligence, grounded in reality — Lucius He">
-    <meta name="twitter:description" content="Systems that connect AI to the physical world, make collective decisions inspectable, and help people carry understanding forward.">
+    <meta name="twitter:title" content="Lucius He — Software, experiments, and human questions">
+    <meta name="twitter:description" content="Lucius He’s work on AI and physical objects, multi-agent judgment, and the questions we inherit from earlier thinkers.">
     <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
@@ -38,39 +38,39 @@
         <h1 data-reveal>Intelligence,<br>grounded in reality.<br><span>Understanding,<br>built to last.</span>
         </h1>
         <div class="hero-intro">
-          <p data-reveal>I’m Lucius He, an independent builder and researcher. I explore how AI can understand physical objects, how groups of agents reach decisions, and how people carry understanding forward.
+          <p data-reveal>I’m Lucius He (贺孟元), a high school student drawn to AI, robots, and the history of ideas.
           </p>
-          <p data-reveal>Across these projects, I build systems, test their assumptions, and keep the evidence available for the next person to question.
+          <p data-reveal>I wonder how AI could get to know a particular device, why a group changes its mind, and how people before us thought about living. Those interests have led to the work below.
           </p>
           <a class="button" href="#work" data-reveal>Inspect the work</a>
         </div>
       </section>
       <nav class="project-index container" aria-label="Explore the three projects">
-        <a href="work/moonblade/"><strong>Moonblade</strong><span>Toward understanding that stays with an object</span><span class="index-kind">Engineering prototype</span></a>
+        <a href="work/moonblade/"><strong>Moonblade</strong><span>An AI interface for physical objects</span><span class="index-kind">Static object context interface</span></a>
         <a href="work/swarmalpha/"><strong>SwarmAlpha</strong><span>How local information becomes a collective decision</span><span class="index-kind">Experimental research</span></a>
         <a href="work/ancestors/"><strong>The Ancestors</strong><span>A map of questions about being human</span><span class="index-kind">Public reading slice</span></a>
       </nav>
       <section id="work" class="section container">
         <div class="section-heading">
-          <h2 data-reveal>Questions made concrete.
+          <h2 data-reveal>What I’ve been working on.
           </h2>
-          <p data-reveal>Three directions of work, with software, experiments, and a reading collection you can explore.
+          <p data-reveal>Each project started with a different question. Here is where it led, and what you can examine for yourself.
           </p>
         </div>
         <article id="moonblade" class="work-row flagship" data-reveal>
           <div class="work-copy">
             <h3><a href="work/moonblade/">Moonblade</a>
             </h3>
-            <p class="status">Engineering prototype
+            <p class="status">Static object context interface
             </p>
-            <p>What would it take for the next person—or the next AI—to inherit an understanding of a particular physical object, then check it again when reality changes?
+            <p>A classmate’s experience assembling a drone at summer camp raised a question: how could AI obtain reliable context for that particular device?
             </p>
-            <p>Moonblade explores how a physical object could carry identity, knowledge, task skills, and context for compatible AI. Its current software prototype records what changes, preserves conflicting evidence, and checks when a task can continue.
+            <p>I began with the idea of giving physical objects an AI interface. The current Object Context tools organize information about a particular object so AI can read it for a task. The replay alongside this text comes from an earlier Runtime experiment.
             </p>
             <a class="text-link" href="work/moonblade/">Read the case</a>
           </div>
           <div class="artifact-preview">
-            <h4>Eight inputs. A recovery record.
+            <h4>Historical Runtime: eight inputs.
             </h4>
             <p>Inspect the executed trace: a reversed orientation triggers recovery; conflicting inputs remain visible; later evidence resolves the conflict.
             </p>
@@ -82,7 +82,7 @@
             <div><dt>Input 7</dt><dd><code>orientation = correct</code><br>Resolved to <code>KNOWN</code>; advances to <code>s3</code>.</dd>
             </div>
             </dl>
-            <p class="boundary">Synthetic software trace. No hardware operation or field success is claimed.
+            <p class="boundary">Historical synthetic software trace; separate from the current static interface.
             </p>
             <a href="work/moonblade/#evidence">Inspect the executed trace</a>
           </div>
@@ -93,9 +93,9 @@
             </h3>
             <p class="status">Multi-agent decision research
             </p>
-            <p>How do agents with different, partial views arrive at a collective decision—and what can an outside observer measure?
+            <p>SwarmAlpha began with financial prediction and multi-agent collaboration. It became a study of how information changes agents’ reported judgments.
             </p>
-            <p>I built a multi-agent experiment system to study how information disclosure changes reported judgments, alongside tools for observing group processes. The archive preserves working code, model runs, and the findings that changed the research direction.
+            <p>The research archive contains the experiment system, actual model runs, and findings that changed my questions. Active research has stopped; the code and records remain available.
             </p>
             <a class="text-link" href="work/swarmalpha/">Read the case</a>
           </div>
@@ -109,11 +109,11 @@
           <div class="work-copy">
             <h3><a href="work/ancestors/">The Ancestors</a>
             </h3>
-            <p class="status">Personal cognitive infrastructure · Public reading slice
+            <p class="status">Personal atlas of human questions · Public reading path
             </p>
-            <p>What can earlier thinkers help us see in the questions we face today?
+            <p>When I’m unsure what to think about a question in my own life, I want to know how others have faced it before.
             </p>
-            <p>The Ancestors is my personal atlas of human questions, earlier thinkers’ works, and their competing answers. Alongside its reading paths, I keep a record of how my own questions and judgments change.
+            <p>I’m slowly building a private home for those encounters: the people, their works, and the arguments that make me reconsider how I want to live. One reading path is open here.
             </p>
             <a class="text-link" href="work/ancestors/">Read the case</a>
           </div>
@@ -125,14 +125,14 @@
         </article>
       </section>
       <section id="approach" class="section container approach">
-        <h2 data-reveal>Make the next judgment possible.
+        <h2 data-reveal>Question the first answer.
         </h2>
         <div data-reveal>
-          <p>These projects did not begin as a unified system, and they do not share a technical core. Their questions gradually converged: what must remain visible when intelligence acts, when people disagree, or when understanding passes to someone else?
+          <p>I like large questions. Building something small is often how I discover what I misunderstood about them.
           </p>
-          <p>My approach is to keep the input, the decision, and the evidence close together. A software trace should explain what happened. An experiment should say what was varied and what was measured. A reading path should let another reader return to the source and disagree.
+          <p>A design can change, an experiment can disappoint, and a book can make a familiar question feel strange again. I want the work to leave room for that.
           </p>
-          <p>I use AI extensively in research and implementation. I am responsible for the questions, system and experiment boundaries, critical tradeoffs, and acceptance of the work. AI assists with analysis, drafting, implementation, and checks. These pages distinguish an implemented mechanism from an executed test, and both from a result in the physical world.
+          <p>I choose the questions and key designs, and take responsibility for what I make of the results.
           </p>
         </div>
       </section>
@@ -140,9 +140,9 @@
         <h2 data-reveal>About
         </h2>
         <div data-reveal>
-          <p>I am Lucius He (<span lang="zh-CN">贺孟元</span>), an independent builder and researcher completing my high school education.
+          <p>My interests run from Physical AI and agent systems to philosophy and complex systems. I enjoy finding connections between fields, then seeing what happens when I try to build with them.
           </p>
-          <p>My recent work brings together software prototypes, multi-agent experiments, and a long-term reading collection. This site presents the projects I most want to develop through testing and conversation.
+          <p>I work extensively with AI on research and implementation, while continuing to strengthen my own engineering foundations. These projects are part of that learning.
           </p>
           <p>Earlier work includes <a href="archive/#personal-agent-runtime">Personal Agent Runtime</a>, which separates a model’s proposed action from permission and verification, and the <a href="archive/">Phase Reversal Hypothesis</a>. <a href="rizhichi/">RIZHICHI</a> remains accessible as a secondary page.
           </p>
@@ -153,7 +153,7 @@
         <h2 data-reveal>Let’s compare notes.
         </h2>
         <div data-reveal>
-          <p>I welcome concrete conversations about object-grounded systems, experimental design, and the inheritance of understanding. A counterexample, a reproducible check, or a better question is a good place to start.
+          <p>If you’ve run a related experiment, encountered the kind of object-specific information problem Moonblade explores, or read this philosophical question differently, I’d like to hear from you. Specific questions, counterexamples, and suggestions are especially useful.
           </p>
           <ul class="contact-list">
             <li><a href="mailto:huimouye@qq.com">huimouye@qq.com</a>

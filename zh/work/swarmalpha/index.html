@@ -40,21 +40,21 @@
     </header>
     <main id="main">
       <section class="case-hero container"><a class="back-link" href="/zh/#work">返回作品</a>
-        <h1 data-reveal>局部视角，<br>如何形成集体判断？</h1>
-        <p class="lead" data-reveal>SwarmAlpha 是我的一项实验研究，探索掌握不同局部信息的 AI 智能体如何形成集体判断，以及外部观察者能从这一过程中了解什么。</p>
+        <h1 data-reveal>从金融预测<br>走向群体判断的变化。</h1>
+        <p class="lead" data-reveal>我最初想让多个 Agent 一起预测、一起决策。后来更吸引我的是：一条新信息进入群体后，谁报告的判断改变了，群体判断又怎样随之变化？</p>
         <p class="status" data-reveal>SwarmAlpha · 多智能体研究档案</p>
         <div class="actions"><a class="button" href="https://github.com/mulasakee17/swarmalpha/tree/b0d9f16b499dd949391bc7d6b84640fa98d43b42">查看 GitHub 仓库</a><a class="text-link" href="#evidence">阅读研究发现</a></div>
         <p class="source-note">仓库链接指向已审阅的研究演进 README，尚待合并至默认分支。</p>
       </section>
       <section class="section container split">
-        <h2 data-reveal>研究问题</h2>
+        <h2 data-reveal>问题怎样变了</h2>
         <div data-reveal>
-          <p>一群智能体可以接触不同的证据、产生分歧，并在讨论中修订各自的报告。这些局部信息如何形成集体判断？从对话之外观察，我们又能看到并描述群体中的哪些变化？</p>
-          <p>为探索这些问题，我围绕智能体搭建了观察与实验层，再通过实验检验：当它们能够获得的信息改变时，会发生什么。</p>
+          <p>让智能体得出一致答案，还不足以解释发生了什么。它们可能看到不同证据，产生分歧，再在讨论中修改自己的报告。我想知道，这些差异怎样影响它们报告的判断；仅凭这些记录，又能对整个过程作出什么判断。</p>
+          <p>我围绕 Agent 搭建了观察与实验层，再改变它们能看到的信息。后来的检查没有支持一些早期预测假设。我不得不把原先想得太近的三件事分开：观察群体过程、预测结果，以及选择怎样影响它。</p>
         </div>
       </section>
       <section class="section container split">
-        <h2 data-reveal>我构建了什么</h2>
+        <h2 data-reveal>留下的实验系统</h2>
         <div data-reveal>
           <p>这项工作建立了一套多智能体实验系统，能够控制信息披露、从同一讨论状态分支进行比较，并保留实际模型运行记录。同时，我也开发了描述群体过程的工具，涵盖信息接触、证据使用、来源记录、响应与资源使用情况。</p>
           <p>档案汇集了可复用代码、实验设计与测量约定。我负责研究方向、实验边界及结果解读，AI 协助实现与分析。过程描述器已实现并完成结构检查；其经验效度仍是有待研究的问题。</p>
@@ -62,10 +62,10 @@
         </div>
       </section>
       <section id="evidence" class="section container split">
-        <h2 data-reveal>研究与发现</h2>
+        <h2 data-reveal>运行结果说明了什么</h2>
         <div data-reveal>
           <p>使用真实模型的实验发现，信息披露能够改变智能体报告的判断。在涵盖 45 个任务、两个随机种子，并使用 <code>deepseek-chat</code>的事后复现实验中，披露反驳关系时的平均 Brier 损失低于披露支持关系时的损失，但个别任务呈现相反结果。这里测量的是概率报告，并未确立选择干预方式的通用规则。 <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/FORK_CONFIRMATORY_RESULTS_V3_2026-08-16.md">阅读实验报告</a>。</p>
-          <p>一些早期预测性假设未得到后续检验的支持。因此，研究逐渐转向更审慎地描述群体状态，并明确测量约定。README 与报告保留了这一演进过程，包括否定性发现与实验的局限。目前已停止主动研究；代码与记录仍可供后续研究及工程交接使用。</p>
+          <p>README 和报告保留了研究方向的变化、否定性发现与实验局限。我已停止 SwarmAlpha 的主动研究，代码和记录仍可用于后续研究与工程移交。</p>
           <p><a href="https://github.com/mulasakee17/swarmalpha/tree/b0d9f16b499dd949391bc7d6b84640fa98d43b42#readme">阅读研究概述</a> · <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">后续分析</a> · <a href="mailto:huimouye@qq.com?subject=SwarmAlpha%20experimental%20design">交流这项工作</a></p>
         </div>
       </section>

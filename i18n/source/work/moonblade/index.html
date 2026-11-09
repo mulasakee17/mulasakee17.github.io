@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Moonblade — Lucius He
     </title>
-    <meta name="description" content="Object-grounded understanding, inspectable evidence, and the limits of a software prototype.">
+    <meta name="description" content="Moonblade’s static Object Context Interface, the question behind it, and an earlier Runtime experiment.">
     <meta name="theme-color" content="#F7F4EF">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://mulasakee17.github.io/work/moonblade/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Lucius He">
     <meta property="og:title" content="Moonblade — Lucius He">
-    <meta property="og:description" content="Object-grounded understanding, inspectable evidence, and the limits of a software prototype.">
+    <meta property="og:description" content="Moonblade’s static Object Context Interface, the question behind it, and an earlier Runtime experiment.">
     <meta property="og:url" content="https://mulasakee17.github.io/work/moonblade/">
     <meta property="og:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
     <meta property="og:image:alt" content="Intelligence, grounded in reality. Understanding, built to last.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Moonblade — Lucius He">
-    <meta name="twitter:description" content="Object-grounded understanding, inspectable evidence, and the limits of a software prototype.">
+    <meta name="twitter:description" content="Moonblade’s static Object Context Interface, the question behind it, and an earlier Runtime experiment.">
     <meta name="twitter:image" content="https://mulasakee17.github.io/assets/og-image.png">
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../style.css">
@@ -35,39 +35,43 @@
     </header>
     <main id="main">
       <section class="case-hero container"><a class="back-link" href="../../#work">Back to work</a>
-        <h1 data-reveal>Understanding a particular object.
+        <h1 data-reveal>An AI interface for a physical object.
         </h1>
-        <p class="lead" data-reveal>How can the next person or AI inherit what was understood about a physical object—and know when that understanding needs to be checked again?
+        <p class="lead" data-reveal>I wanted to give physical objects an interface for AI. The question became: what should an object tell an agent before it tries to help?
         </p>
-        <p class="status" data-reveal>Moonblade · Engineering prototype
+        <p class="status" data-reveal>Moonblade · Static Object Context Interface
         </p>
-        <a class="text-link case-evidence-link" href="#evidence">Inspect the eight-input trace</a>
+        <a class="text-link case-evidence-link" href="#object-context">See the current Object Context tools</a>
       </section>
       <section class="section container split">
-        <h2 data-reveal>Let the object carry its context
+        <h2 data-reveal>Where the question began
         </h2>
         <div data-reveal>
-          <p>The direction is to give a particular physical object a durable identity, knowledge, task skills, and real-world context that compatible AI can inherit. When the object changes, that understanding should be checked again.
+          <p>A classmate attended a summer camp where assembling a drone meant looking up tutorials and learning the hardware basics. That experience raised a problem for me: AI could answer many technical questions, yet it would struggle to obtain reliable background context for a particular device. Could a physical object have an interface for AI?
           </p>
-          <p>The current prototype makes part of that idea concrete: a Runtime resolves evidence, checks task conditions, preserves contradictions, and records transitions. The replay below exposes that mechanism in one small, executed software case.
+          <p>But would live guidance even be more useful than a manufacturer’s video or manual? I began to care more about what could stay with the object: its identity, the knowledge about it, and the experience someone might need next time.
           </p>
         </div>
       </section>
+      <section id="object-context" class="section container split">
+        <h2 data-reveal>The current focus</h2>
+        <div data-reveal><p>I have built the information handoff part into a static Object Context Interface, with local tools for preparing, checking, and handing over object information. It keeps sources, applicable models and versions, unknowns, and conflicting claims together so AI or another program can read the context for a task.</p><p>A fictional, synthetic FieldNode example keeps the object at revision r2 while updated power-supply information gives a different maximum input voltage claim. It preserves the source and applicable scope of that information; this is synthetic information, not a test on a physical object.</p><p>When the information changes, the tools help inspect which context is affected. This is the part of the larger idea I can now test.</p><p>The interface has local checks and has not been publicly released. Its usefulness to independent users and maintainers remains an open question.</p></div>
+      </section>
       <section id="evidence" class="section container">
         <div class="section-heading">
-          <h2 data-reveal>Inspect a recorded interaction.
+          <h2 data-reveal>Earlier engineering: the Runtime
           </h2>
-          <p data-reveal>A reversed orientation stops normal progress. Conflicting observations remain visible until later evidence supports continuing. Browse the eight recorded inputs to see the distinction.
+          <p data-reveal>In earlier Runtime work, I explored task conditions, conflicting evidence, and recovery. The eight-input replay preserves one synthetic software experiment from that work; the Runtime and hardware experiments are now archived.
           </p>
         </div>
         <div class="evidence-panel" data-trace-browser>
           <h3>Eight inputs. A recovery record.
           </h3>
-          <p class="status">Synthetic software trace · Executed 7 October 2026
+          <p class="status">Historical Runtime experiment · Synthetic software trace · Executed 7 October 2026
           </p>
           <p>The existing <code>mini_skill</code> fixture supplies observations to a deterministic Runtime. A reversed orientation triggers a failure and recovery. Conflicting observations are recorded; later inputs resolve the conflict, and the final input reaches the software state <code>COMPLETED</code>.
           </p>
-          <p class="boundary">Evidence scope: deterministic execution of synthetic inputs and timestamps, with no model or hardware calls. COMPLETED is a software state. Physical task success and durable inheritance require separate validation; this sequence contains recovery, not BLOCK.
+          <p class="boundary">Evidence scope: deterministic execution of synthetic inputs and timestamps, with no model or hardware calls. COMPLETED is a software state, not a physical task result. This sequence contains recovery, not BLOCK.
           </p>
           <ol class="recovery-path" aria-label="What to look for in the trace"><li><strong>Detect</strong><span>Input 3: reversed orientation enters recovery.</span></li><li><strong>Keep the conflict</strong><span>Inputs 4–6: new claims do not silently overwrite evidence.</span></li><li><strong>Resume</strong><span>Input 7: the conflict resolves and the task advances.</span></li></ol>
           <ol class="trace-steps">
@@ -188,16 +192,17 @@
         <div data-reveal>
           <p>The important choice is visible between inputs 3 and 7: a new observation does not simply replace the previous one. The Runtime records the contradiction, retains the earlier value while conflicted, and waits for its recovery conditions to be satisfied.
           </p>
-          <p>That record gives the next operator something to inspect when understanding is inherited. I set the object-grounded question, system boundaries, and acceptance criteria; AI supports implementation, analysis, and checks.
+          <p>Keeping both observations in the record makes the recovery decision easier to inspect. I set the project question, system boundaries, and acceptance criteria; AI supports implementation, analysis, and checks.
           </p>
         </div>
       </section>
       <section class="section container split">
-        <h2 data-reveal>The next useful check
+        <h2 data-reveal>What I would want to learn—and what lies beyond
         </h2>
         <div data-reveal>
-          <p>The next useful test is a bounded physical task: change the object, check whether stale assumptions are detected, and ask another operator to recover the relevant evidence. This would connect the implemented recovery mechanism to the larger inheritance question.
+          <p>A future test could ask whether someone outside the project can use and maintain the static interface: find the relevant sources, understand unknowns and disagreements, and judge what needs updating when the information changes.
           </p>
+          <p>Further out, I want to explore how an object’s identity, memory, and skills could connect with agents and robots. That ambition is still what makes the interface worth trying.</p>
           <p><a href="mailto:huimouye@qq.com?subject=Moonblade%20validation">Discuss a bounded validation task</a>
           </p>
         </div>

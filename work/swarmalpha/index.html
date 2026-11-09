@@ -40,21 +40,21 @@
     </header>
     <main id="main">
       <section class="case-hero container"><a class="back-link" href="/#work">Back to work</a>
-        <h1 data-reveal>How do partial views<br>become a collective judgment?</h1>
-        <p class="lead" data-reveal>SwarmAlpha is my experimental research into how AI agents with different local information form collective judgments—and what an outside observer can learn from the process.</p>
+        <h1 data-reveal>From financial prediction<br>to changes in group judgment.</h1>
+        <p class="lead" data-reveal>I started by asking whether agents could predict and decide together. I became more interested in what happened when new information entered the group: whose report changed, and how did the collective judgment change with it?</p>
         <p class="status" data-reveal>SwarmAlpha · Multi-agent research archive</p>
         <div class="actions"><a class="button" href="https://github.com/mulasakee17/swarmalpha/tree/b0d9f16b499dd949391bc7d6b84640fa98d43b42">View GitHub Repository</a><a class="text-link" href="#evidence">Read the findings</a></div>
         <p class="source-note">Repository link opens the reviewed research-evolution README, pending merge into the default branch.</p>
       </section>
       <section class="section container split">
-        <h2 data-reveal>Research Question</h2>
+        <h2 data-reveal>How the question changed</h2>
         <div data-reveal>
-          <p>A group of agents can see different evidence, disagree, and revise its reports through discussion. How does that local information become a collective judgment? Which changes in the group can we observe and describe from outside its conversation?</p>
-          <p>I approached these questions by building an observation and experiment layer around the agents, then testing what happens when the information available to them changes.</p>
+          <p>Getting agents to agree was not enough to explain what had happened. They could see different evidence, disagree, and revise their reports during discussion. I wanted to understand how those differences affected the judgment they reported, and what the records let me say about the process.</p>
+          <p>I built an observation and experiment layer around the agents, then varied the information available to them. Later checks did not support some of my early predictive hypotheses. I had to separate three ambitions that had been too close together in my thinking: observing a group, predicting its outcome, and choosing how to influence it.</p>
         </div>
       </section>
       <section class="section container split">
-        <h2 data-reveal>What I Built</h2>
+        <h2 data-reveal>The experiment system</h2>
         <div data-reveal>
           <p>The work produced a multi-agent experiment system with controlled information disclosure, comparisons branching from a shared discussion state, and records of actual model runs. It also produced tools for describing group processes through information exposure, evidence use, source records, responses, and resource use.</p>
           <p>The archive brings together reusable code, experiment designs, and measurement contracts. I set the research direction, experiment boundaries, and interpretation, with AI assisting in implementation and analysis. The process descriptor is implemented and structurally checked; its empirical validity remains a research question.</p>
@@ -62,10 +62,10 @@
         </div>
       </section>
       <section id="evidence" class="section container split">
-        <h2 data-reveal>Research &amp; Findings</h2>
+        <h2 data-reveal>What the runs showed</h2>
         <div data-reveal>
           <p>Experiments with real models found that information disclosure can change agents’ reported judgments. In a post-hoc replication across 45 tasks and two seeds with <code>deepseek-chat</code>, disclosing attacking relations produced lower average Brier loss than disclosing supporting relations, with individual tasks showing the reverse. This measured probability reports; it did not establish a general rule for choosing interventions. <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/FORK_CONFIRMATORY_RESULTS_V3_2026-08-16.md">Read the experiment report</a>.</p>
-          <p>Some early predictive hypotheses were not supported by later checks. The research consequently moved toward more careful descriptions of group states and clearer measurement contracts. The README and reports preserve that evolution, including negative findings and the limits of the experiments. Active research has stopped; the code and records remain available for further study and engineering handoff.</p>
+          <p>The README and reports preserve the changes in direction, negative findings, and experimental limits. I have stopped active research on SwarmAlpha. The code and records remain available for further study and engineering handoff.</p>
           <p><a href="https://github.com/mulasakee17/swarmalpha/tree/b0d9f16b499dd949391bc7d6b84640fa98d43b42#readme">Read the research overview</a> · <a href="https://github.com/mulasakee17/swarmalpha/blob/4fcfff940b32e9dd867d4df257ee27455485488d/docs/experiments/V6_POLARITY_BUNDLE_RESPONSE_L0_REPORT_2026-08-22.md">Follow-up analysis</a> · <a href="mailto:huimouye@qq.com?subject=SwarmAlpha%20experimental%20design">Discuss the work</a></p>
         </div>
       </section>
