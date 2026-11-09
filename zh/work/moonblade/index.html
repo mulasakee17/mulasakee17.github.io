@@ -42,11 +42,11 @@
       <section class="case-hero container"><a class="back-link" href="/zh/#work">返回作品</a>
         <h1 data-reveal>给实物增加一个 AI 接口。
         </h1>
-        <p class="lead" data-reveal>同学在夏令营装配无人机的经历，引出了一个更大的问题：AI 怎样才能获得人正在操作的那台具体设备的可靠信息？
+        <p class="lead" data-reveal>我想给实物增加一个 AI 接口。接下来的问题是：在 Agent 开始帮忙之前，物体应该先告诉它什么？
         </p>
         <p class="status" data-reveal>月刃 · 静态物体上下文接口
         </p>
-        <a class="text-link case-evidence-link" href="#evidence">查看历史运行时记录</a>
+        <a class="text-link case-evidence-link" href="#object-context">了解当前的物体上下文工具</a>
       </section>
       <section class="section container split">
         <h2 data-reveal>这个问题从哪里来
@@ -54,13 +54,13 @@
         <div data-reveal>
           <p>同学参加夏令营，装配无人机需要自己查教程、了解硬件基本信息。这段经历让我注意到一个问题：AI 能回答许多技术问题，却很难获得某台具体设备的可靠背景上下文。能不能给实物增加一个 AI 接口？
           </p>
-          <p>一步步的实时指导，有时还不如厂商提前准备的视频和说明书。设计问题因此转向了指导之前：AI 需要知道自己面对哪个物体和版本，一条说法来自哪里，以及它现在是否仍然适用。
+          <p>但实时指导真的会比厂商的视频和说明书更有用吗？我开始更在意什么能留在物体身边：它的身份、关于它的知识，以及下一次可能用得上的经验。
           </p>
         </div>
       </section>
-      <section class="section container split">
+      <section id="object-context" class="section container split">
         <h2 data-reveal>目前聚焦什么</h2>
-        <div data-reveal><p>当前产品是一套静态物体上下文接口，配有用于整理、检查和交接资料的本地工具。它将具体物体的资料来源、适用型号与版本、未知信息和相互冲突的说法组织起来，供 AI 或其他程序按任务读取。资料更新后，工具可以帮助检查哪些上下文受到影响。</p><p>例如，一份设备说明更新后，开发者需要知道新资料覆盖哪个版本、哪些说法有来源，以及哪些原有上下文需要重新检查。接口正在围绕这样的交接问题设计。</p><p>接口已有本地检查，接下来需要外部使用者与维护者的反馈。目前尚未公开发行。</p></div>
+        <div data-reveal><p>我已经把资料交接这部分做成了静态物体上下文接口，配有整理、检查和交接资料的本地工具。它将来源、适用型号与版本、未知信息和相互冲突的说法放在一起，供 AI 或其他程序按任务读取。</p><p>资料变化后，工具可以帮助检查哪些上下文受到影响。这是那个更大设想中，我现在能着手检验的一部分。</p><p>接口已有本地检查，尚未公开发行。它对独立使用者和维护者是否有用，仍是一个有待回答的问题。</p></div>
       </section>
       <section id="evidence" class="section container">
         <div class="section-heading">
@@ -202,12 +202,12 @@
         </div>
       </section>
       <section class="section container split">
-        <h2 data-reveal>接下来验证什么，更远处还有什么
+        <h2 data-reveal>我还想弄清什么，以及更远的方向
         </h2>
         <div data-reveal>
-          <p>接下来更有价值的检查，是项目之外的人能否使用并维护静态接口：找到相关来源，读懂未知与分歧，并在资料变化后判断哪些内容需要更新。
+          <p>未来的检验可以围绕一个问题展开：项目之外的人能否使用并维护静态接口，找到相关来源，读懂未知与分歧，并在资料变化后判断哪些内容需要更新。
           </p>
-          <p>在静态接口之外，长期探索的问题涉及物体身份、记忆、技能与行动：它们怎样将一个具体物体与 AI 连接起来？</p>
+          <p>再往远处，我想探索物体的身份、记忆与技能怎样和 Agent、机器人连接起来。这份野心依然让我觉得，这个接口值得试一试。</p>
           <p><a href="mailto:huimouye@qq.com?subject=Moonblade%20validation">讨论一项边界明确的验证任务</a>
           </p>
         </div>
